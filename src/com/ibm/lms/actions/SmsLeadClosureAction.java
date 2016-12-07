@@ -1,0 +1,88 @@
+package com.ibm.lms.actions;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.action.ActionMessages;
+import org.apache.struts.actions.DispatchAction;
+
+
+import com.ibm.lms.common.LMSStatusCodes;
+import com.ibm.lms.dto.UserMstr;
+import com.ibm.lms.wf.forms.LeadForm;
+import com.ibm.lms.wf.services.AssignedLeadsManager;
+import com.ibm.lms.wf.services.impl.AssignedLeadsManagerImpl;
+
+public class SmsLeadClosureAction extends DispatchAction {
+	private static Logger logger = Logger.getLogger(SmsLeadClosureAction.class.getName());
+
+	public ActionForward closeTheLeadSms(HttpServletRequest request)throws Exception {
+		ActionForward forward = new ActionForward();
+		HttpSession session = request.getSession();
+		AssignedLeadsManager assignedLeadsManager = new AssignedLeadsManagerImpl();
+		LeadForm commonForm = null;
+		String leadId= request.getParameter("LEAD_ID");
+		String status=request.getParameter("STATUS");
+		String message=request.getParameter("MESSAGE");
+		String mobileNo=request.getParameter("MOBILENO");
+		String userID = null;
+		
+		if ( !isTokenValid(request) ) {
+			//  return init(mapping, form, request, response);
+			}
+		ActionMessages messages = new ActionMessages();
+		Boolean flag = false;
+		
+		try {	
+			//commonForm.setUpdatedBy(sessionUserBean.getUserLoginId());
+			//commonForm.setUdId(sessionUserBean.getUdId());
+		
+			if (!(null==mobileNo|| mobileNo.isEmpty())|| mobileNo.equals(""))
+				userID = assignedLeadsManager.getUserID(mobileNo);
+			else 
+				return forward; 
+			
+			if (userID == null || userID.isEmpty()||userID.equals(""))
+				return forward;
+			else{
+					commonForm = new LeadForm();
+					commonForm.setLeadID(leadId);		 
+					commonForm.setUpdatedBy(userID);
+					if(status!=null){
+						 if(status.trim().equalsIgnoreCase("W")){
+							 commonForm.setActionType(String.valueOf(LMSStatusCodes.WON));
+							 commonForm.setCafNumber(message);
+						 }else if(status.trim().equalsIgnoreCase("L")){
+							 commonForm.setActionType(String.valueOf(LMSStatusCodes.LOST));
+							 commonForm.setClosureComments(message);
+						 }
+					}
+				flag = assignedLeadsManager.closeTheLeadSms(commonForm);
+				
+				if(!flag){
+					commonForm.setMsg("Lead was not closed!");
+				}
+							
+				logger.info("get circle co-ordi");
+				saveMessages(request, messages);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			logger.error("Exception occurs in viewUserList: " + e.getMessage());
+		}
+		
+		
+		return forward;
+	}
+	
+
+}

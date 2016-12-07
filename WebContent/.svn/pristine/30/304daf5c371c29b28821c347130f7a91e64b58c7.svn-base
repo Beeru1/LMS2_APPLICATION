@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.lms.ibm.com" xmlns:impl="http://webservice.lms.ibm.com" xmlns:intf="http://webservice.lms.ibm.com" xmlns:tns2="http://webservice.dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.dto.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="AuthorizationData">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="RetrieveIDOCStatusDataResponse">
+    <sequence>
+     <element name="responseMsg" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element maxOccurs="unbounded" name="webServiceResponse" nillable="true" type="tns2:RetrieveIDOCLeadDataDTO"/>
+    </sequence>
+   </complexType>
+   <complexType name="RetrieveIDOCLeadDataDTO">
+    <sequence>
+     <element name="leadId" nillable="true" type="xsd:string"/>
+     <element name="transactionId" nillable="true" type="xsd:string"/>
+     <element name="prospectMobileNo" nillable="true" type="xsd:string"/>
+     <element name="product" nillable="true" type="xsd:string"/>
+     <element name="source" nillable="true" type="xsd:string"/>
+     <element name="idocVerificationName" nillable="true" type="xsd:string"/>
+     <element name="idocStatus" nillable="true" type="xsd:string"/>
+     <element name="statusUpdateDt" nillable="true" type="xsd:string"/>
+     <element name="activateNumber" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://webservice.dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://webservice.dto.lms.ibm.com"/>
+   <element name="retrieveIDOCStatusData">
+    <complexType>
+     <sequence>
+      <element name="authorizationData" nillable="true" type="tns2:AuthorizationData"/>
+      <element name="leadid" nillable="true" type="xsd:string"/>
+      <element name="prospectMobileNumber" nillable="true" type="xsd:string"/>
+      <element name="product" nillable="true" type="xsd:string"/>
+      <element name="source" nillable="true" type="xsd:string"/>
+      <element name="transactionId" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="retrieveIDOCStatusDataResponse">
+    <complexType>
+     <sequence>
+      <element name="retrieveIDOCStatusDataReturn" nillable="true" type="tns2:RetrieveIDOCStatusDataResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="retrieveIDOCStatusDataResponse">
+
+      <wsdl:part element="impl:retrieveIDOCStatusDataResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveIDOCStatusDataRequest">
+
+      <wsdl:part element="impl:retrieveIDOCStatusData" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RetrieveIDOCStatusDataService">
+
+      <wsdl:operation name="retrieveIDOCStatusData">
+
+         <wsdl:input message="impl:retrieveIDOCStatusDataRequest" name="retrieveIDOCStatusDataRequest"/>
+
+         <wsdl:output message="impl:retrieveIDOCStatusDataResponse" name="retrieveIDOCStatusDataResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RetrieveIDOCStatusDataServiceSoapBinding" type="impl:RetrieveIDOCStatusDataService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="retrieveIDOCStatusData">
+
+         <wsdlsoap:operation soapAction="retrieveIDOCStatusData"/>
+
+         <wsdl:input name="retrieveIDOCStatusDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="retrieveIDOCStatusDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RetrieveIDOCStatusDataServiceService">
+
+      <wsdl:port binding="impl:RetrieveIDOCStatusDataServiceSoapBinding" name="RetrieveIDOCStatusDataService">
+
+         <wsdlsoap:address location="http://localhost:9080/LMS2/services/RetrieveIDOCStatusDataService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

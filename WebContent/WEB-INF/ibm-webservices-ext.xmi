@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.webservice.wsext:WsExtension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.etools.webservice.wsext="http://www.ibm.com/websphere/appserver/schemas/5.0.2/wsext.xmi" xmi:id="WsExtension_1363946465390">
+  <wsDescExt xmi:id="WsDescExt_1363946465390" wsDescNameLink="UpdateLeadDispositionServiceService">
+    <pcBinding xmi:id="PcBinding_1363946465390" pcNameLink="UpdateLeadDispositionService"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1413560878077" wsDescNameLink="LeadCaptureWebServiceService">
+    <pcBinding xmi:id="PcBinding_1413560878077" pcNameLink="LeadCaptureWebService"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1413560939198" wsDescNameLink="PushMstrWebServiceService">
+    <pcBinding xmi:id="PcBinding_1413560939198" pcNameLink="PushMstrWebService"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1413561104106" wsDescNameLink="AgencyLeadCaptureWebServiceService">
+    <pcBinding xmi:id="PcBinding_1413561104106" pcNameLink="AgencyLeadCaptureWebService"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1415300357992" wsDescNameLink="UpdateLeadWebServiceService">
+    <pcBinding xmi:id="PcBinding_1415300357992" pcNameLink="UpdateLeadWebService"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1433138271959" wsDescNameLink="GisInfoCaptureWebServiceService">
+    <pcBinding xmi:id="PcBinding_1433138271959" pcNameLink="GisInfoCaptureWebService"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1458249147383" wsDescNameLink="LeadCaptureServiceFirstVersService">
+    <pcBinding xmi:id="PcBinding_1458249147383" pcNameLink="LeadCaptureServiceFirstVers"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1458249832738" wsDescNameLink="IDOCDataStatusServiceService">
+    <pcBinding xmi:id="PcBinding_1458249832738" pcNameLink="IDOCDataStatusService"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1458250013386" wsDescNameLink="RetrieveIDOCStatusDataServiceService">
+    <pcBinding xmi:id="PcBinding_1458250013386" pcNameLink="RetrieveIDOCStatusDataService"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1458219011956" wsDescNameLink="LeadUpdatedDataServiceService">
+    <pcBinding xmi:id="PcBinding_1458219011956" pcNameLink="LeadUpdatedDataService"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1458219107825" wsDescNameLink="UpdateLeadDataFirstVersService">
+    <pcBinding xmi:id="PcBinding_1458219107825" pcNameLink="UpdateLeadDataFirstVers"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1461071206007" wsDescNameLink="RetrieveLeadDataFirstVersService">
+    <pcBinding xmi:id="PcBinding_1461071206007" pcNameLink="RetrieveLeadDataFirstVers"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1461071308456" wsDescNameLink="RetrieveLeadDataServiceService">
+    <pcBinding xmi:id="PcBinding_1461071308456" pcNameLink="RetrieveLeadDataService"/>
+  </wsDescExt>
+</com.ibm.etools.webservice.wsext:WsExtension>

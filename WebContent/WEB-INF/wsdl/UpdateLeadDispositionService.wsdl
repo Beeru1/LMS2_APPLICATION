@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.lms.ibm.com" xmlns:impl="http://webservice.lms.ibm.com" xmlns:intf="http://webservice.lms.ibm.com" xmlns:tns2="http://dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://dto.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="LeadData">
+    <sequence>
+     <element maxOccurs="unbounded" name="callDispositionList" nillable="true" type="tns2:LeadDispositionDTO"/>
+     <element name="leadId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="LeadDispositionDTO">
+    <sequence>
+     <element name="agentDispositionCode" nillable="true" type="xsd:string"/>
+     <element name="callRetryCount" nillable="true" type="xsd:string"/>
+     <element name="customerHoldTime" nillable="true" type="xsd:string"/>
+     <element name="customerTalkTime" nillable="true" type="xsd:string"/>
+     <element name="dialerAgencyCode" nillable="true" type="xsd:string"/>
+     <element name="dispositionCode" nillable="true" type="xsd:string"/>
+     <element name="isDispositionDialer" nillable="true" type="xsd:string"/>
+     <element name="ivrTime" nillable="true" type="xsd:string"/>
+     <element name="ringingTime" nillable="true" type="xsd:string"/>
+     <element name="setupTime" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="AuthorizationData">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ResponseMessageDisposition">
+    <sequence>
+     <element name="responseCode" nillable="true" type="xsd:string"/>
+     <element name="responseMsg" nillable="true" type="xsd:string"/>
+     <element name="leadId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://dto.lms.ibm.com"/>
+   <element name="updateLeadDisposition">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="leadData" type="tns2:LeadData"/>
+      <element name="authData" nillable="true" type="tns2:AuthorizationData"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateLeadDispositionResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="updateLeadDispositionReturn" type="tns2:ResponseMessageDisposition"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="updateLeadDispositionResponse">
+
+      <wsdl:part element="impl:updateLeadDispositionResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateLeadDispositionRequest">
+
+      <wsdl:part element="impl:updateLeadDisposition" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="UpdateLeadDispositionService">
+
+      <wsdl:operation name="updateLeadDisposition">
+
+         <wsdl:input message="impl:updateLeadDispositionRequest" name="updateLeadDispositionRequest"/>
+
+         <wsdl:output message="impl:updateLeadDispositionResponse" name="updateLeadDispositionResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="UpdateLeadDispositionServiceSoapBinding" type="impl:UpdateLeadDispositionService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="updateLeadDisposition">
+
+         <wsdlsoap:operation soapAction="updateLeadDisposition"/>
+
+         <wsdl:input name="updateLeadDispositionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateLeadDispositionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="UpdateLeadDispositionServiceService">
+
+      <wsdl:port binding="impl:UpdateLeadDispositionServiceSoapBinding" name="UpdateLeadDispositionService">
+
+         <wsdlsoap:address location="http://localhost:9080/LMS2/services/UpdateLeadDispositionService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

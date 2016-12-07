@@ -1,0 +1,120 @@
+/**
+ * PushMstrWebserviceResponse_Ser.java
+ *
+ * This file was auto-generated from WSDL
+ * by the IBM Web services WSDL2Java emitter.
+ * q0834.18 v82708152146
+ */
+
+package com.ibm.lms.dto;
+
+public class PushMstrWebserviceResponse_Ser extends com.ibm.ws.webservices.engine.encoding.ser.BeanSerializer {
+    /**
+     * Constructor
+     */
+    public PushMstrWebserviceResponse_Ser(
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType, 
+           com.ibm.ws.webservices.engine.description.TypeDesc _typeDesc) {
+        super(_javaType, _xmlType, _typeDesc);
+    }
+    public void serialize(
+        javax.xml.namespace.QName name,
+        org.xml.sax.Attributes attributes,
+        java.lang.Object value,
+        com.ibm.ws.webservices.engine.encoding.SerializationContext context)
+        throws java.io.IOException
+    {
+        context.startElement(name, addAttributes(attributes, value, context));
+        addElements(value, context);
+        context.endElement();
+    }
+    protected org.xml.sax.Attributes addAttributes(
+        org.xml.sax.Attributes attributes,
+        java.lang.Object value,
+        com.ibm.ws.webservices.engine.encoding.SerializationContext context)
+        throws java.io.IOException
+    {
+           javax.xml.namespace.QName
+           elemQName = QName_0_55;
+           context.qName2String(elemQName, true);
+           elemQName = QName_0_56;
+           context.qName2String(elemQName, true);
+           elemQName = QName_0_57;
+           context.qName2String(elemQName, true);
+           elemQName = QName_0_16;
+           context.qName2String(elemQName, true);
+        return attributes;
+    }
+    protected void addElements(
+        java.lang.Object value,
+        com.ibm.ws.webservices.engine.encoding.SerializationContext context)
+        throws java.io.IOException
+    {
+        PushMstrWebserviceResponse bean = (PushMstrWebserviceResponse) value;
+        java.lang.Object propValue;
+        javax.xml.namespace.QName propQName;
+        {
+          propQName = QName_0_55;
+          propValue = bean.getProductName();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_0_56;
+          propValue = bean.getWebserviceResponse();
+          serializeChild(propQName, null, 
+              propValue, 
+              QName_0_58,
+              true,null,context);
+          propQName = QName_0_57;
+          propValue = bean.getResponseMessage();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_0_16;
+          propValue = new java.lang.Integer(bean.getResponseCode());
+          serializeChild(propQName, null, 
+              propValue, 
+              QName_1_59,
+              true,null,context);
+        }
+    }
+    private final static javax.xml.namespace.QName QName_0_56 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dto.lms.ibm.com",
+                  "webserviceResponse");
+    private final static javax.xml.namespace.QName QName_0_58 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dto.lms.ibm.com",
+                  "PushMstrWebserviceDTO");
+    private final static javax.xml.namespace.QName QName_1_59 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://www.w3.org/2001/XMLSchema",
+                  "int");
+    private final static javax.xml.namespace.QName QName_0_55 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dto.lms.ibm.com",
+                  "productName");
+    private final static javax.xml.namespace.QName QName_0_16 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dto.lms.ibm.com",
+                  "responseCode");
+    private final static javax.xml.namespace.QName QName_0_57 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dto.lms.ibm.com",
+                  "responseMessage");
+    private final static javax.xml.namespace.QName QName_1_3 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://www.w3.org/2001/XMLSchema",
+                  "string");
+}

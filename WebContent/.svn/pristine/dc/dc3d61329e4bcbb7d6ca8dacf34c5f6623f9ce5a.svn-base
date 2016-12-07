@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+<bean id="timer" class="org.springframework.scheduling.timer.TimerFactoryBean">
+        <property name="scheduledTimerTasks">
+            <list>
+                <ref bean="scheduledTask"/>
+            </list>
+        </property>
+ </bean>
+    
+    
+    <bean id="scheduledTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+    	    <property name="delay"><value>500000</value></property>
+    	    <property name="period"><value>500000</value></property>
+    	    <property name="timerTask" ref="timerTask"/>
+    </bean>
+    
+    
+     <bean id="timerTask" class="org.springframework.scheduling.timer.MethodInvokingTimerTaskFactoryBean">
+            <property name="targetObject"><ref bean="schedulerTrigger"/></property>
+            <property name="targetMethod"><value>trigger</value></property>
+    </bean>
+    
+    
+    <bean id="schedulerTrigger" class="com.ibm.km.scheduler.SchedulerTrigger"> 
+    </bean>
+    	
+ 
+ </beans>

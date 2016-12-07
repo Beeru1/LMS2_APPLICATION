@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE java-wsdl-mapping PUBLIC "-//IBM Corporation, Inc.//DTD J2EE JAX-RPC mapping 1.0//EN" "http://www.ibm.com/webservices/dtd/j2ee_jaxrpc_mapping_1_0.dtd">
+
+   <java-wsdl-mapping id="JavaWSDLMapping_1458219011519">
+      <package-mapping id="PackageMapping_1458219011519">
+         <package-type>com.ibm.lms.webservice</package-type>
+         <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <package-mapping id="PackageMapping_1458219011520">
+         <package-type>com.ibm.lms.dto.webservice</package-type>
+         <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458219011519">
+         <class-type>com.ibm.lms.dto.webservice.AuthorizationData</class-type>
+         <root-type-qname id="RootTypeQname_1458219011519">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>AuthorizationData</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1458219011519">
+            <java-variable-name>password</java-variable-name>
+            <xml-element-name>password</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011520">
+            <java-variable-name>userName</java-variable-name>
+            <xml-element-name>userName</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458219011520">
+         <class-type>com.ibm.lms.dto.webservice.ServiceResponseMsg</class-type>
+         <root-type-qname id="RootTypeQname_1458219011520">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>ServiceResponseMsg</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1458219011521">
+            <java-variable-name>responseCode</java-variable-name>
+            <xml-element-name>responseCode</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011522">
+            <java-variable-name>responseMsg</java-variable-name>
+            <xml-element-name>responseMsg</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458219011521">
+         <class-type>java.lang.String</class-type>
+         <root-type-qname id="RootTypeQname_1458219011521">
+            <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+            <localpart>string</localpart>
+         </root-type-qname>
+         <qname-scope>simpleType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458219011522">
+         <class-type>com.ibm.lms.dto.webservice.UpdatedLeadDataDTO[]</class-type>
+         <root-type-qname id="RootTypeQname_1458219011522">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>UpdatedLeadDataDTO[unbounded]</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458219011523">
+         <class-type>com.ibm.lms.dto.webservice.UpdatedLeadDataDTO</class-type>
+         <root-type-qname id="RootTypeQname_1458219011523">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>UpdatedLeadDataDTO</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1458219011523">
+            <java-variable-name>prospectsName</java-variable-name>
+            <xml-element-name>prospectsName</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011524">
+            <java-variable-name>prospectsMobileNumber</java-variable-name>
+            <xml-element-name>prospectsMobileNumber</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011525">
+            <java-variable-name>alternateContactNumber</java-variable-name>
+            <xml-element-name>alternateContactNumber</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011526">
+            <java-variable-name>landlineNumber</java-variable-name>
+            <xml-element-name>landlineNumber</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011527">
+            <java-variable-name>address</java-variable-name>
+            <xml-element-name>address</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011528">
+            <java-variable-name>address2</java-variable-name>
+            <xml-element-name>address2</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011529">
+            <java-variable-name>city</java-variable-name>
+            <xml-element-name>city</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011530">
+            <java-variable-name>pincode</java-variable-name>
+            <xml-element-name>pincode</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011531">
+            <java-variable-name>state</java-variable-name>
+            <xml-element-name>state</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011532">
+            <java-variable-name>circle</java-variable-name>
+            <xml-element-name>circle</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011533">
+            <java-variable-name>maritalStatus</java-variable-name>
+            <xml-element-name>maritalStatus</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011534">
+            <java-variable-name>requestCategory</java-variable-name>
+            <xml-element-name>requestCategory</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011535">
+            <java-variable-name>appointmentTime</java-variable-name>
+            <xml-element-name>appointmentTime</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011536">
+            <java-variable-name>email</java-variable-name>
+            <xml-element-name>email</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011537">
+            <java-variable-name>primaryLanguage</java-variable-name>
+            <xml-element-name>primaryLanguage</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011538">
+            <java-variable-name>subZone</java-variable-name>
+            <xml-element-name>subZone</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011539">
+            <java-variable-name>zone</java-variable-name>
+            <xml-element-name>zone</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011540">
+            <java-variable-name>remarks</java-variable-name>
+            <xml-element-name>remarks</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011541">
+            <java-variable-name>qualLeadParam</java-variable-name>
+            <xml-element-name>qualLeadParam</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011542">
+            <java-variable-name>service</java-variable-name>
+            <xml-element-name>service</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011543">
+            <java-variable-name>tag</java-variable-name>
+            <xml-element-name>tag</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011544">
+            <java-variable-name>isCustomer</java-variable-name>
+            <xml-element-name>isCustomer</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011545">
+            <java-variable-name>adParameter</java-variable-name>
+            <xml-element-name>adParameter</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011546">
+            <java-variable-name>utmLAbels</java-variable-name>
+            <xml-element-name>utmLAbels</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011547">
+            <java-variable-name>company</java-variable-name>
+            <xml-element-name>company</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011548">
+            <java-variable-name>cityZoneCode</java-variable-name>
+            <xml-element-name>cityZoneCode</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011549">
+            <java-variable-name>plan</java-variable-name>
+            <xml-element-name>plan</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011550">
+            <java-variable-name>rental</java-variable-name>
+            <xml-element-name>rental</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011551">
+            <java-variable-name>allocatedNo</java-variable-name>
+            <xml-element-name>allocatedNo</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011552">
+            <java-variable-name>onlineCafNo</java-variable-name>
+            <xml-element-name>onlineCafNo</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011553">
+            <java-variable-name>pytAmt</java-variable-name>
+            <xml-element-name>pytAmt</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011554">
+            <java-variable-name>tranRefno</java-variable-name>
+            <xml-element-name>tranRefno</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011555">
+            <java-variable-name>agencyId</java-variable-name>
+            <xml-element-name>agencyId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011556">
+            <java-variable-name>udId</java-variable-name>
+            <xml-element-name>udId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011557">
+            <java-variable-name>cityId</java-variable-name>
+            <xml-element-name>cityId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011558">
+            <java-variable-name>circleId</java-variable-name>
+            <xml-element-name>circleId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011559">
+            <java-variable-name>feasibilityparam</java-variable-name>
+            <xml-element-name>feasibilityparam</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011560">
+            <java-variable-name>planId</java-variable-name>
+            <xml-element-name>planId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011561">
+            <java-variable-name>customerInfoId</java-variable-name>
+            <xml-element-name>customerInfoId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011562">
+            <java-variable-name>rentaltype</java-variable-name>
+            <xml-element-name>rentaltype</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011563">
+            <java-variable-name>freebiecount</java-variable-name>
+            <xml-element-name>freebiecount</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011564">
+            <java-variable-name>boostercount</java-variable-name>
+            <xml-element-name>boostercount</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011565">
+            <java-variable-name>freebietaken</java-variable-name>
+            <xml-element-name>freebietaken</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011566">
+            <java-variable-name>boostertaken</java-variable-name>
+            <xml-element-name>boostertaken</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011567">
+            <java-variable-name>flag</java-variable-name>
+            <xml-element-name>flag</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011568">
+            <java-variable-name>prepaidnumber</java-variable-name>
+            <xml-element-name>prepaidnumber</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011569">
+            <java-variable-name>offer</java-variable-name>
+            <xml-element-name>offer</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011570">
+            <java-variable-name>downloadlimit</java-variable-name>
+            <xml-element-name>downloadlimit</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011571">
+            <java-variable-name>devicemrp</java-variable-name>
+            <xml-element-name>devicemrp</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011572">
+            <java-variable-name>voicebenefit</java-variable-name>
+            <xml-element-name>voicebenefit</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011573">
+            <java-variable-name>dataquota</java-variable-name>
+            <xml-element-name>dataquota</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011574">
+            <java-variable-name>usertype</java-variable-name>
+            <xml-element-name>usertype</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011575">
+            <java-variable-name>devicetaken</java-variable-name>
+            <xml-element-name>devicetaken</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011576">
+            <java-variable-name>benefit</java-variable-name>
+            <xml-element-name>benefit</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011577">
+            <java-variable-name>pkgduration</java-variable-name>
+            <xml-element-name>pkgduration</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011578">
+            <java-variable-name>hlrno</java-variable-name>
+            <xml-element-name>hlrno</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011579">
+            <java-variable-name>rsuCode</java-variable-name>
+            <xml-element-name>rsuCode</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011580">
+            <java-variable-name>dob</java-variable-name>
+            <xml-element-name>dob</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011581">
+            <java-variable-name>trxnId</java-variable-name>
+            <xml-element-name>trxnId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011582">
+            <java-variable-name>leadId</java-variable-name>
+            <xml-element-name>leadId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011583">
+            <java-variable-name>status</java-variable-name>
+            <xml-element-name>status</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011584">
+            <java-variable-name>subStatus</java-variable-name>
+            <xml-element-name>subStatus</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011585">
+            <java-variable-name>cafNumber</java-variable-name>
+            <xml-element-name>cafNumber</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011586">
+            <java-variable-name>productBought</java-variable-name>
+            <xml-element-name>productBought</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011587">
+            <java-variable-name>rentalPlan</java-variable-name>
+            <xml-element-name>rentalPlan</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011588">
+            <java-variable-name>paymentCollected</java-variable-name>
+            <xml-element-name>paymentCollected</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011589">
+            <java-variable-name>paymentType</java-variable-name>
+            <xml-element-name>paymentType</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011590">
+            <java-variable-name>paymentAmount</java-variable-name>
+            <xml-element-name>paymentAmount</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011591">
+            <java-variable-name>competitorChosen</java-variable-name>
+            <xml-element-name>competitorChosen</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011592">
+            <java-variable-name>sentBy</java-variable-name>
+            <xml-element-name>sentBy</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011593">
+            <java-variable-name>latitude</java-variable-name>
+            <xml-element-name>latitude</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011594">
+            <java-variable-name>longitude</java-variable-name>
+            <xml-element-name>longitude</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011595">
+            <java-variable-name>assignedRemarks</java-variable-name>
+            <xml-element-name>assignedRemarks</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011596">
+            <java-variable-name>paymentStatus</java-variable-name>
+            <xml-element-name>paymentStatus</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011597">
+            <java-variable-name>taskStartTime</java-variable-name>
+            <xml-element-name>taskStartTime</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011598">
+            <java-variable-name>taskEndTime</java-variable-name>
+            <xml-element-name>taskEndTime</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011599">
+            <java-variable-name>paymentAmtDue</java-variable-name>
+            <xml-element-name>paymentAmtDue</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011600">
+            <java-variable-name>appointmentEndTime</java-variable-name>
+            <xml-element-name>appointmentEndTime</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011601">
+            <java-variable-name>extraParam1</java-variable-name>
+            <xml-element-name>extraParam1</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011602">
+            <java-variable-name>extraParam2</java-variable-name>
+            <xml-element-name>extraParam2</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011603">
+            <java-variable-name>extraParam3</java-variable-name>
+            <xml-element-name>extraParam3</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011604">
+            <java-variable-name>extraParam4</java-variable-name>
+            <xml-element-name>extraParam4</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011605">
+            <java-variable-name>extraParam5</java-variable-name>
+            <xml-element-name>extraParam5</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011606">
+            <java-variable-name>extraParam6</java-variable-name>
+            <xml-element-name>extraParam6</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011607">
+            <java-variable-name>extraParam7</java-variable-name>
+            <xml-element-name>extraParam7</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011608">
+            <java-variable-name>extraParam8</java-variable-name>
+            <xml-element-name>extraParam8</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011609">
+            <java-variable-name>extraParam9</java-variable-name>
+            <xml-element-name>extraParam9</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011610">
+            <java-variable-name>extraParam10</java-variable-name>
+            <xml-element-name>extraParam10</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458219011611">
+            <java-variable-name>productLob</java-variable-name>
+            <xml-element-name>productLob</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <service-interface-mapping id="ServiceInterfaceMapping_1458219011519">
+         <service-interface>com.ibm.lms.webservice.LeadUpdatedDataServiceService</service-interface>
+         <wsdl-service-name id="WSDLServiceName_1458219011519">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>LeadUpdatedDataServiceService</localpart>
+         </wsdl-service-name>
+         <port-mapping id="PortMapping_1458219011519">
+            <port-name>LeadUpdatedDataService</port-name>
+            <java-port-name>LeadUpdatedDataService</java-port-name>
+         </port-mapping>
+      </service-interface-mapping>
+      <service-endpoint-interface-mapping id="ServiceEndpointInterfaceMapping_1458219011519">
+         <service-endpoint-interface>com.ibm.lms.webservice.LeadUpdatedDataService</service-endpoint-interface>
+         <wsdl-port-type id="WSDLPortType_1458219011519">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>LeadUpdatedDataService</localpart>
+         </wsdl-port-type>
+         <wsdl-binding id="WSDLBinding_1458219011519">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>LeadUpdatedDataServiceSoapBinding</localpart>
+         </wsdl-binding>
+         <service-endpoint-method-mapping id="ServiceEndpointMethodMapping_1458219011519">
+            <java-method-name>leadUpdatedDataCapture</java-method-name>
+            <wsdl-operation>leadUpdatedDataCapture</wsdl-operation>
+            <wrapped-element></wrapped-element>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1458219011519">
+               <param-position>0</param-position>
+               <param-type>com.ibm.lms.dto.webservice.UpdatedLeadDataDTO[]</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1458219011519">
+                  <wsdl-message id="WSDLMessage_1458219011519">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>leadUpdatedDataCaptureRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>updatedLeadDataDTO</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1458219011520">
+               <param-position>1</param-position>
+               <param-type>com.ibm.lms.dto.webservice.AuthorizationData</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1458219011520">
+                  <wsdl-message id="WSDLMessage_1458219011520">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>leadUpdatedDataCaptureRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>authorizationData</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping id="WSDLReturnValueMapping_1458219011519">
+               <method-return-value>com.ibm.lms.dto.webservice.ServiceResponseMsg</method-return-value>
+               <wsdl-message id="WSDLMessage_1458219011521">
+                  <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                  <localpart>leadUpdatedDataCaptureResponse</localpart>
+               </wsdl-message>
+               <wsdl-message-part-name>leadUpdatedDataCaptureReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+         </service-endpoint-method-mapping>
+      </service-endpoint-interface-mapping>
+   </java-wsdl-mapping>

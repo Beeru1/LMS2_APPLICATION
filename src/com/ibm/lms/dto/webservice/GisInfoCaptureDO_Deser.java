@@ -1,0 +1,123 @@
+/**
+ * GisInfoCaptureDO_Deser.java
+ *
+ * This file was auto-generated from WSDL
+ * by the IBM Web services WSDL2Java emitter.
+ * gm1318.02 v5913144247
+ */
+
+package com.ibm.lms.dto.webservice;
+
+public class GisInfoCaptureDO_Deser extends com.ibm.ws.webservices.engine.encoding.ser.BeanDeserializer {
+    /**
+     * Constructor
+     */
+    public GisInfoCaptureDO_Deser(
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType, 
+           com.ibm.ws.webservices.engine.description.TypeDesc _typeDesc) {
+        super(_javaType, _xmlType, _typeDesc);
+    }
+    /**
+     * Create instance of java bean
+     */
+    public void createValue() {
+        value = new GisInfoCaptureDO();
+    }
+    protected boolean tryElementSetFromString(javax.xml.namespace.QName qName, java.lang.String strValue) {
+        if (qName==QName_4_1) {
+          ((GisInfoCaptureDO)value).setLeadId(strValue);
+          return true;}
+        else if (qName==QName_4_119) {
+          ((GisInfoCaptureDO)value).setStatus(strValue);
+          return true;}
+        else if (qName==QName_4_120) {
+          ((GisInfoCaptureDO)value).setSubStatus(strValue);
+          return true;}
+        else if (qName==QName_4_107) {
+          ((GisInfoCaptureDO)value).setRsuCode(strValue);
+          return true;}
+        else if (qName==QName_4_79) {
+          ((GisInfoCaptureDO)value).setRemarks(strValue);
+          return true;}
+        else if (qName==QName_4_122) {
+          ((GisInfoCaptureDO)value).setProductBought(strValue);
+          return true;}
+        else if (qName==QName_4_123) {
+          ((GisInfoCaptureDO)value).setRentalPlan(strValue);
+          return true;}
+        else if (qName==QName_4_124) {
+          ((GisInfoCaptureDO)value).setPaymentCollected(strValue);
+          return true;}
+        else if (qName==QName_4_125) {
+          ((GisInfoCaptureDO)value).setPaymentType(strValue);
+          return true;}
+        else if (qName==QName_4_126) {
+          ((GisInfoCaptureDO)value).setPaymentAmount(strValue);
+          return true;}
+        else if (qName==QName_4_129) {
+          ((GisInfoCaptureDO)value).setAddress1(strValue);
+          return true;}
+        else if (qName==QName_4_128) {
+          ((GisInfoCaptureDO)value).setSentBy(strValue);
+          return true;}
+        return false;
+    }
+    protected boolean tryAttributeSetFromString(javax.xml.namespace.QName qName, java.lang.String strValue) {
+        return false;
+    }
+    protected boolean tryElementSetFromObject(javax.xml.namespace.QName qName, java.lang.Object objValue) {
+        return false;
+    }
+    protected boolean tryElementSetFromList(javax.xml.namespace.QName qName, java.util.List listValue) {
+        return false;
+    }
+    private final static javax.xml.namespace.QName QName_4_107 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "rsuCode");
+    private final static javax.xml.namespace.QName QName_4_124 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "paymentCollected");
+    private final static javax.xml.namespace.QName QName_4_122 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "productBought");
+    private final static javax.xml.namespace.QName QName_4_128 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "sentBy");
+    private final static javax.xml.namespace.QName QName_4_129 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "address1");
+    private final static javax.xml.namespace.QName QName_4_126 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "paymentAmount");
+    private final static javax.xml.namespace.QName QName_4_123 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "rentalPlan");
+    private final static javax.xml.namespace.QName QName_4_125 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "paymentType");
+    private final static javax.xml.namespace.QName QName_4_79 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "remarks");
+    private final static javax.xml.namespace.QName QName_4_119 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "status");
+    private final static javax.xml.namespace.QName QName_4_1 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "leadId");
+    private final static javax.xml.namespace.QName QName_4_120 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://webservice.dto.lms.ibm.com",
+                  "subStatus");
+}

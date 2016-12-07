@@ -1,0 +1,92 @@
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+
+<html:html><HEAD>
+
+<LINK href="theme/text.css" rel="stylesheet" type="text/css">
+<TITLE>Bulk Assignment</TITLE>
+
+
+<script>
+
+//function openFile(fileName){
+//window.location.href="userBulkUpload.do?methodName=openFile&fileName="+fileName;
+//}
+
+function formsubmit(){
+      
+     if(document.bulkAssigmentFormBean.newFile.value==""){
+		alert("Please Select the file");
+		return false;
+	}else if(!(/^.*\.xls$/.test(document.bulkAssigmentFormBean.newFile.value))) {
+			//Extension not proper.
+			alert("Please select a .xls file only.");
+			return false;
+				
+	}else if(navigator.userAgent.indexOf("MSIE") != -1) {
+		if(document.bulkAssigmentFormBean.newFile.value.indexOf(":\\") == -1 ) {
+			alert("Please Select a proper file.")
+			return false;
+		}
+	}else{  
+		document.forms[0].methodName.value='uploadExcel';
+		return true;
+	}
+	
+}
+
+</script>
+</HEAD>
+  					
+
+<html:form name="bulkAssigmentFormBean" type="com.ibm.km.forms.BulkAssigmentFormBean" action="/bulkAssignment" enctype="multipart/form-data">
+	
+	<html:hidden name="bulkAssigmentFormBean" property="methodName" value="uploadExcel"/>
+	
+			
+		<div class="box2">
+        <div class="content-upload">
+        
+        <H1>Bulk Assignment</H1>
+        
+			
+		 <FONT color="red" style="font-size: small">
+		 
+			<html:messages id="msg" message="true">
+            <bean:write name="msg"/>  
+            </html:messages>							
+			<logic:equal name="bulkAssigmentFormBean" property="isError" value="true">
+			   <a href="Docs/bulkAssignmentErrorLog.csv" target="_new">click here</a>
+		    </logic:equal>
+		    </FONT> 
+					
+			 
+			 <ul class="list2 form1 "> 
+			 <li class="clearfix" > </li>
+			 
+			 <li class="clearfix alt" >
+				<span class="text2 fll width160"><strong>Select File: </strong> </span>	
+
+				<p class="clearfix fll margin-r20"> 
+				   <html:file property="newFile"/> 
+				</p>		
+			  </li>
+			   
+	   <li class="clearfix" style="padding-left:170px;">
+			<span class="text2 fll">&nbsp;</span>
+			<input type="image" src="images/submit.jpg" style="margin-right:10px;" onclick="return formsubmit();" styleClass="red-btn fll"/>&nbsp;&nbsp;&nbsp;&nbsp;	
+		</li>
+					
+	
+			</ul>
+			
+			
+	</div>
+	</div>		
+
+			
+</html:form>
+
+</html:html>
+

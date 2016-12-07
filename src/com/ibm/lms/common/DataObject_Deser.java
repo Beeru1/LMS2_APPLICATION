@@ -1,0 +1,53 @@
+/**
+ * DataObject_Deser.java
+ *
+ * This file was auto-generated from WSDL
+ * by the IBM Web services WSDL2Java emitter.
+ * gm1318.02 v5913144247
+ */
+
+package com.ibm.lms.common;
+
+public class DataObject_Deser extends com.ibm.ws.webservices.engine.encoding.ser.BeanDeserializer {
+    /**
+     * Constructor
+     */
+    public DataObject_Deser(
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType, 
+           com.ibm.ws.webservices.engine.description.TypeDesc _typeDesc) {
+        super(_javaType, _xmlType, _typeDesc);
+    }
+    /**
+     * Create instance of java bean
+     */
+    public void createValue() {
+        value = new DataObject();
+    }
+    protected boolean tryElementSetFromString(javax.xml.namespace.QName qName, java.lang.String strValue) {
+        if (qName==QName_3_64) {
+          ((DataObject)value).setName(strValue);
+          return true;}
+        else if (qName==QName_3_65) {
+          ((DataObject)value).setCode(strValue);
+          return true;}
+        return false;
+    }
+    protected boolean tryAttributeSetFromString(javax.xml.namespace.QName qName, java.lang.String strValue) {
+        return false;
+    }
+    protected boolean tryElementSetFromObject(javax.xml.namespace.QName qName, java.lang.Object objValue) {
+        return false;
+    }
+    protected boolean tryElementSetFromList(javax.xml.namespace.QName qName, java.util.List listValue) {
+        return false;
+    }
+    private final static javax.xml.namespace.QName QName_3_64 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://common.lms.ibm.com",
+                  "name");
+    private final static javax.xml.namespace.QName QName_3_65 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://common.lms.ibm.com",
+                  "code");
+}

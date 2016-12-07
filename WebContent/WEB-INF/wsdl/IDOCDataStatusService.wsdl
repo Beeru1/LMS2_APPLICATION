@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.lms.ibm.com" xmlns:impl="http://webservice.lms.ibm.com" xmlns:intf="http://webservice.lms.ibm.com" xmlns:tns2="http://webservice.dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.dto.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="AuthorizationData">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="IDOCDataStatusDTO">
+    <sequence>
+     <element name="prospectsMobileNumber" nillable="true" type="xsd:string"/>
+     <element name="alternateContactNumber" nillable="true" type="xsd:string"/>
+     <element name="onlineCafNo" nillable="true" type="xsd:string"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+     <element name="status_date" nillable="true" type="xsd:string"/>
+     <element name="rejectReason" nillable="true" type="xsd:string"/>
+     <element name="idocStep" nillable="true" type="xsd:string"/>
+     <element name="source" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="IDOCStatusServiceResponse">
+    <sequence>
+     <element name="responseCode" nillable="true" type="xsd:string"/>
+     <element name="responseMsg" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://webservice.dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://webservice.dto.lms.ibm.com"/>
+   <element name="iDOCStatusUpdateData">
+    <complexType>
+     <sequence>
+      <element name="authorizationData" nillable="true" type="tns2:AuthorizationData"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="dataStatusDTO" type="tns2:IDOCDataStatusDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="iDOCStatusUpdateDataResponse">
+    <complexType>
+     <sequence>
+      <element name="iDOCStatusUpdateDataReturn" nillable="true" type="tns2:IDOCStatusServiceResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="iDOCStatusUpdateDataResponse">
+
+      <wsdl:part element="impl:iDOCStatusUpdateDataResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="iDOCStatusUpdateDataRequest">
+
+      <wsdl:part element="impl:iDOCStatusUpdateData" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="IDOCDataStatusService">
+
+      <wsdl:operation name="iDOCStatusUpdateData">
+
+         <wsdl:input message="impl:iDOCStatusUpdateDataRequest" name="iDOCStatusUpdateDataRequest"/>
+
+         <wsdl:output message="impl:iDOCStatusUpdateDataResponse" name="iDOCStatusUpdateDataResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="IDOCDataStatusServiceSoapBinding" type="impl:IDOCDataStatusService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="iDOCStatusUpdateData">
+
+         <wsdlsoap:operation soapAction="iDOCStatusUpdateData"/>
+
+         <wsdl:input name="iDOCStatusUpdateDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="iDOCStatusUpdateDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="IDOCDataStatusServiceService">
+
+      <wsdl:port binding="impl:IDOCDataStatusServiceSoapBinding" name="IDOCDataStatusService">
+
+         <wsdlsoap:address location="http://localhost:9080/LMS2/services/IDOCDataStatusService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,9 @@
+
+#
+# resources for "AppSecure"
+#
+
+PwdExpiryLimit = 0
+SpecialCharacters = $?*/\<>^'
+PasswordDisableLimit = 3
+PasswordHistoryLimit = 4

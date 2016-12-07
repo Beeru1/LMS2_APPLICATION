@@ -1,0 +1,648 @@
+/**
+ * CaptureLeadDO_Ser.java
+ *
+ * This file was auto-generated from WSDL
+ * by the IBM Web services WSDL2Java emitter.
+ * q0834.18 v82708152146
+ */
+
+package com.ibm.lms.engine.dataobjects;
+
+public class CaptureLeadDO_Ser extends com.ibm.ws.webservices.engine.encoding.ser.BeanSerializer {
+    /**
+     * Constructor
+     */
+    public CaptureLeadDO_Ser(
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType, 
+           com.ibm.ws.webservices.engine.description.TypeDesc _typeDesc) {
+        super(_javaType, _xmlType, _typeDesc);
+    }
+    public void serialize(
+        javax.xml.namespace.QName name,
+        org.xml.sax.Attributes attributes,
+        java.lang.Object value,
+        com.ibm.ws.webservices.engine.encoding.SerializationContext context)
+        throws java.io.IOException
+    {
+        context.startElement(name, addAttributes(attributes, value, context));
+        addElements(value, context);
+        context.endElement();
+    }
+    protected org.xml.sax.Attributes addAttributes(
+        org.xml.sax.Attributes attributes,
+        java.lang.Object value,
+        com.ibm.ws.webservices.engine.encoding.SerializationContext context)
+        throws java.io.IOException
+    {
+           javax.xml.namespace.QName
+           elemQName = QName_2_18;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_19;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_20;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_21;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_22;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_23;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_24;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_25;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_26;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_27;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_28;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_29;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_30;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_31;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_32;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_33;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_34;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_35;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_36;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_37;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_38;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_39;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_40;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_41;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_42;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_43;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_44;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_45;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_46;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_47;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_48;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_49;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_50;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_51;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_52;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_53;
+           context.qName2String(elemQName, true);
+           elemQName = QName_2_54;
+           context.qName2String(elemQName, true);
+        return attributes;
+    }
+    protected void addElements(
+        java.lang.Object value,
+        com.ibm.ws.webservices.engine.encoding.SerializationContext context)
+        throws java.io.IOException
+    {
+        CaptureLeadDO bean = (CaptureLeadDO) value;
+        java.lang.Object propValue;
+        javax.xml.namespace.QName propQName;
+        {
+          propQName = QName_2_18;
+          propValue = bean.getAddress();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_19;
+          propValue = bean.getAlternateContactNumber();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_20;
+          propValue = bean.getCampaign();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_21;
+          propValue = bean.getCircle();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_22;
+          propValue = bean.getCity();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_23;
+          propValue = bean.getCompany();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_24;
+          propValue = bean.getEmail();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_25;
+          propValue = bean.getExtraParametrs();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_26;
+          propValue = bean.getFid();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_27;
+          propValue = bean.getFromPage();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_28;
+          propValue = bean.getIsCustomer();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_29;
+          propValue = bean.getKeyWord();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_30;
+          propValue = bean.getPinecode();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_31;
+          propValue = bean.getPlan();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_32;
+          propValue = bean.getProduct();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_33;
+          propValue = bean.getProspectsMobileNumber();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_34;
+          propValue = bean.getProspectsName();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_35;
+          propValue = bean.getReferPage();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_36;
+          propValue = bean.getReferUrl();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_37;
+          propValue = bean.getService();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_38;
+          propValue = bean.getTid();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_39;
+          propValue = bean.getUtmLabels();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_40;
+          propValue = bean.getZoneCode();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_41;
+          propValue = bean.getCityZoneCode();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_42;
+          propValue = bean.getRental();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_43;
+          propValue = bean.getTag();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_44;
+          propValue = bean.getOnlineCafNo();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_45;
+          propValue = bean.getTranRefno();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_46;
+          propValue = bean.getPytAmt();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_47;
+          propValue = bean.getQualLeadParam();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_48;
+          propValue = bean.getAdParameter();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_49;
+          propValue = bean.getLeadSubmitTime();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_50;
+          propValue = bean.getExtraParams2();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_51;
+          propValue = bean.getExtraParams3();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_52;
+          propValue = bean.getAllocatedNo();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_53;
+          propValue = bean.getMyopId();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+          propQName = QName_2_54;
+          propValue = bean.getGeoIpCity();
+          if (propValue != null && !context.shouldSendXSIType()) {
+            context.simpleElement(propQName, null, propValue.toString()); 
+          } else {
+            serializeChild(propQName, null, 
+              propValue, 
+              QName_1_3,
+              true,null,context);
+          }
+        }
+    }
+    private final static javax.xml.namespace.QName QName_2_40 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "zoneCode");
+    private final static javax.xml.namespace.QName QName_2_18 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "address");
+    private final static javax.xml.namespace.QName QName_2_33 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "prospectsMobileNumber");
+    private final static javax.xml.namespace.QName QName_2_49 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "leadSubmitTime");
+    private final static javax.xml.namespace.QName QName_2_42 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "rental");
+    private final static javax.xml.namespace.QName QName_2_53 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "myopId");
+    private final static javax.xml.namespace.QName QName_2_35 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "referPage");
+    private final static javax.xml.namespace.QName QName_2_20 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "campaign");
+    private final static javax.xml.namespace.QName QName_2_47 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "qualLeadParam");
+    private final static javax.xml.namespace.QName QName_2_29 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "keyWord");
+    private final static javax.xml.namespace.QName QName_2_39 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "utmLabels");
+    private final static javax.xml.namespace.QName QName_2_22 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "city");
+    private final static javax.xml.namespace.QName QName_2_32 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "product");
+    private final static javax.xml.namespace.QName QName_2_25 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "extraParametrs");
+    private final static javax.xml.namespace.QName QName_2_24 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "email");
+    private final static javax.xml.namespace.QName QName_2_38 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "tid");
+    private final static javax.xml.namespace.QName QName_2_28 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "isCustomer");
+    private final static javax.xml.namespace.QName QName_2_19 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "alternateContactNumber");
+    private final static javax.xml.namespace.QName QName_2_52 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "allocatedNo");
+    private final static javax.xml.namespace.QName QName_1_3 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://www.w3.org/2001/XMLSchema",
+                  "string");
+    private final static javax.xml.namespace.QName QName_2_36 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "referUrl");
+    private final static javax.xml.namespace.QName QName_2_54 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "geoIpCity");
+    private final static javax.xml.namespace.QName QName_2_44 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "onlineCafNo");
+    private final static javax.xml.namespace.QName QName_2_41 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "cityZoneCode");
+    private final static javax.xml.namespace.QName QName_2_26 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "fid");
+    private final static javax.xml.namespace.QName QName_2_45 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "tranRefno");
+    private final static javax.xml.namespace.QName QName_2_46 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "pytAmt");
+    private final static javax.xml.namespace.QName QName_2_31 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "plan");
+    private final static javax.xml.namespace.QName QName_2_34 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "prospectsName");
+    private final static javax.xml.namespace.QName QName_2_37 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "service");
+    private final static javax.xml.namespace.QName QName_2_43 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "tag");
+    private final static javax.xml.namespace.QName QName_2_48 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "adParameter");
+    private final static javax.xml.namespace.QName QName_2_21 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "circle");
+    private final static javax.xml.namespace.QName QName_2_30 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "pinecode");
+    private final static javax.xml.namespace.QName QName_2_27 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "fromPage");
+    private final static javax.xml.namespace.QName QName_2_23 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "company");
+    private final static javax.xml.namespace.QName QName_2_50 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "extraParams2");
+    private final static javax.xml.namespace.QName QName_2_51 = 
+           com.ibm.ws.webservices.engine.utils.QNameTable.createQName(
+                  "http://dataobjects.engine.lms.ibm.com",
+                  "extraParams3");
+}

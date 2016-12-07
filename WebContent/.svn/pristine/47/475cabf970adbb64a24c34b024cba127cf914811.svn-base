@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+
+	<!-- Data Sources -->
+	<data-sources>
+	</data-sources>
+
+	<!-- Form Beans -->
+	<form-beans>
+		<form-bean name="loginForm" type="com.ibm.lms.forms.LoginFormBean"></form-bean>
+		<form-bean name="kmCreateUserForm" type="com.ibm.lms.forms.UserMstrFormBean"></form-bean>
+		<form-bean name="kmCircleMstrForm" type="com.ibm.lms.forms.CircleMstrFormBean"></form-bean>
+		<form-bean name="kmViewUserFormBean" type="com.ibm.lms.forms.UserMstrFormBean"></form-bean>
+	    <form-bean name="kmCategoryMstrFormBean" type="com.ibm.lms.forms.CategoryMstrFormBean">
+		</form-bean>		
+		<form-bean name="hitCountReportBean" type="com.ibm.lms.forms.HitCountReportBean">
+		</form-bean>
+		<form-bean name="kmChangePasswordForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="oldPassword" type="java.lang.String" />
+			<form-property name="newPassword" type="java.lang.String" />
+			<form-property name="confirmPassword" type="java.lang.String" />
+			<form-property name="methodName" type="java.lang.String" />
+			
+		</form-bean>	
+		<form-bean name="kmAddFileFormBean" type="com.ibm.lms.forms.KmAddFileFormBean"></form-bean>
+	
+		<form-bean name="submitFileFormBean" type="com.ibm.lms.forms.KmSubmitFileFormBean"></form-bean>
+		<form-bean name="approveFileFormBean" type="com.ibm.lms.forms.KmApproveFileFormBean"></form-bean>
+
+	
+		<form-bean name="kmSubCategoryMstrFormBean" type="com.ibm.lms.forms.KmSubCategoryMstrFormBean">
+		</form-bean>
+		<form-bean name="kmCircleMstrFormBean" type="com.ibm.lms.forms.KmCircleMstrFormBean">
+		</form-bean>		
+
+		<form-bean name="kmUserMstrFormBean" type="com.ibm.lms.forms.UserMstrFormBean">
+		</form-bean>
+
+		<form-bean name="kmFileReportForm" type="com.ibm.lms.forms.KmFileReportFormBean"></form-bean>
+		
+		<form-bean name="changePasswordFormBean" type="com.ibm.lms.forms.KmChangePasswordFormBean">
+		</form-bean>
+
+		<form-bean name="kmDocumentMstrForm" type="com.ibm.lms.forms.KmDocumentMstrFormBean"></form-bean>
+		<form-bean name="rejectedFileFormBean" type="com.ibm.lms.forms.KmRejectedFileFormBean"></form-bean>
+		<form-bean name="activateUserAccountBean" type="com.ibm.lms.forms.ActivateUserAccountBean" />
+		<form-bean name="kmFeedbackMstrFormBean" type="com.ibm.lms.forms.KmFeedbackMstrFormBean">
+		</form-bean>
+		<form-bean name="kmBriefingMstrFormBean" type="com.ibm.lms.forms.KmBriefingMstrFormBean">
+		</form-bean>
+		<form-bean name="kmWhatsNewFormBean" type="com.ibm.lms.forms.KmWhatsNewFormBean">
+		</form-bean>
+		<form-bean name="kmSearchFormBean" type="com.ibm.lms.forms.KmSearchFormBean">
+		</form-bean>
+		<form-bean name="kmElementMstrFormBean" type="com.ibm.lms.forms.KmElementMstrFormBean">
+		</form-bean>
+		<form-bean name="kmEmployeeAppreciationFormBean" type="com.ibm.lms.forms.KmEmployeeAppreciationFormBean">
+		</form-bean>
+		<form-bean name="leadRegistrationFormBean" type="com.ibm.lms.forms.LeadRegistrationFormBean">
+		</form-bean>	
+		
+		<form-bean name="kmProductUploadFormBean" type="com.ibm.lms.forms.KmProductUploadFormBean">
+		</form-bean>
+		<form-bean name="kmSopUploadFormBean" type="com.ibm.lms.forms.KmSopUploadFormBean">
+		</form-bean>
+		<form-bean name="kmSopBDUploadFormBean" type="com.ibm.lms.forms.KmSopBDUploadFormBean">
+		</form-bean>
+		<form-bean name="kmMoveDocumentFormBean" type="com.ibm.lms.forms.KmMoveDocumentFormBean">
+		</form-bean>
+		<form-bean name="kmMoveElementFormBean" type="com.ibm.lms.forms.KmMoveElementFormBean">
+		</form-bean>		
+		<form-bean name="kmScrollerMstrFormBean" type="com.ibm.lms.forms.KmScrollerMstrFormBean">
+		</form-bean>
+		<form-bean name="kmAlertMstrFormBean" type="com.ibm.lms.forms.KmAlertMstrFormBean">
+		</form-bean>
+		<form-bean name="bulkUserUploadFormBean" type="com.ibm.lms.forms.BulkUserUploadFormBean">
+		</form-bean>
+		<form-bean name="bulkUserDeleteFormBean" type="com.ibm.lms.forms.BulkUserDeleteFormBean">
+		</form-bean>
+		<form-bean name="userReportForm" type="com.ibm.lms.forms.UserReportFormBean">
+		</form-bean>
+		<form-bean name="kmLinkMstrFormBean" type="com.ibm.lms.forms.KmLinkMstrFormBean"></form-bean>
+		<form-bean name="KmBannerUploadFormBean" type="com.ibm.lms.forms.KmBannerUploadFormBean"></form-bean>
+		<form-bean name="kmRCContentUploadFormBean" type="com.ibm.lms.forms.KmRCContentUploadFormBean"></form-bean>
+		<form-bean name="kmDocumentHitsCountFormBean" type="com.ibm.lms.forms.KmDocumentHitsCountFormBean"></form-bean>
+		<form-bean name="kmDynamicIndexPageFormBean" type="com.ibm.lms.forms.KmDynamicIndexPageFormBean"></form-bean>
+		<form-bean name="kmNoUsageReportFormBean" type="com.ibm.lms.forms.NoUsageReportFormBean"></form-bean>
+		<form-bean name="kmContentStatusReportFormBean" type="com.ibm.lms.forms.KmContentStatusReportFormBean"></form-bean>
+		<form-bean name="kmContentExpireReportFormBean" type="com.ibm.lms.forms.KmContentExpireReportFormBean"></form-bean>
+		<form-bean name="kmObsoleteIdsReportFormBean" type="com.ibm.lms.forms.KmObsoleteIdsReportFormBean"></form-bean>
+		<form-bean name="kmViewReportsFormBean" type="com.ibm.lms.forms.KmViewReportsFormBean"></form-bean>
+		<form-bean name="kmCsrLatestUpdatesFormBean" type="com.ibm.lms.forms.KmCsrLatestUpdatesFormBean"></form-bean>
+		<form-bean name="kmViewDthAegingFormBean" type="com.ibm.lms.forms.KmViewDthAegingFormBean"></form-bean>
+		<form-bean name="kmBPUploadFormBean" type="com.ibm.lms.forms.KmBPUploadFormBean"></form-bean>
+		<!-- Waiver Matrix -->
+		<form-bean name="kmExcelUploadFormBean" type="com.ibm.lms.forms.KmExcelUploadFormBean">
+		</form-bean>
+		<form-bean name="kmCompanyWisePlanFormBean" type="com.ibm.lms.forms.KmCompanyWisePlanFormBean">
+		</form-bean>	
+		<!-- Waiver Matrix -->
+		
+		<!-- Real Time Network Map - Phase 4 -->
+		<form-bean name="kmNetworkErrorFormBean" type="com.ibm.lms.forms.KmNetworkErrorFormBean"></form-bean>
+		<form-bean name="configCSDForm" type="com.ibm.lms.forms.ConfigCSDForm"></form-bean>
+		<form-bean name="networkFaultReportForm" type="com.ibm.lms.forms.NetworkFaultReportForm"></form-bean>		<!-- Real Time Network Map -->
+		<form-bean name="LeadForm" type="com.ibm.lms.wf.forms.LeadForm">
+		</form-bean>
+		
+		<form-bean name="bulkAssigmentFormBean" type="com.ibm.lms.forms.BulkAssigmentFormBean">
+		</form-bean>
+		
+		<form-bean name="downloadFileFormBean" type="com.ibm.lms.forms.DownloadFileFormBean">
+		</form-bean>
+		
+		<form-bean name="bulkUserCreationFormBean" type="com.ibm.lms.forms.BulkUserCreationFormBean">
+		</form-bean>
+		
+		<form-bean name="bulkLeadRegistrationFormBean" type="com.ibm.lms.forms.BulkLeadRegistrationFormBean">
+		</form-bean>
+		<form-bean name="bulkAssignmentDownloadFormBean" type="com.ibm.lms.forms.BulkAssignmentDownloadFormBean">
+		</form-bean>
+		<form-bean name="userMasterDownloadFormBean" type="com.ibm.lms.forms.UserMasterDownloadFormBean">
+		</form-bean>
+		
+
+		<!-- Added By Parnika -->
+		
+		<form-bean name="productMappingForm" type="com.ibm.lms.wf.forms.ProductMappingForm"></form-bean>
+		<form-bean name="ajaxSupportForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="mt" type="java.lang.String" />	
+		</form-bean>
+
+		<form-bean name="agencyMappingForm" type="com.ibm.lms.wf.forms.AgencyMappingForm"></form-bean>
+		<form-bean name="reportsFormBean" type="com.ibm.lms.forms.ReportsFormBean"></form-bean>
+		
+		<form-bean name="masterDataFormBean" type="com.ibm.lms.forms.MasterDataFormBean"></form-bean>
+		
+		<!-- End Of changes By Parnika -->
+		<form-bean name="assignmentMatrixFormBean" type="com.ibm.lms.wf.forms.AssignmentMatrixFormBean"></form-bean>
+		
+			<!-- added by aman  -->
+		<form-bean name="circleManagementForm" type="com.ibm.lms.wf.forms.CircleManagementForm"></form-bean>
+		<form-bean name="bulkMstrForm" type="com.ibm.lms.forms.BulkMstrFormBean"></form-bean>
+		<!-- end of changes by aman -->
+		
+		<form-bean name="formIdBean" type="com.ibm.lms.wf.forms.FormIdBean"></form-bean>
+		<form-bean name="ReportConfigurationBean" type="com.ibm.lms.forms.ReportConfigurationBean"></form-bean>
+		
+		<!-- Neetika for Phase 3 Dashboard -->
+		<form-bean name="KmViewDashboardBean" type="com.ibm.km.forms.KmViewDashboardBean"></form-bean>
+		<!--<form-bean name= "AlertsFormBean" type="com.ibm.lms.forms.AlertsFormBean"></form-bean>-->
+		<form-bean name= "alertsFormBean" type="com.ibm.lms.forms.AlertsFormBean"></form-bean>
+		<!-- For download logs -->
+		<form-bean name="downloadLogsFormBean" type="com.ibm.lms.forms.DownloadLogsFormBean"></form-bean>
+	</form-beans>
+	
+
+	<!-- Global Exceptions -->
+	<global-exceptions>
+	</global-exceptions>
+
+	<!-- Global Forwards -->
+	<global-forwards>
+	    <forward   name="success"  path="success.page"/>	    
+	</global-forwards>
+
+	<!-- Action Mappings -->
+	<action-mappings>
+	
+	<!--  
+	 <action name="AlertsFormBean" path="/alertsAction" type="com.ibm.lms.actions.AlertsAction" parameter="methodName" scope="request">
+          <forward name="initAlertReport" path="alert.page" ></forward>
+         </action>
+         -->
+		<action name="loginForm" path="/initLogin" scope="request" validate="false" forward="/jsp/login.jsp">
+		</action>
+		<action name="loginForm" path="/errorDisplay" scope="request" validate="false" forward="errorPage.page">
+		</action>
+		<action name="loginForm" path="/initCSRLogin" scope="request" validate="false" forward="/jsp/csrLogin.jsp">
+		</action>		
+
+		<action name="loginForm" path="/login" scope="request" type="com.ibm.lms.actions.LoginAction"  validate="false">
+			<forward name="loginSuccess" path="home.page"></forward>
+			<forward name="testpopup" path="/jsp/csrLogin.jsp"></forward>
+     		<forward name="csrOnloadPage" path="kmBriefingMstr.do?methodName=viewCSRBriefing"></forward>
+			<forward name="csrLoginSuccess" path="kmBriefingMstr.do?methodName=viewCSRBriefing"></forward>
+			<forward name="userExpireNotification" path="/jsp/errors/userExpireNotification.jsp"></forward>
+			<forward name="firstLoginChangePassword" path="/kmChangePassword.do?methodName=initFirstLoginPwdChange"></forward>
+		    <forward name="csrChangePassword" path="/jsp/changePassword.jsp"></forward>	
+		    <forward name="otp_page" path="/jsp/otpscreen.jsp"></forward>	
+		    <forward name="loginFailure" path="/jsp/LoginFailure.jsp"></forward>
+		    
+		</action>
+		<action name="loginForm" path="/Altlogin" scope="request" type="com.ibm.lms.actions.LoginAction"  validate="false">
+			<forward name="loginSuccess" path="home.page"></forward>
+			<forward name="loginFail" path="/jsp/login.jsp"></forward>
+			<forward name="testpopup" path="/jsp/csrLogin.jsp"></forward>
+<!-- Added by atul  -->
+			<forward name="csrOnloadPage" path="kmBriefingMstr.do?methodName=viewCSRBriefing"></forward>
+			<forward name="csrLoginSuccess" path="kmBriefingMstr.do?methodName=viewCSRBriefing"></forward>
+			<forward name="loginFailure" path="/jsp/login.jsp"></forward>
+			<forward name="csrLoginFailure" path="/jsp/login.jsp"></forward>
+		    <forward name="firstLoginChangePassword" path="/kmChangePassword.do?methodName=initFirstLoginPwdChange"></forward>
+		    <forward name="csrChangePassword" path="/jsp/changePassword.jsp"></forward>			
+		 	<forward name="loginFailed" path="/jsp/login.jsp"></forward>
+		</action>
+		
+		<action path="/csrAction" type="com.ibm.lms.actions.KmCSRAction" validate="false" parameter="methodName">
+			<forward name="csrHome" path="csrhome.page"></forward>
+			<forward name="csrFailure" path="/jsp/csrLogin.jsp"></forward>
+			<forward name="login" path="/login.do" >	</forward>
+			<forward name="displaySubCategories" path="/jsp/displaySubCategories.jsp" >	</forward>
+			<forward name="init" path="/csrAction.do?methodName=viewCSRHome"></forward>
+		</action>
+		
+		<action name="loginForm" path="/initForgotPassword" scope="request" type="com.ibm.lms.actions.LoginAction" validate="false">
+			<forward name="forgotPassword" path="/jsp/forgotPassword.jsp"></forward>
+			<forward name="kmForgotPassword" path="/jsp/KmForgotPassword.jsp"></forward>
+			<forward name="loginFailure" path="/jsp/login.jsp"></forward>
+		</action>
+		<action name="loginForm" path="/forgotPassword" scope="request" type="com.ibm.lms.actions.LoginAction" validate="false">
+			<forward name="forgotPwdSuccess" path="/jsp/login.jsp"></forward>
+			<forward name="forgotPassword" path="/jsp/forgotPassword.jsp"></forward>
+			<forward name="kmForgotPassword" path="/jsp/KmForgotPassword.jsp"></forward>
+			<forward name="loginFailure" path="/jsp/forgotPassword.jsp"></forward>
+			<forward name="CSRLogin" path="/initCSRLogin.do"></forward>
+            
+		</action>
+		<action name="loginForm" path="/home" scope="request" type="com.ibm.lms.actions.LoginAction" validate="false">
+			<forward name="home" path="home.page"></forward>
+		</action>
+		
+		<action name="loginForm" path="/help" scope="request" type="com.ibm.lms.actions.LoginAction" validate="false">
+			<forward name="help" path="lmsHelp.page"></forward>
+		</action>
+		
+		<action name="loginForm" path="/displayOTPPage" scope="request" type="com.ibm.lms.actions.LoginAction" validate="false">
+			<forward name="displayOTPPage" path="/jsp/otpscreen.jsp"></forward>
+		</action>
+		
+		<action name="loginForm" path="/OTPlogin" scope="request" validate="false" type="com.ibm.lms.actions.LoginAction">
+		<forward name="loginSuccess" path="home.page"></forward>
+		<forward name="OTPAuthnticationFailure" path="/jsp/otpscreen.jsp"></forward>
+		<forward name="otp_page" path="/jsp/otpscreen.jsp"></forward>
+		<forward name="otp_page" path="/jsp/otpscreen.jsp"></forward>
+		<forward name="loginFailure" path="/jsp/LoginFailure.jsp"></forward>
+		</action>
+		
+		<action path="/Logout" type="com.ibm.lms.actions.LogoutAction">
+			<forward name="logoutSuccess" path="/jsp/logout.jsp"></forward>
+			<forward name="csrLogoutSuccess" path="/jsp/csrLogin.jsp"></forward>			
+			<forward name="logoutFailure" path="/jsp/login.jsp"></forward>
+
+		</action>	
+	<action path="/timeout" type="com.ibm.lms.actions.LogoutAction" validate="false">
+	<forward name="timeout" path="/jsp/errors/sessionTimeout.jsp"></forward>
+	</action>	
+
+		<action name="loginForm" path="/csrHome" scope="request" type="com.ibm.lms.actions.LoginAction" validate="false">
+			<forward name="csrHome" path="csrhome.page"></forward>
+		</action>
+		<action name="kmUserMstrFormBean" path="/kmUserMstr" scope="request" type="com.ibm.lms.actions.UserMstrAction"  parameter="methodName" validate="false">
+			<forward name="initCreateUser" path="createUser.page"></forward>
+			<forward name="UserCreatedSuccess" path="createUser.page"></forward>
+			<forward name="CreateUserFailure" path="createUser.page" ></forward>		
+			<forward name="viewUserList" path="viewUser.page"></forward>
+			<forward name="searchUser" path="searchUser.page"></forward>
+			<forward name="initEditUser" path="editUser.page"></forward>
+			<forward name="viewUser" path="viewSingleUser.page"></forward>	
+			<forward name="EditUserSuccess" path="viewUser.page"/>
+			<forward name="viewUserListExcel" path="/jsp/viewUsersExcel.jsp"/>
+			<forward name="error" path="errorPage.page"></forward>
+		</action>
+		
+		
+	<action name="kmChangePasswordForm" path="/kmChangePassword" scope="request" type="com.ibm.lms.actions.ChangePasswordAction" parameter="methodName" validate="false">
+		<forward name="initchangePasswordSuccess" path="changePassword.page"></forward>
+		<forward name="initCSRChangePassword" path="csrChangePassword.page"></forward>
+		
+			<forward name="initChangePasswordFirstLogin" path="/jsp/changePassword.jsp"></forward>
+		<forward name="initCSRChangePasswordFirstLogin" path="/jsp/changePassword.jsp"></forward>
+		
+		<forward name="changePasswordSuccess" path="/jsp/changePassword.jsp"></forward>
+		<forward name="changePasswordFailureLogout" path="/Logout.do"></forward>
+		<forward name="changePasswordFailure" path="/jsp/changePassword.jsp"></forward>	
+		<forward name="changePasswordFailureInt" path="changePassword.page"></forward>	
+
+		<!--<forward name="changePasswordFailure" path="changePassword.page"></forward>
+		-->
+		<forward name="changePasswordFistLoginFailure" path="/jsp/changePassword.jsp"></forward>			
+	</action>
+
+		<action name="activateUserAccountBean" path="/activateUserAccount" parameter="methodName" scope="request" type="com.ibm.lms.actions.ActivateUserAccountAction">
+		
+		</action>
+		<action  name="leadRegistrationFormBean" path="/leadRegistration" type="com.ibm.lms.actions.LeadRegistrationAction" parameter="methodName" scope="request">
+			<forward name="initialize" path="leadRegistration.page"></forward>
+			<forward name="initializeeditLead" path="editLeadRegistration.page"></forward>
+			<forward name="leadSearchPage" path="leadSearch.page"></forward>
+			<forward name="leadSearchFinalUpdatePage" path="leadSearchFinalUpdatePage.page"></forward>
+			<forward name="leadSearchDialler" path="leadSearchDialler.page"></forward>
+			<forward name="viewLeadFinalUpdateDetails" path="viewLeadFinalUpdateDetails.page"></forward>
+			<forward name="viewLeadDetails" path="leadDetails.page"></forward>
+			<forward name="viewFinalStatusLeadsExcel" path="/jsp/workflow/bulkLeadFinalStatusExcel.jsp"></forward>
+			<forward name="editLeadSearchPage" path="editLeadSearch.page"></forward>
+			<forward name="editLead" path="editLead.page"></forward>
+			<forward name="editLeadDetails" path="editLeadDetails.page"></forward>
+			<forward name="leadDetailsForSomeProducts" path="leadDetailsForSomeProducts.page"></forward>
+			<forward name="leadSearchDiallerForSomeProducts" path="leadSearchDiallerForSomeProducts.page"></forward>
+			<forward name="viewEditOfferDetails" path="viewEditOfferDetails.page"></forward>
+             	<forward name="leadDetailsForProductId" path="leadDetailsForProductId.page"></forward>
+			<forward name="error" path="errorPage.page"></forward>
+		   <forward name="leadDetailsbyContactPopup" path="leadDetailsByContact.page"></forward>
+		    <forward name="leadCreateDetailscheckbyTxnID" path="checkleadcreationwithTxnId.page"></forward>
+
+		</action>
+		<action  name="LeadForm" path="/leadFinalStatusUpdate" type="com.ibm.lms.actions.LeadRegistrationAction" parameter="methodName">
+			<forward name="leadSearchFinalUpdatePage" path="leadSearchFinalUpdatePage.page"></forward>
+		</action>
+		<action  name="bulkUserUploadFormBean" path="/userBulkUpload" type="com.ibm.lms.actions.BulkUserUploadAction" parameter="methodName">
+			<forward name="bulkUserUpload" path="bulkUserUpload.page"></forward>
+			<forward name="bulkUserDelete" path="bulkUserDelete.page"></forward>
+			<forward name="openfile"  path="/jsp/openfile.jsp"></forward>
+			<forward name="viewBulkUserFiles"  path="viewBulkUserFiles.page"></forward>
+			
+		</action>
+	
+	<action  name="userReportForm" path="/userReport" type="com.ibm.lms.actions.UserReportAction" parameter="methodName">
+	    <forward name="userLoginReport" path="userLoginReport.page"></forward>
+	    <forward name="loginExcelReport" path="/jsp/userLoginExcelReport.jsp"></forward>
+	    <forward name="circleWiseReport" path="circleWiseReport.page"></forward>
+	    <forward name="circleWiseExcelReport" path="/jsp/circleWiseExcelReport.jsp"></forward> 
+	    <forward name="viewAgentWiseReport" path="fileIdWiseReport.page"></forward>
+	    <forward name="agentWiseExcelReport" path="/jsp/agentWiseExcelReport.jsp"></forward>
+	     <forward name="lockedUserReport" path="lockedUserReport.page"></forward>
+	      <forward name="lockedUserReportExcel" path="/jsp/lockedUserReportExcel.jsp"></forward>
+	    
+	    </action>	 
+
+	    <action name="kmViewReportsFormBean" path="/viewReports" type="com.ibm.lms.actions.KmViewReportsAction" parameter="methodName">
+	    	<forward name="success" path="reports.page"></forward>
+	    	<forward name="noUsageReport" path="/jsp/NoUsageReportExcel.jsp"></forward>
+	    	<forward name="scrollerUpdationReport" path="/jsp/scrollerUpdationReportExcel.jsp"></forward>
+	    	<forward name="contentStatusReport" path="/jsp/contentStatusReportExcel.jsp"></forward>
+	    	<forward name="obsoleteIdsReport" path="/jsp/obsoleteIdsReportExcel.jsp"></forward>
+	    	<forward name="contentExpiryReport" path="/jsp/contentExpiryReportExcel.jsp"></forward>
+			<forward name="documentHitCountReport" path="/jsp/documentHitCountReportExcel.jsp"></forward>
+			<forward name="iportalFeedbackReport" path="/jsp/iportalFeedbackReportExcel.jsp"></forward>
+			<forward name="userLoginStatusReport" path="/jsp/userLoginStatusReportExcel.jsp"></forward>
+	    </action>
+
+	    <action  name="kmExcelUploadFormBean" path="/kmExcelAction" type="com.ibm.lms.actions.KmExcelUploadAction" parameter="methodName">
+		    <forward name="kmExcelAction" path="excelUpload.page"></forward>
+		    <forward name="kmExcelDisplay" path="displayFile.page"></forward>		    
+	    	<forward name="home" path="home.page"> </forward>
+	    </action>   
+	    
+			<action name="configCSDForm" path="/initCsd" type="com.ibm.lms.actions.KmTSGAction" parameter="methodName">
+				 	<forward name="initCsdConfigure" path="CsdConfiguration.page"></forward>  
+			</action>
+			<action name="networkFaultReportForm" path="/networkFaultReport" type="com.ibm.lms.actions.NetworkFaultReportAction" parameter="methodName" scope="session">
+					<forward name="initNetworkReport" path="NetworkFaultReport.page"></forward>
+					<forward name="networkFaultExcelReport" path="/jsp/networkFaultExcelReport.jsp"></forward>
+					<forward name="initImpactReport" path="NetworkImpactReport.page"></forward>
+					<forward name="networkImpactExcelReport" path="/jsp/networkImpactExcelReport.jsp"></forward>		
+			</action>		
+			 <action name="LeadForm" path="/qualifiedLeads" type="com.ibm.lms.wf.actions.SearchAssignedLeadsAction" parameter="methodName">
+	    	<forward name="search" path="assignedLeads.page"></forward>
+	    	<forward name="viewDetail" path="assignedLeadDetail.page"></forward>
+	    	<forward name="viewAssignedLeadDetail" path="assignedLeadView.page"></forward>
+	    	<forward name="viewAssignedLeadsExcel" path="/jsp/workflow/assignedListExcel.jsp"></forward>
+	    	<forward name="viewAssignedLeadsExcelFwd" path="/jsp/workflow/assignedListExcelFwd.jsp"></forward>
+	    	<forward name="error" path="errorPage.page"></forward>
+	    </action> 
+	     <action name="LeadForm" path="/assignedAcceleration" type="com.ibm.lms.actions.AssignedAccelerationAction" parameter="methodName">
+	    	<forward name="search" path="searchAssignmentAcceleration.page"></forward>	    	    	
+	    	<forward name="viewLeadDetails" path="fesibleleadDetails.page"></forward>
+	    	<forward name="error" path="errorPage.page"></forward>
+	
+	    </action>
+	    
+	    <!-- added by Nancy -->	
+		<action name="leadRegistrationFormBean" path="/statusAction" type="com.ibm.lms.actions.StatusAction"  parameter="methodName"  scope="request">
+		<forward name="viewSubStatus" path="subStatus.page"></forward>
+		<forward name="viewSubStatusDetails" path="SubStatusSearch.page"></forward>
+		<forward name="initialize" path="subStatus.page"></forward>
+		<forward name="updateDetails" path="subStatus.page"></forward>
+		<forward name="addSubStatus" path="subStatus.page"></forward>
+		<forward name="error" path="errorPage.page"></forward>
+		</action>	
+		
+		<action name="leadRegistrationFormBean"  path="/subStatusAction" type="com.ibm.lms.actions.SubStatusAction"  parameter="methodName" scope="request">
+		<forward name="viewSubSubStatus" path="subSubStatus.page"></forward>
+		<forward name="viewSubSubStatusDetails" path="SubSubStatusSearch.page"></forward>
+		<forward name="initialize" path="subSubStatus.page"></forward>
+		<forward name="updateDetails" path="subSubStatus.page"></forward>
+		<forward name="addSubSubStatus" path="subSubStatus.page"></forward>
+		<forward name="error" path="errorPage.page"></forward>
+		</action>
+		
+		
+	    <!-- aman -->
+	    <action name="LeadForm" path="/feasibilityEscalation" type="com.ibm.lms.actions.AssignedAccelerationAction" parameter="methodName">   <!--   SearchAssignedLeadsAction-->
+	    	<forward name="search" path="searchFeasibilityEscalation.page"></forward>	
+	    	<forward name="viewLeadDetails" path="fesibleleadDetails.page"></forward> 
+	    	<forward name="error" path="errorPage.page"></forward>   
+	    </action>
+	    
+	     <action name="LeadForm" path="/feasibleLeads" type="com.ibm.lms.wf.actions.SearchFeasibleLeadsAction" parameter="methodName">
+	    	<forward name="search" path="feasibleLeads.page"></forward>
+	    	<forward name="searchNew" path="newFeasibilityLead.page"></forward>
+	    	
+	    	<forward name="viewDetail" path="feasibilityLeadDetail.page"></forward>
+	    	<forward name="viewFeasibilityListExcel" path="/jsp/workflow/feasibilityListExcel.jsp"></forward>
+	    	<forward name="viewLeadDetails" path="fesibleleadDetails.page"></forward>
+	    	<forward name="error" path="errorPage.page"></forward>
+	    </action> 
+
+	     
+	     <action  name="bulkAssigmentFormBean" path="/bulkAssignment" type="com.ibm.lms.actions.BulkAssigmentAction" parameter="methodName" scope="request">
+			    <forward name="bulkAssignment" path="bulkAssignment.page"></forward> 
+			     <forward name="error" path="errorPage.page"></forward>
+	     </action> 
+	     
+	     <!--  added by nancy -->
+	     
+	      <action  name="assignmentMatrixFormBean" path="/assignmentApprovals" type="com.ibm.lms.actions.AssignmentApprovals" parameter="methodName" scope="request">
+		  <forward name="list" path="assignmentMatrixApprovalList.page"></forward>  
+		  <forward name="error" path="errorPage.page"></forward>
+	      </action> 
+	     
+	     <action  name="assignmentMatrixFormBean" path="/assignmentsL2" type="com.ibm.lms.actions.AssignmentsL2" parameter="methodName" scope="request">
+		  <forward name="list" path="secondLevelApprover.page"></forward>  
+		  <forward name="error" path="errorPage.page"></forward>
+	      </action>
+	     
+	     <action  name="downloadFileFormBean" path="/downloadFile" 
+	     type="com.ibm.lms.actions.DownloadFileAction" parameter="methodName" scope="request">
+			    <forward name="downloadFile" path="/jsp/downloadCsv.jsp"></forward>  
+	     </action> 
+	     
+	      <action  name="bulkUserCreationFormBean" path="/bulkUserCreation" 
+	     type="com.ibm.lms.actions.BulkUserCreationAction" parameter="methodName" scope="request">
+			   
+	     </action> 
+	     
+	      <action  name="bulkLeadRegistrationFormBean" path="/bulkLeadRegistration" 
+	     type="com.ibm.lms.actions.BulkLeadRegistrationAction" parameter="methodName" scope="request">
+			    <forward name="bulkLeadRegistration" path="bulkLeadRegistration.page"></forward>
+			     <forward name="error" path="errorPage.page"></forward>
+	     </action> 
+	     
+	     
+	     <action name="LeadForm" path="/assignedLeads" type="com.ibm.lms.wf.actions.LookUpSelectAction" parameter="methodName">
+	    	<forward name="search" path="assignLeads.page"></forward>
+	    </action> 
+		  <action name="assignmentMatrixFormBean" path="/assignmentMatrix" type="com.ibm.lms.wf.actions.AssignmentMatrixAction" parameter="methodName">
+	    	<forward name="success" path="assignmentMatrix.page"></forward>
+	    	<forward name="list" path="assignmentMatrixList.page"></forward>
+	    	<forward name="error" path="errorPage.page"></forward>
+	    </action> 
+	
+		 <!-- Added By Parnika -->
+		
+		<action name="productMappingForm" path="/createProductMapping"  scope="request" type="com.ibm.lms.wf.actions.ProductMappingAction" parameter="methodName" validate="false">	
+			<forward name="initProductMapping" path="createProductMapping.page"></forward>	
+			<forward name="error" path="errorPage.page"></forward>
+		</action>
+		
+			
+		<action name="agencyMappingForm" path="/createAgencyMapping"  scope="request" type="com.ibm.lms.wf.actions.AgencyMappingAction" parameter="methodName" validate="false">	
+			<forward name="createAgencyMapping" path="createAgency.page"></forward>
+			<forward name="initAgencyMapping" path="createAgency.page"></forward>	
+		</action>
+		
+		<action path="/ajaxSupport" name="ajaxSupportForm" type="com.ibm.lms.actions.AjaxSupportAction" validate="false" parameter="mt">
+		</action>
+		
+				
+		<action name="agencyMappingForm" path="/editAgencyMapping"  scope="request" type="com.ibm.lms.wf.actions.AgencyMappingAction" parameter="methodName" validate="false">	
+			<forward name="editAgencyMapping" path="editAgency.page"></forward>
+			<forward name="initEditAgencyMapping" path="editAgency.page"></forward>	
+		</action>
+
+
+		<action name="reportsFormBean" path="/initViewReports"  scope="request" type="com.ibm.lms.actions.ReportsAction" parameter="methodName" validate="false">	
+			<forward name="initViewReports" path="reports.page"></forward>
+			<forward name="initLeadMTDReports" path="mtdReports.page"></forward>
+			<forward name="leadLifecycle" path="leadLifeCycleReports.page"></forward>
+			<forward name="initiDOCReport" path="iDocReports.page"></forward>
+			
+			<!-- Added by Parnika on 30-Apr 2014 -->
+			<forward name="initViewDirtyDuplicateReport" path="dirty.page"></forward>
+			<forward name="error" path="errorPage.page"></forward>
+			
+		</action>
+		
+
+		
+			
+		<action name="reportsFormBean" path="/viewReports"  scope="request" type="com.ibm.lms.actions.ReportsAction" parameter="methodName" validate="false">	
+			<forward name="viewReports" path="reports.page"></forward>
+			<forward name="initViewReports" path="reports.page"></forward>
+			<forward name="viewMTDReportExcel" path="/jsp/mtdReportExcel.jsp"></forward>
+			<forward name="viewLifeCycleReportExcel" path="/jsp/lifeCycleReportExcel.jsp"></forward>
+			<forward name="viewiDOCReportExcel" path="/jsp/iDOCReportExcel.jsp"></forward>
+			
+			<!-- Added by Parnika on 30-Apr 2014 -->
+			<forward name="initViewDirtyDuplicateReport" path="dirty.page"></forward>
+			<forward name="dashboardReport" path="dashboardReport.page"></forward>
+			<forward name="dashboardReportExcel" path="/jsp/dashboardReportExcel.jsp"></forward>
+			<forward name="error" path="errorPage.page"></forward>
+			<forward name="FtdMTDReportdownload" path="leadMTDFTDReport.page"></forward>
+			<forward name="MTDReportExcelDayOrMonthwise" path="/jsp/workflow/mtdMonthlyDailyReportExcel.jsp"></forward>
+			<forward name="FTDMTDCOUNTReportExcel" path="/jsp/workflow/ftdmtdcountdetailsexcel.jsp"></forward>
+			
+			
+			
+		</action>
+		
+		
+		
+		
+		<action name="masterDataFormBean" path="/downloadMasterData"  scope="request" type="com.ibm.lms.actions.MasterDataDownloadAction" parameter="methodName" validate="false">	
+			<forward name="viewMasterData" path="downloadMasters.page"></forward>
+			<forward name="initDownloadData" path="downloadMasters.page"></forward>
+			<forward name="error" path="errorPage.page"></forward>
+		</action>
+		
+		<!--  End of changes by Parnika -->
+		
+		<!-- ADDED BY Bhaskar -->
+		
+		<action name="bulkAssignmentDownloadFormBean" path="/bulkAssignmentDownload"  scope="request" type="com.ibm.lms.actions.BulkAssignmentDownloadAction" parameter="methodName" validate="false">	
+			<forward name="bulkAssignmentDownload" path="bulkAssignmentDownload.page"></forward>
+			<forward name="viewAssignmentDownloadExcel" path="/jsp/workflow/bulkMatrixDownloadExcel.jsp"></forward>
+			<forward name="error" path="errorPage.page"></forward>
+			
+		</action>
+		
+		<!-- ADDED BY Bhaskar -->
+		
+		
+		
+			<!-- added by aman -->
+		<action name="circleManagementForm" path="/circleManagement"  scope="request" type="com.ibm.lms.wf.actions.CircleManagementAction" parameter="methodName" validate="false">	
+			<forward name="initCircleManagement" path="circleManagement.page"></forward>
+			<forward name="error" path="errorPage.page"></forward>	
+		</action>
+		
+		<action name="bulkMstrForm" path="/bulkMstr"  scope="request" type="com.ibm.lms.actions.BulkMstrAction" parameter="methodName" validate="false">	
+			<forward name="initMstrBulk" path="bulkMstr.page"></forward>
+			<forward name="CapabilityMstrBulk" path="UploadPartnerThreshold.page"></forward>
+			<forward name="error" path="errorPage.page"></forward>	
+		</action>
+		
+		<!-- end of changes by aman -->
+		
+		<action name="formIdBean" path="/manageFormId" scope="request" type="com.ibm.lms.actions.ManageFormIdAction" parameter="methodName" validate="false">
+			<forward name="initCreate" path="createFormId.page"></forward>
+			<forward name="createFid" path="createFormId.page"></forward>
+			<forward name="initView" path="viewFormId.page"></forward>
+			<forward name="getFidData" path="viewFormId.page"></forward>
+			<forward name="editFidData" path="updateFormId.page"></forward>
+			<forward name="updateFid" path="viewFormId.page"></forward>
+			<!--<forward name="deleteFid" path="editFormId.page"></forward>-->
+			<forward name="downloadExcel" path="/jsp/downloadFids.jsp"></forward>
+			<forward name="error" path="errorPage.page"></forward>
+		</action>
+		 <!-- ADDED BY NEHIL -->
+		<action name="ReportConfigurationBean" path="/reportConfiguration" scope="session" type="com.ibm.lms.actions.ReportConfigurationAction" parameter="methodName" validate="false">
+			<forward name="success" path="reportConfiguration.page"></forward>
+			<forward name="error" path="errorPage.page"></forward>
+		</action>
+		
+		<action name="userMasterDownloadFormBean" path="/userMasterDownload"  scope="request" type="com.ibm.lms.actions.UserMasterDownloadAction" parameter="methodName" validate="false">	
+			<forward name="userMasterDownload" path="userMasterDownload.page"></forward>
+		<forward name="userMasterDownloadExcel" path="/jsp/workflow/bulkUserDownloadExcel.jsp"></forward> 
+		<forward name="error" path="errorPage.page"></forward>
+		</action>
+	     <!-- ADDED BY GAURAV BHASIN -->
+	     	<action name="loginForm" path="/UDlogin" scope="request" type="com.ibm.lms.actions.LoginAction"  validate="false">
+			<forward name="loginSuccess" path="home.page"></forward>
+			<forward name="csrLoginFailure" path="/jsp/login.jsp"></forward>
+			<forward name="loginFailure" path="/jsp/login.jsp"></forward>
+	    </action>
+			      
+			      <!-- Added by Neetika  -->
+		<action name="KmViewDashboardBean" path="/dashBoard" scope="request" type="com.ibm.km.actions.KmViewDashBoard" parameter="methodName">
+	    	<forward name="success" path="reportDashboard.page"></forward>
+	    	<forward name="searchNew" path="reportDashboard.page"></forward>
+	    	<forward name="viewDashBoardReportExcel" path="/jsp/dashboardReportExcel.jsp"></forward>
+	    	<forward name="error" path="errorPage.page"></forward>
+	    </action>
+	    <!-- added by Nancy Agrawal -->
+          <action name="alertsFormBean" path="/alertsAction" type="com.ibm.lms.actions.AlertsAction" parameter="methodName" scope="request">
+          <forward name="initAlertReport" path="alerts.page" ></forward>
+          <forward name="error" path="errorPage.page"></forward>
+                       </action>
+		     
+			      
+		<action name="downloadLogsFormBean" path="/downloadLogs" type="com.ibm.lms.actions.DownloadLogsAction" parameter="methodName" >
+		<forward name="initLogs" path="logs.page"/>
+		<forward name="viewLogs" path="logs.page"/>
+		<forward name="viewImportExportFileLogs" path="/jsp/ViewImportExportFilesLogsExcel.jsp"/>
+		<forward name="viewUserSMSLogs" path="/jsp/ViewUserSMSLogsExcel.jsp"/>
+		<forward name="viewUserEmailLogs" path="/jsp/ViewUserEmailLogsExcel.jsp" />
+		<forward name="viewUserMstrHistLogs" path="/jsp/ViewUserMstrHistLogsExcel.jsp" />
+		<forward name="viewUserloginlogout" path="/jsp/viewUserloginlogoutExcel.jsp"/>
+		<forward name="error" path="errorPage.page"></forward>
+		</action>	      
+<!-- added by Pernica for iDOC Status Report -->
+		<action name ="iDOCStatusReportFormBean" path="/iDOCStatusReport" type="com.ibm.km.actions.iDOCStatusReportAction" parameter="methodName">
+		<forward name ="iDocStatus" path="iDocStatus.page"/>
+		<forward name="error" path="errorPage.page"></forward>
+		<forward name="initIDOCStatusReport" path="iDocStatus.page"></forward>
+		</action>  
+		
+		<!-- added by Pernica for iDOC Rejection Log Report -->
+		<action name ="iDOCRejectionLogFormBean" path="/iDOCRejectionLog" type="com.ibm.lms.actions.iDOCRejectionLogAction" parameter="methodName">
+		<forward name ="iDocRejectionLog" path="iDOCRejectionLogs.page"/>
+		<forward name ="iDOCRejectionLogExcel" path="/jsp/iDOCRejectionLogExcel.jsp"/>
+		<forward name="error" path="errorPage.page"></forward>
+		
+		</action> 
+	</action-mappings>
+	<controller className="org.apache.struts.config.ControllerConfig" 
+		  processorClass="com.ibm.lms.common.LMSRequestProcessor" />
+	<!-- Message Resources -->
+	<message-resources parameter="ApplicationResources"/>		
+	<!--  plug in -->	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	<plug-in className="com.ibm.appsecure.plugin.QueryPlugin">
+	</plug-in>
+	
+</struts-config>
+	

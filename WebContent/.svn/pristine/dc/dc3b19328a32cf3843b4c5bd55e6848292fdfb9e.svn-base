@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.lms.ibm.com" xmlns:impl="http://webservice.lms.ibm.com" xmlns:intf="http://webservice.lms.ibm.com" xmlns:tns2="http://webservice.dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.dto.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="AuthorizationData">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="RetrieveLeadDataRespMsg">
+    <sequence>
+     <element name="responseMsg" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element maxOccurs="unbounded" name="webServiceResponse" nillable="true" type="tns2:RetrieveLeadDataNewDTO"/>
+    </sequence>
+   </complexType>
+   <complexType name="RetrieveLeadDataNewDTO">
+    <sequence>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="appointmentEndTime" nillable="true" type="xsd:string"/>
+     <element name="planType" nillable="true" type="xsd:string"/>
+     <element name="simNo" nillable="true" type="xsd:string"/>
+     <element name="custSegVal" nillable="true" type="xsd:string"/>
+     <element name="fathMothHus" nillable="true" type="xsd:string"/>
+     <element name="nationality" nillable="true" type="xsd:string"/>
+     <element name="idProofType" nillable="true" type="xsd:string"/>
+     <element name="idProofID" nillable="true" type="xsd:string"/>
+     <element name="gender" nillable="true" type="xsd:string"/>
+     <element name="paymDT" nillable="true" type="xsd:string"/>
+     <element name="upc" nillable="true" type="xsd:string"/>
+     <element name="upcGenDT" nillable="true" type="xsd:string"/>
+     <element name="prevOperName" nillable="true" type="xsd:string"/>
+     <element name="prevCircleName" nillable="true" type="xsd:string"/>
+     <element name="prePost" nillable="true" type="xsd:string"/>
+     <element name="mnpStatus" nillable="true" type="xsd:string"/>
+     <element name="docCollFlag" nillable="true" type="xsd:string"/>
+     <element name="leadId" nillable="true" type="xsd:string"/>
+     <element name="txnId" nillable="true" type="xsd:string"/>
+     <element name="prospectsMobileNumber" nillable="true" type="xsd:string"/>
+     <element name="prospectsName" nillable="true" type="xsd:string"/>
+     <element name="alternateContactNumber" nillable="true" type="xsd:string"/>
+     <element name="landlineNumber" nillable="true" type="xsd:string"/>
+     <element name="address" nillable="true" type="xsd:string"/>
+     <element name="address2" nillable="true" type="xsd:string"/>
+     <element name="city" nillable="true" type="xsd:string"/>
+     <element name="pincode" nillable="true" type="xsd:string"/>
+     <element name="state" nillable="true" type="xsd:string"/>
+     <element name="circle" nillable="true" type="xsd:string"/>
+     <element name="maritalStatus" nillable="true" type="xsd:string"/>
+     <element name="source" nillable="true" type="xsd:string"/>
+     <element name="subSource" nillable="true" type="xsd:string"/>
+     <element name="requestCategory" nillable="true" type="xsd:string"/>
+     <element name="appointmentTime" nillable="true" type="xsd:string"/>
+     <element name="opportunityTime" nillable="true" type="xsd:string"/>
+     <element name="productLob" nillable="true" type="xsd:string"/>
+     <element name="email" nillable="true" type="xsd:string"/>
+     <element name="primaryLanguage" nillable="true" type="xsd:string"/>
+     <element name="subZone" nillable="true" type="xsd:string"/>
+     <element name="zone" nillable="true" type="xsd:string"/>
+     <element name="campaign" nillable="true" type="xsd:string"/>
+     <element name="referPage" nillable="true" type="xsd:string"/>
+     <element name="qualLeadParam" nillable="true" type="xsd:string"/>
+     <element name="geoIpCity" nillable="true" type="xsd:string"/>
+     <element name="leadSubmitTime" nillable="true" type="xsd:string"/>
+     <element name="tid" nillable="true" type="xsd:string"/>
+     <element name="fid" nillable="true" type="xsd:string"/>
+     <element name="keyWord" nillable="true" type="xsd:string"/>
+     <element name="fromPage" nillable="true" type="xsd:string"/>
+     <element name="service" nillable="true" type="xsd:string"/>
+     <element name="tag" nillable="true" type="xsd:string"/>
+     <element name="isCustomer" nillable="true" type="xsd:string"/>
+     <element name="adParameter" nillable="true" type="xsd:string"/>
+     <element name="utmLAbels" nillable="true" type="xsd:string"/>
+     <element name="referUrl" nillable="true" type="xsd:string"/>
+     <element name="company" nillable="true" type="xsd:string"/>
+     <element name="cityZoneCode" nillable="true" type="xsd:string"/>
+     <element name="plan" nillable="true" type="xsd:string"/>
+     <element name="rental" nillable="true" type="xsd:string"/>
+     <element name="allocatedNo" nillable="true" type="xsd:string"/>
+     <element name="onlineCafNo" nillable="true" type="xsd:string"/>
+     <element name="pytAmt" nillable="true" type="xsd:string"/>
+     <element name="tranRefno" nillable="true" type="xsd:string"/>
+     <element name="agencyId" nillable="true" type="xsd:string"/>
+     <element name="ndncDisclaimer" nillable="true" type="xsd:string"/>
+     <element name="ipAddress" nillable="true" type="xsd:string"/>
+     <element name="udId" nillable="true" type="xsd:string"/>
+     <element name="cityId" nillable="true" type="xsd:string"/>
+     <element name="circleId" nillable="true" type="xsd:string"/>
+     <element name="feasibilityparam" nillable="true" type="xsd:string"/>
+     <element name="planId" nillable="true" type="xsd:string"/>
+     <element name="customerInfoId" nillable="true" type="xsd:string"/>
+     <element name="rentaltype" nillable="true" type="xsd:string"/>
+     <element name="freebiecount" nillable="true" type="xsd:string"/>
+     <element name="boostercount" nillable="true" type="xsd:string"/>
+     <element name="freebietaken" nillable="true" type="xsd:string"/>
+     <element name="boostertaken" nillable="true" type="xsd:string"/>
+     <element name="flag" nillable="true" type="xsd:string"/>
+     <element name="prepaidnumber" nillable="true" type="xsd:string"/>
+     <element name="offer" nillable="true" type="xsd:string"/>
+     <element name="downloadlimit" nillable="true" type="xsd:string"/>
+     <element name="devicemrp" nillable="true" type="xsd:string"/>
+     <element name="voicebenefit" nillable="true" type="xsd:string"/>
+     <element name="dataquota" nillable="true" type="xsd:string"/>
+     <element name="usertype" nillable="true" type="xsd:string"/>
+     <element name="devicetaken" nillable="true" type="xsd:string"/>
+     <element name="benefit" nillable="true" type="xsd:string"/>
+     <element name="pkgduration" nillable="true" type="xsd:string"/>
+     <element name="hlrno" nillable="true" type="xsd:string"/>
+     <element name="rsuCode" nillable="true" type="xsd:string"/>
+     <element name="dob" nillable="true" type="xsd:string"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+     <element name="subStatus" nillable="true" type="xsd:string"/>
+     <element name="cafNumber" nillable="true" type="xsd:string"/>
+     <element name="remarks" nillable="true" type="xsd:string"/>
+     <element name="productBought" nillable="true" type="xsd:string"/>
+     <element name="rentalPlan" nillable="true" type="xsd:string"/>
+     <element name="paymentCollected" nillable="true" type="xsd:string"/>
+     <element name="paymentType" nillable="true" type="xsd:string"/>
+     <element name="paymentAmountDue" nillable="true" type="xsd:string"/>
+     <element name="competitorChosen" nillable="true" type="xsd:string"/>
+     <element name="sentBy" nillable="true" type="xsd:string"/>
+     <element name="latitude" nillable="true" type="xsd:string"/>
+     <element name="longitude" nillable="true" type="xsd:string"/>
+     <element name="assignedremarks" nillable="true" type="xsd:string"/>
+     <element name="amtdue" nillable="true" type="xsd:string"/>
+     <element name="paymentStatus" nillable="true" type="xsd:string"/>
+     <element name="taskStartTime" nillable="true" type="xsd:string"/>
+     <element name="taskEndTime" nillable="true" type="xsd:string"/>
+     <element name="extraParam1" nillable="true" type="xsd:string"/>
+     <element name="extraParam2" nillable="true" type="xsd:string"/>
+     <element name="extraParam3" nillable="true" type="xsd:string"/>
+     <element name="extraParam4" nillable="true" type="xsd:string"/>
+     <element name="extraParam5" nillable="true" type="xsd:string"/>
+     <element name="extraParam6" nillable="true" type="xsd:string"/>
+     <element name="extraParam7" nillable="true" type="xsd:string"/>
+     <element name="extraParam8" nillable="true" type="xsd:string"/>
+     <element name="extraParam9" nillable="true" type="xsd:string"/>
+     <element name="extraParam10" nillable="true" type="xsd:string"/>
+     <element name="leadProspectId" nillable="true" type="xsd:string"/>
+     <element name="prospectId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://webservice.dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://webservice.dto.lms.ibm.com"/>
+   <element name="retrieveLeadDetailData">
+    <complexType>
+     <sequence>
+      <element name="authorizationData" nillable="true" type="tns2:AuthorizationData"/>
+      <element name="leadId" nillable="true" type="xsd:string"/>
+      <element name="prospectMobileNumber" nillable="true" type="xsd:string"/>
+      <element name="transactionId" nillable="true" type="xsd:string"/>
+      <element name="flag" nillable="true" type="xsd:string"/>
+      <element name="product" nillable="true" type="xsd:string"/>
+      <element name="source" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="retrieveLeadDetailDataResponse">
+    <complexType>
+     <sequence>
+      <element name="retrieveLeadDetailDataReturn" nillable="true" type="tns2:RetrieveLeadDataRespMsg"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="retrieveLeadDetailDataResponse">
+
+      <wsdl:part element="impl:retrieveLeadDetailDataResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveLeadDetailDataRequest">
+
+      <wsdl:part element="impl:retrieveLeadDetailData" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RetrieveLeadDataFirstVers">
+
+      <wsdl:operation name="retrieveLeadDetailData">
+
+         <wsdl:input message="impl:retrieveLeadDetailDataRequest" name="retrieveLeadDetailDataRequest"/>
+
+         <wsdl:output message="impl:retrieveLeadDetailDataResponse" name="retrieveLeadDetailDataResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RetrieveLeadDataFirstVersSoapBinding" type="impl:RetrieveLeadDataFirstVers">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="retrieveLeadDetailData">
+
+         <wsdlsoap:operation soapAction="retrieveLeadDetailData"/>
+
+         <wsdl:input name="retrieveLeadDetailDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="retrieveLeadDetailDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RetrieveLeadDataFirstVersService">
+
+      <wsdl:port binding="impl:RetrieveLeadDataFirstVersSoapBinding" name="RetrieveLeadDataFirstVers">
+
+         <wsdlsoap:address location="http://localhost:9080/LMS2/services/RetrieveLeadDataFirstVers"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.lms.ibm.com" xmlns:impl="http://webservice.lms.ibm.com" xmlns:intf="http://webservice.lms.ibm.com" xmlns:tns2="http://dto.lms.ibm.com" xmlns:tns3="http://common.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://dto.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://common.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://common.lms.ibm.com"/>
+   <complexType name="AuthorizationData">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PushMstrWebserviceResponse">
+    <sequence>
+     <element name="productName" nillable="true" type="xsd:string"/>
+     <element name="webserviceResponse" nillable="true" type="tns2:PushMstrWebserviceDTO"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="PushMstrWebserviceDTO">
+    <sequence>
+     <element maxOccurs="unbounded" name="circleData" nillable="true" type="tns3:DataObject"/>
+     <element maxOccurs="unbounded" name="cityData" nillable="true" type="tns3:DataObject"/>
+     <element maxOccurs="unbounded" name="pincodeList" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://dto.lms.ibm.com"/>
+   <element name="getMstrByProduct">
+    <complexType>
+     <sequence>
+      <element name="authData" nillable="true" type="tns2:AuthorizationData"/>
+      <element name="product" nillable="true" type="xsd:string"/>
+      <element name="flag" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMstrByProductResponse">
+    <complexType>
+     <sequence>
+      <element name="getMstrByProductReturn" nillable="true" type="tns2:PushMstrWebserviceResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://common.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="DataObject">
+    <sequence>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="code" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getMstrByProductRequest">
+
+      <wsdl:part element="impl:getMstrByProduct" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMstrByProductResponse">
+
+      <wsdl:part element="impl:getMstrByProductResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PushMstrWebService">
+
+      <wsdl:operation name="getMstrByProduct">
+
+         <wsdl:input message="impl:getMstrByProductRequest" name="getMstrByProductRequest"/>
+
+         <wsdl:output message="impl:getMstrByProductResponse" name="getMstrByProductResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PushMstrWebServiceSoapBinding" type="impl:PushMstrWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getMstrByProduct">
+
+         <wsdlsoap:operation soapAction="getMstrByProduct"/>
+
+         <wsdl:input name="getMstrByProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMstrByProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PushMstrWebServiceService">
+
+      <wsdl:port binding="impl:PushMstrWebServiceSoapBinding" name="PushMstrWebService">
+
+         <wsdlsoap:address location="http://localhost:9080/LMS2/services/PushMstrWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

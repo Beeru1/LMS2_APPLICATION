@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.lms.ibm.com" xmlns:impl="http://webservice.lms.ibm.com" xmlns:intf="http://webservice.lms.ibm.com" xmlns:tns2="http://dataobjects.engine.lms.ibm.com" xmlns:tns3="http://dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://dataobjects.engine.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="CaptureLeadDO">
+    <sequence>
+     <element name="address" nillable="true" type="xsd:string"/>
+     <element name="alternateContactNumber" nillable="true" type="xsd:string"/>
+     <element name="campaign" nillable="true" type="xsd:string"/>
+     <element name="circle" nillable="true" type="xsd:string"/>
+     <element name="city" nillable="true" type="xsd:string"/>
+     <element name="company" nillable="true" type="xsd:string"/>
+     <element name="email" nillable="true" type="xsd:string"/>
+     <element name="extraParametrs" nillable="true" type="xsd:string"/>
+     <element name="fid" nillable="true" type="xsd:string"/>
+     <element name="fromPage" nillable="true" type="xsd:string"/>
+     <element name="isCustomer" nillable="true" type="xsd:string"/>
+     <element name="keyWord" nillable="true" type="xsd:string"/>
+     <element name="pinecode" nillable="true" type="xsd:string"/>
+     <element name="plan" nillable="true" type="xsd:string"/>
+     <element name="product" nillable="true" type="xsd:string"/>
+     <element name="prospectsMobileNumber" nillable="true" type="xsd:string"/>
+     <element name="prospectsName" nillable="true" type="xsd:string"/>
+     <element name="referPage" nillable="true" type="xsd:string"/>
+     <element name="referUrl" nillable="true" type="xsd:string"/>
+     <element name="service" nillable="true" type="xsd:string"/>
+     <element name="tid" nillable="true" type="xsd:string"/>
+     <element name="utmLabels" nillable="true" type="xsd:string"/>
+     <element name="zoneCode" nillable="true" type="xsd:string"/>
+     <element name="cityZoneCode" nillable="true" type="xsd:string"/>
+     <element name="rental" nillable="true" type="xsd:string"/>
+     <element name="tag" nillable="true" type="xsd:string"/>
+     <element name="onlineCafNo" nillable="true" type="xsd:string"/>
+     <element name="tranRefno" nillable="true" type="xsd:string"/>
+     <element name="pytAmt" nillable="true" type="xsd:string"/>
+     <element name="qualLeadParam" nillable="true" type="xsd:string"/>
+     <element name="adParameter" nillable="true" type="xsd:string"/>
+     <element name="leadSubmitTime" nillable="true" type="xsd:string"/>
+     <element name="extraParams2" nillable="true" type="xsd:string"/>
+     <element name="extraParams3" nillable="true" type="xsd:string"/>
+     <element name="allocatedNo" nillable="true" type="xsd:string"/>
+     <element name="myopId" nillable="true" type="xsd:string"/>
+     <element name="geoIpCity" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://dataobjects.engine.lms.ibm.com" xmlns:tns3="http://dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://dto.lms.ibm.com"/>
+   <import namespace="http://dataobjects.engine.lms.ibm.com"/>
+   <element name="captureLeadData">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="leadData" type="tns2:CaptureLeadDO"/>
+      <element name="authData" nillable="true" type="tns3:AuthorizationData"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="captureLeadDataResponse">
+    <complexType>
+     <sequence>
+      <element name="captureLeadDataReturn" nillable="true" type="tns3:ResponseMessage"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://dto.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="AuthorizationData">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ResponseMessage">
+    <sequence>
+     <element name="responseCode" nillable="true" type="xsd:string"/>
+     <element name="responseMsg" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="captureLeadDataRequest">
+
+      <wsdl:part element="impl:captureLeadData" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="captureLeadDataResponse">
+
+      <wsdl:part element="impl:captureLeadDataResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="LeadCaptureWebService">
+
+      <wsdl:operation name="captureLeadData">
+
+         <wsdl:input message="impl:captureLeadDataRequest" name="captureLeadDataRequest"/>
+
+         <wsdl:output message="impl:captureLeadDataResponse" name="captureLeadDataResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LeadCaptureWebServiceSoapBinding" type="impl:LeadCaptureWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="captureLeadData">
+
+         <wsdlsoap:operation soapAction="captureLeadData"/>
+
+         <wsdl:input name="captureLeadDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="captureLeadDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LeadCaptureWebServiceService">
+
+      <wsdl:port binding="impl:LeadCaptureWebServiceSoapBinding" name="LeadCaptureWebService">
+
+         <wsdlsoap:address location="http://localhost:9080/LMS2/services/LeadCaptureWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

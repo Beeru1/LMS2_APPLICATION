@@ -1,0 +1,1145 @@
+####### KM Portal Login IP ######
+KMPORTAL.IP=http://10.14.91.202:9080/KM
+bulkUploadprocessTime=0,2
+doLdapValidation=N
+#SMTP For development server
+#LOGIN.SMTP=9.182.227.151
+#SMTP For production server
+LOGIN.SMTP=10.5.128.146
+favCat.error=Please Contact Admin and Get a Category Assigned for You. 
+####### Start of Login Messages ######
+login.title=KM Portal:Login Page
+login.loginId=User Login Id
+login.password=Password
+login.submit=Submit
+login.error=Exception Occured During Login
+login.error.password.length=Password must be 8 characters long
+login.error.field.required=Required Field
+login.invalid.login=Invalid Login
+login.invalid.memberpage=Please use CSR Login Page
+login.invalid.csrpage=Please use Member Login Page
+errors.login.invalid_id=Invalid Login Id/Password
+errors.login.userExpire= User may be expired in ILMS,please visit EasyAccess Page
+errors.login.null_id=Some Problem Arises,Kindly Visit EasyAccess Page for further processing...
+### Added by Parnika ####
+login.otp=Enter OTP Code
+errors.login.user_id=Invalid UD User Id
+errors.login.encdata=Invalid UD Encryption Data
+errors.login.udauth=Invalid UD Login Id/Password
+errors.login.OTPVerification.failed=OTP Verification failed,please try again.
+#### End of changes by Parnika #########3
+login.user.deactivated=User is Deactivated
+login.success=Password changed Successfully. Please Login again to Continue...
+login.singleSignError=User already logged in
+login.connectionError=Unable to Connect to Server
+login.ldapValidationError=LDAP validation failed, contact admin.
+login.ldapConnectionFail=Couldn't connected to HRMS server, try again later.
+####### End of Login Messages ######
+
+###### For UD Changes#######
+##  UDKey = abcdefghijklmnop   -- Test Key
+###### Production Key ######
+UDKey = qzwxecrvtbynumio
+ud.user.olmid=UD_USER
+
+file.exception=File cannot be uploaded due to unknown error. Please try later!!!
+file.ioexception=File cannot be uploaded due to network error. Please try later!!!
+file.empty=Empty file found. Please try another file!!! 
+file.deleted=Document(s) Deleted
+record.not.found=No Record Found
+
+panindia=Pan India :
+user.activated=User(s) activated successfully.
+network.fault.index.path=/ST_kb_files2/iPortal/network_fault_index
+index.not.found=Index not Created for the day
+folder.path=/LMS_kb_files2/LMS/
+Index.path=/ST_kb_files2/LMS/new_index/LMS_index
+lock.timeout=20000
+SINGLE.INDEX=Y
+folder.path_help=/lms_common/LMS2/HELP/
+property.file.path=/lms_common/LMS2/HELP/
+## Configuring content search ##
+maxno.files=100
+search.error=No. of Documents in the Result Exceeded the Maximum Limit. Please Try Another Keyword
+session.expry.alert.time=25
+ALERT_CHECK_INTERVAL=10
+Interim2007.filepath=/ST_kb_files2/LMS/temp/
+# Configure Search keywords to be searched from memory or db. Set value of 'keyword.search.method' as MEMORY or DB
+keyword.search.method=MEMORY
+
+##Path is in the Web Content  ##
+image.path=/images/image/
+
+##Bulk User Upload##
+
+default.password=9JyRLx3FI57aGynRfRXiWw==
+bu.dberror=Exception occured while insering file data in the DB.
+bu.error=Exception occured while uploading CSV file
+bu.userError=Bulk User Creation is done is done partially
+bu.success.creation=File Successfully Uploaded for Bulk User Creation
+bu.success.updation=File Successfully Uploaded for Bulk User Updation
+bu.success.deletion=File Successfully Uploaded for Bulk User Deletion
+bd.dberror=Exception occured while insering file data in the DB.
+bd.error=Exception occured while uploading CSV file
+bd.userError=Bulk User Deletion is done partially
+bd.success=Bulk User Deletion Completed
+file.SNO=S.No.
+file.fileName =File Name
+file.fileType= File Type
+file.fileStatus= Status
+file.uploadedBy= Uploaded By
+file.total= Total Records
+user.created =User Created
+user.updated = Users Updated
+user.deleted= Users Deleted
+vb.heading = View Bulk Upload Files
+bv.date=Select Date
+
+##csv.path=C:/LMS/csvFiles
+##csv.deletepath=C:/LMS/csvDeleteFiles
+##csvError.path=C:/LMS/csvErrorFiles
+
+csv.path=/LMS_kb_files1/csvFiles
+csv.deletepath=/LMS_kb_files1/csvDeleteFiles
+csvError.path=/LMS_kb_files1/csvErrorFiles
+
+
+
+file.not.found= Invalid or empty file
+file.empty= Invalid or empty file
+
+##Bulk User Upload##
+
+######End of Document Folder########
+
+csrMenu.SearchFiles = Keyword Search
+csrMenu.sendFeedback= Send Feedback
+element.deleted=Element Deleted Successfully
+########Start of Briefing#########
+briefing.title=Create Briefing
+briefing.heading=Heading
+briefing.details=Details
+briefing.displayDate=Display Date
+briefing.success= A Briefing Is Created Successfully
+briefing.failure= Error Occured While Creating the briefing
+########End of Briefing##########
+
+########Start of WhatsNew#########
+whatsNew.createWhatsNew=Add Whats New Documents
+whatsNew.selectFile= Select File
+whatsNew.docDesc= Document Desc
+whatsNew.added= File Added Successfully
+whatsNew.failure=Error Occured While Adding the File
+whatsNew.duplicate=File Already Exists
+whatsNew.viewAllFiles= Whats New 
+##whatsnewfolder.path=C:/LMS/whats_new/  --- not being used
+########End of WhatsNew#########
+
+
+########Start of Add File#########
+addfile.category=Select Category<FONT color="red"> *</FONT>
+addfile.subCategory=Select Sub-Category<FONT color="red"> *</FONT>
+addfile.selectFile=Select File<FONT color="red"> *</FONT>
+addfile.docDesc=Document Description
+addfile.docTitle=Document Title<FONT color="red"> *</FONT>
+addfile.keyword=Add Keywords(,)
+addFile.heading=Upload Document
+file.toDate=To Date<FONT color="red"> *</FONT>
+file.fromDate=From Date<FONT color="red"> *</FONT>
+addfile.publishDate = Publish Date<FONT color="red"> *</FONT>
+addfile.publishDate_end = Publish End Date<FONT color="red"> *</FONT>
+file.submit=Submit File For Approval
+file.approvereject=Approve/Reject Files
+file.add=Please select file to be uploaded
+########End of Add File##########
+
+####### Start of Create User Messages ######
+createUser.category=Select Category
+createUser.categorycsr=A New Category CSR Is Created
+createUser.NewAdmin=New Admin
+createUser.NewUser=New User
+createUser.Newlobadmin=New LOB Admin
+createUser.NewUser= Create New User
+createUser.NewCircleApprover= New Circle Admin
+createUser.NewCsr= New CSR User
+createUser.UserLoginId= User Login Id<FONT color="red"> *</FONT>
+createUser.FirstName= First Name<FONT color="red"> *</FONT> 
+createUser.MiddleName= Middle Name &nbsp; 
+createUser.LastName= Last Name<FONT color="red"> *</FONT>
+createUser.E-Mail= E-Mail<FONT color="red"> *</FONT>&nbsp; 
+createUser.Mobile= Mobile Number<FONT color="red"> *</FONT>
+createUser.Password= Password<FONT color="red"> *</FONT>
+createUser.ConfirmPassword= Confirm Password<FONT color="red"> *</FONT> 
+createUser.UserType= User Type <FONT color="red"> *</FONT>
+createUser.CircleNames= Circle Names<FONT color="red"> *</FONT> 
+createUser.select =Select
+createUser.duplicate=User Login Id Already exists
+createUser.invalidUserId=User Login Id should have active OLM Id
+createUser.lobadmin=A New LOB Admin Is Created
+createUser.circleapprover=A New Circle Admin Is Created
+createUser.circleuser=A New Circle User Is Created
+createUser.csr=A New CSR User Is Created
+createUser.reportadmin = A New Report Admin is created
+createUser.TSGUser=A New TSG User Is Created
+max.report.admin.limit=30
+max.report.admin.message=Report Admin cannot be created as maximum limit({0}) reached for the total no.of Report Admins for the circle.
+errors.duplicateId = User Login Id already exists
+errors.created = A New User Is Created
+errors.userCreate= An Error Occured While Creating the User
+createUser.mailError= Password could not be sent on your emailId.
+### Added by Parnika  ####
+createUser.Partner= Partner
+createUser.PbxId= PBX Id
+createUser.BusinessSegment= Business Segment
+createUser.Activity= Activity
+createUser.Role= Role
+createUser.actor=User Login Id exists for a different User Role
+createUser.duplicateLob=User Login Id Already exists for selected LOB
+
+### End of changes by Parnika  ####
+
+###########Start of Create Element#################
+createElement.title=Create Element
+createElement.elementName=Element Name
+createElement.elementDesc=Element Description
+element.duplicate=Element '{0}' Already Exists
+element.created=Element Created Successfully
+############ End of Create Element #############
+
+###########Start of Move Documents#################
+moveDocument.title=Move Documents
+moveDocument.documentList=Document List
+moveDocument.title.select=Select
+moveDocument.documentPath=Document Path
+moveDocument.documentName=Document Name
+moveDocument.success=Documents Moved Successfully
+moveDocument.noDocument=No Document is there for moving
+moveDocument.networkFailure=Unable to Move Documents due to Network Failure
+moveDocument.documentPath=Document Path
+############ End of Create Element #############
+
+###########Start of Move Elements#################
+moveElement.title=Move/Copy Elements
+moveElement.elementList=Element List
+moveElement.title.select=Select
+moveElement.elementPath=Element Path
+moveElement.elementName=Element Name
+moveElement.success=Elements Moved Successfully
+copyElement.success=Elements Copied Successfully
+moveElement.noElement=No Element is there for moving
+moveElement.networkFailure=Unable to Move Elements due to Network Failure
+moveElement.databaseFailure=Unable to Move Elements due to Database Failure
+moveElement.elementPath=Element Path
+############ End of Create Element #############
+
+####### Start of Forgot Password Messages ######
+forgotpassword.loginId = User ID*
+forgotpassword.loginDetails = Enter the Login Details
+UD.Admin=anilchan@in.ibm.com
+error.forgotPassword=Error Occured Whlle Sending Email.
+error.server.forgotPassword= Cannot Access Mail Server
+password.reset.retry = Your previous reset request is under processing
+max.retry.interval=6
+SESSION.EXPIRY.ALERT.FLAG=Y
+####### End of Forgot Password Messages ######
+####### Start of View All Users Messages ######
+viewAllUser.SNO= S.No.
+viewAllUser.ViewUsers= View All Users
+viewAllUser.UserLoginId= User Login Id 
+viewAllUser.UserId= User Id
+viewAllUser.FirstName= First Name 
+viewAllUser.MiddleName= Middle Name 
+viewAllUser.LastName= Last Name 
+viewAllUser.UserType= User Type
+viewAllUser.NotFound= No Record Found
+viewAllUser.Status=Status
+viewAllUser.edit=Edit
+viewAllUser.view=View
+viewAllUser.MobileNumber= Mobile Number
+viewAllUser.EmailId= Email Id
+viewAllUser.element=Handling Element
+####### End of View All Users Messages ######
+
+#####Start of csrSearch########
+
+search.keyword = Search For
+search.circle = Select Circle*
+search.category = Category
+search.subCategory = Sub-Category
+search.fromDate = From
+search.toDate = To
+search.subsubCategory=Sub-Sub Category
+
+
+####### Start of View All Files Messages ######
+viewAllFiles.SNO= S.No.
+viewAllFiles.DocumentName= Document Name
+viewAllFiles.CategoryName= Category
+viewAllFiles.SubCategoryName= Sub-Category
+viewAllFiles.ApprovalStatus= Approval Status 
+viewAllFiles.UpdatedDate= Updated Date
+viewAllFiles.UploadedDate= Uploaded Date
+viewAllFiles.PublishEndDate= Publish End Date
+viewAllFiles.ApprovalDate = Approval/ Rejection Date
+viewAllFiles.NotFound= No Record Found
+viewAllFiles.ViewFiles= View/Edit Documents
+viewAllFiles.delete=Delete
+viewAllFiles.circle=Circle<FONT color="red"> *</FONT>
+viewAllFiles.category=Category<FONT color="red"> *</FONT>
+viewAllFiles.subCategory=Sub-Category<FONT color="red"> *</FONT>
+viewAllFiles.keywordSerach=Search Keyword<FONT color="red"> *</FONT>
+viewAllFiles.emptyCategoryList=Category List is Empty
+viewAllFiles.emptySubCategoryList=Sub-Category List is Empty
+viewAllFiles.DocumentDescription= Document Description
+viewAllFiles.elementName=Parent
+viewAllFiles.path=Document path
+viewAllFiles.approvalStatus=Approval Status
+viewAllFiles.download=Download
+contentSearch.exception=The Entered Keyword Gives Large Result. Please Enter Another Keyword
+####### End of View All Files Messages ######
+
+####### Start of View File Report Messages ######
+fileReport.circle=Circle<FONT color="red"> *</FONT>
+fileReport.category=Category
+fileReport.subCategory=Sub-Category
+####### End of View File Report Messages ######
+
+
+####### Start of Feedback Messages ######
+feedback.category=Category
+feedback.subCategory=Sub-Category
+feedback.feedBackOn=Feedback On
+feedback.comment=Comment
+feedback.success=Feedback Is Sent Successfully
+feedback.failure=Error occured while sending feedback
+feedback.title=Create Feedback
+feedback.viewFeedback= View Feedbacks
+feedback.categoryName=Category Name
+feedback.subCategoryName=Sub-Category Name
+feedback.createdBy= Created User 
+feedback.createdDt= Created Date
+feedback.SNO= SNo.
+feedback.read=Feedback(s) Read 
+
+####### End of Feedback Messages ######
+
+####### Start of Update User Messages ######
+updateUser.updateUser= Update User
+updateUser.UserLoginId= User Login Id<FONT color="red"> *</FONT> 
+updateUser.FirstName= First Name<FONT color="red"> *</FONT> 
+updateUser.MiddleName= Middle Name &nbsp; 
+updateUser.LastName= Last Name<FONT color="red"> *</FONT> 
+updateUser.E-Mail= E-Mail<FONT color="red"> *</FONT> 
+updateUser.Mobile= Mobile &nbsp; 
+updateUser.UserType= User Type<FONT color="red"> *</FONT>
+updateUser.CircleNames= Circle Names
+
+updateUser.Status=Status<FONT color="red"> *</FONT> 
+updateUser.Active=Active
+updateUser.Deactive=Deactive
+updateUser.success=User Details Updated Successfully
+updateUser.favCategory=Category
+updateUser.createdBy = Created By 
+updateUser.updatedBy = Updated By 
+
+####### End of Update User Messages ######
+
+report.not.generated = Report not generated
+
+####### Start of View User Details Messages ######
+viewUser.viewUser= View User
+viewUser.UserLoginId= User Login Id : 
+viewUser.FirstName= First Name : 
+viewUser.MiddleName= Middle Name : 
+viewUser.LastName= Last Name : 
+viewUser.E-Mail= E-Mail : 
+viewUser.Mobile= Mobile : 
+viewUser.Status=Status : 
+
+####### End of View User Details Messages ######
+
+####### Start of Create Circle Messages ######
+edit=Edit
+circleMaster.sno=S.NO
+circleMaster.title=New Circle
+circleMaster.CircleName=Circle Name<FONT color="red"> *</FONT>
+circleMaster.CircleID=Circle ID<FONT color="red"> *</FONT>
+circleMasterReport.title=View Circle
+circleMaster.crtdt=Created On
+circleMaster.CirName=Circle Name
+circleMaster.CirID=Circle ID
+circleMaster.status=Status
+createCircle.Active=Active
+createCircle.Deactive=Deactive
+createCircle.success=A New Circle Is Created
+createCircle.duplicate=Circle Already Exists
+record.norecords=No Records Found
+####### End of Create Circle Messages ######
+
+###### Start of Create Category Messages ######
+createCategory.circle=Circle<FONT color="red"> *</FONT>
+createCategory.categoryName=Category Name<FONT color="red"> *</FONT>
+createCategory.categoryDesc=Category Desc
+createCategory.title=New Category
+category.created=A New Category Is Created
+category.duplicate=Category Already Exists Under the Selected Circle
+category.maximum=No Of Categories for the Selected Circle Exceeds the Permissible Limit
+category.image= Select Image
+category.fileType= File Type Not Supported. Pls Select gif Files
+###### End of Create Category Messages ######
+
+###### Start of Create Sub-Category Messages ######
+createSubCategory.circle=Circle<FONT color="red"> *</FONT>
+createSubCategory.category=Category<FONT color="red"> *</FONT>
+createSubCategory.subCategoryName=Sub-Category Name<FONT color="red"> *</FONT>
+createSubCategory.subCategoryDesc=Sub-Category Desc
+createSubCategory.title=New Sub-Category
+subcategory.created=A New Sub-Category Is Created
+subcategory.duplicate=Sub-Category Already Exists Under the Selected Category
+###### End of Create Sub-Category Messages ######
+
+#####Approval Workflow#######
+ESCALATION_HOUR_1=5
+ESCALATION_HOUR_2=2
+#####Approval Workflow#######
+
+####### Start of Change Password ######
+changePassword.changepassword=Change Password
+changePassword.oldPassword=Current Password<FONT color="red"> *</FONT>
+changePassword.newPassword=New Password<FONT color="red"> *</FONT> 
+##Bug MASDB00064220 Resolved
+changePassword.confirmPassword=Confirm Password<FONT color="red"> *</FONT>
+password.sent=Password is Sent to '{0}'
+errors.incorrectPassword=Incorrect Current Password
+errors.changePasswordNetworkError=Cannot change Password due to Network Error. Please try later!!!
+####### End of Change Password ######
+
+########Start of Add Scroller#########
+scroller.message=Message<FONT color="red"> *</FONT>
+scroller.startDate=Start Date<FONT color="red"> *</FONT>
+scroller.endDate=End Date<FONT color="red"> *</FONT>
+scroller.title=Create Scroller
+scroller.created=A New Scroller Is Created
+scroller.edited=Scroller is Updated
+scroller.error= Error Occured While Creating the Scroller
+scroller.view = View Scroller
+scroller.errorList= No Record Found
+scroller.errorView=Error Occured While Fetching Scroller List
+scroller.deleted= Scroller Deleted 
+scroller.notdeleted=Error Occured While Deleting the Scroller
+
+########End of Add Scroller##########
+
+rc.value=RC Value<FONT color="red"> *</FONT>
+
+###########Start of Alerts##############
+alert.message=Message<FONT color="red"> *</FONT>
+alert.Circle=Circle<FONT color="red"> *</FONT>
+alert.title=Create Alert
+alert.created=A New Alert Is Created
+alert.error= Error Occured While Creating Alert
+alert.view = View Alert
+alert.errorList= No Record Found
+alert.errorView=Error Occured While Fetching Alert List
+alert.deleted= Alert Deleted 
+alert.notdeleted=Error Occured While Deleting the Alert
+alert.interval=600000
+## added by harpreet ##
+# last 24 hour is equal to 1000000 #
+alert.report.timeinterval=1000000 
+alert.time=12000
+alert.title.edit=View/Edit Alerts
+alertHistory.circle= Circle
+
+ALERT.SOURCE.SMS=SMS
+ALERT.SOURCE.GUI=GUI
+MAX.NO.OF.ALERTS=10
+MINUTES.EXPIRES.ALERTS=60
+FH.KEYWORD=KM
+NA.KEYWORD=NA
+NA.USERID=kmiportal
+NA.PASSWORD=a4e6add6f676645e1793222dd45d73644413cd6e
+message.length=140
+message.separator=:
+appreciation.max.display.days=30
+appreciation.created=Employee Appreciation Created Successfully
+appreciation.not.created=Employee Appreciation Could not Created 
+createOffer.selectBucket= Select Bucket<FONT color="red"> *</FONT>
+createOffer.offerTitle= Offer Title<FONT color="red"> *</FONT> 
+createOffer.offerDesc= Offer Description<FONT color="red"> *</FONT>
+createOffer.startDate= Start Date<FONT color="red"> *</FONT>
+createOffer.endDate= End Date<FONT color="red"> *</FONT> 
+
+lead.registered= Lead Registered Successfully
+lead.not.registered= Lead could not Registered
+dirty.lead.registered= Lead registered as dirty lead
+lead.not.found= No Lead Found
+lead.not.4G= Not a 4G Lead.
+subStatus.not.found= No Sub_Status Found
+subStatusAdd.success= Sub Status added successfully.Sub Status Id is : 
+subStatus.not.add= Sub Status already existing.
+subSubStatus.not.add= Sub SubStatus already existing.
+subSubstatus.not.found= No Sub_Sub_Status Found
+lead.updated=Lead details updated
+lead.not.updated=Lead details could not updated
+ 
+ 
+ 
+ 
+
+msg.security.id01=Password must be different from last 3 passwords.
+msg.security.id02=Password Expired
+msg.security.id03=User or Password length must not be less than 8
+msg.security.id04=First and Last Character of Password Must Not Be Numeric
+msg.security.id05=Empty white space not allowed in UserID and Password
+msg.security.id06=Identical characters in password exceeds permissible limit
+msg.security.id07=UserId should not exist as part of the password
+msg.security.id08=Password must contain at least one alphabetic character
+msg.security.id09=New password exceeds permissible limit of matching characters in the previous password
+msg.security.id010=invalid special charcter in password
+msg.security.id011=invalid userId
+msg.security.id012=Password must contain at least one non-alphabetic character
+msg.security.id013=Invalid Login Id/Password 
+msg.security.id014=User Account Locked
+msg.security.id015=Password must contain atleast 1 special character !@#%&_
+msg.security.id016=Password must contain atleast 1 numeric character
+msg.security.id017=Password must contain atleast 1 upper case character
+msg.security.id018=Password must be different from last 4 passwords.
+msg.security.id019=Maximum Password length allowed is 250 characters.
+msg.security.id020=Password must contain atleast 1 lower case character
+msg.security.id021=Invalid Security Token
+msg.security.id022=Password should not contain 3 or more consecutive characters of the user login id
+
+specialChars=!@#%&_
+numericChars=0123456789
+upperChars=QWERTYUIOPASDFGHJKLZXCVBNM
+lowerChars=qwertyuiopasdfghjklzxcvbnm
+#
+# End of resources for "AppSecure Exception Message"
+#
+
+########### START Log4J #########################
+
+# set the root logger level to WARNING and to append to file F1 (defined later)
+log4j.category.com.ibm=DEBUG,F1,A1
+
+# setup F1 to append to a fixed file
+log4j.appender.F1=org.apache.log4j.FileAppender
+
+# setup F1 to log all messages with a fixed pattern
+log4j.appender.F1.layout=org.apache.log4j.PatternLayout
+log4j.appender.F1.layout.ConversionPattern=%d{dd MMM yyyy HH:mm:ss} [%t] %-5p %c %x - %m%n
+
+# setup A1 to append to a console
+log4j.appender.A1=org.apache.log4j.ConsoleAppender
+
+# setup A1 to log all messages with a fixed pattern
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+log4j.appender.A1.layout.ConversionPattern=%d{dd MMM yyyy HH:mm:ss} [%t] %-5p %c %x - %m%n
+########### START Log4J #########################
+
+######### START GSD ############
+
+#
+# resources for "AppSecure"
+#
+
+PwdExpiryLimit = 0
+SpecialCharacters = $?*/\<>^'
+PasswordDisableLimit = 10
+
+
+######### END GSD ############
+
+file.updated = File Updated Successfully!!!
+file.added = File Added Successfully!!!
+file.addedVersion=File Version Created Successfully!!!
+file.exists = File with same name already exists in submitted state!!!
+pendingFile.exists=File with same name already exists in Pending state!!!
+approvedFile.exists=File with same name already exists in Approved state!!!
+km.file.submitted = File Submitted For Approval.
+km.file.submition.error = Some Error Occurs on Submission.Please try again!!!
+km.file.approved = File Approved Successfully!!!
+km.file.rejected = File Rejected Successfully!!!
+km.file.approval.error = Some Error Occurs.Please try again!!! 
+km.no.file = No File Found !!!
+km.file.size=5242880
+km.file.size.exceeds = File Size Exceeds 5MB!!!
+km.file.exception = Exception Occurs While reading.Please try again!!!
+######### END GSD ############
+
+######### START Create Category ############
+
+category.create=A Record Is Created
+
+######### End Create Category ############
+
+######### View Favorites ###########
+favorites.viewFavorites=View Favorites
+favorites.SNO=S.No.
+favorites.categoryName=Category Name
+favorites.elementName=Element Name
+favorites.documentId=Document ID
+favorites.documentName=Document Name
+favorites.addedOn=Added On
+favorites.documentPath=Document Path
+favorites.uploadedDt=Uploaded Date
+
+######### Document Views ###########
+documentViews.documentViews=Most Viewed Documents
+documentViews.SNO=S.No.
+documentViews.documentId=Document ID
+documentViews.documentName=Document Name
+documentViews.count=No. of views
+documentViews.path=Document Path
+
+######### Start Edit Document ###########
+editDocument.documentId = Document Id
+editDocument.documentName=Document Name 
+editDocument.documentTitle=Document Title
+editDocument.documentLoc=Document Location
+editDocument.keywords = Keywords 
+editDocument.documentDesc=Document Desc
+editDocument.edit=Edit
+editDocument.title=Title
+editDocument.documentEndDt=Publishing End Date
+document.update.error=Error Occured While Editing Document Details
+document.delete.error=Error Occured While Deleting the Document
+document.download.error=Error Occured While Downloading the Document
+
+document.update=Document Details Edited Successfully
+######### End Edit Document ###########
+######### Start Edit Element ###########
+editElement.elementId = Element Id
+editElement.elementName=Element Name 
+editElement.elementLoc=Element Location
+editElement.elementDesc=Element Desc
+editElement.edit=Edit
+element.update.error=Error Occured While Editing Element Details
+element.delete.error=Error Occured While Deleting Element
+element.update= Details Edited Successfully
+element.not.deleted=Element cannot be deleted because user exists for the element 
+element.deletetion.not.possible=Element Deletion Can be Made Only Below Circle Level
+moveElement.not.possible=Element cannot be moved because users are created for inner elements
+copyElement.not.possible=Element cannot be Copied because Users are Created for Inner Elements
+######### End Edit Document ###########
+
+##########################################
+Superadmin=1
+LOBAdmin=5
+CircleAdmin=2
+CircleUser=3
+CircleCSR=4
+CategoryCSR=6
+ReportAdmin=7
+TSGUser=8
+#######################################
+Country=1
+LOB=2
+Circle=3
+Category=4
+Sub-Category=5
+Sub-Sub-Category=6
+#####Added by Atul - For Forgot password Anil######
+
+login.invalid.login=Invalid Login Id
+login.noEmailId=No Email Id assigned to User
+login.email=LMS_Administrator
+
+
+
+
+lms.user.create.mail.subject=LMS Account Details 
+lms.user.create.mail.body=Please find below LMS account credentials.
+SENDER.EMAIL = LMS_Administrator
+########## Configuring Escalation Hour ############
+
+
+
+### Added by Harpreet for Phase 2###
+
+
+
+viewAllFiles.viewArchivedFiles= Archived Documents
+viewAllFiles.publishing_end_dt= Archived Date
+viewAllFiles.publishing_end_date=Archiving Date
+viewAllUser.Partner=Partner
+updateUser.PartnerName=Partner Name
+
+report.not.generated = Report not generated
+
+######### Start userLoginStatus Reports ###########
+userLoginStatus.title=User Login Status Report
+userLoginStatus.toDate=Select To Date<FONT color="red"> *</FONT>
+userLoginStatus.fromDate=Select From Date<FONT color="red"> *</FONT>
+######### End userLoginStatus Reports ###########
+user.not.found=No User Found
+
+######### Start Locked User Report###########
+lockedUser.title=Locked User Report
+locktype.userlocked = User Locked
+locktype.passwordexpry = Password Expired
+
+######### End userLoginStatus Reports ###########
+######### Start userLoginCount Reports ###########
+userLoginCount.title=Circle Wise User Report
+######### End userLoginCount Reports ###########
+
+######### Start agentIdWise Reports ###########
+agentIdWise.title=Agent Wise CSR Report
+agentIdWise.partner= Select Partner
+######### End agentIdWise Reports ###########
+
+######### Start alertHistory Reports ###########
+alertHistory.title=Alert History Report
+alertHistory.circle= Select Circle 
+######### End alertHistory Reports ###########
+
+
+###########Waiver Matrix Template############
+##excel.template=C:/uploaded_file/Template/WaiverMatrixTemplate.xls
+excel.template=/LMS_kb_files2/waivermatrix/Template/WaiverMatrixTemplate.xls
+#############################################
+##############Excel Processing###############
+excel.authorization.error = You are not authorized to access this link
+excel.error1=Excel processing failed !!!
+excel.errorSize=Excel uploaded cannot exceed 4MB !!
+excel.tempateError=Uploaded excel file does not match the template !!!
+excel.location=/LMS_kb_files2/waivermatrix/
+#############################################
+####### Start of Bill Plans ###########  
+viewBillPlan.SNO= S.No.
+viewBillPlan.BillPlan= Bill Plan 
+viewBillPlan.BillPlanRemarks= Remarks
+####### End of Bill Plans ###########  
+
+####### Start of Company Details ######
+viewCompanyDetails.SCANNING_CODE=SCANNING CODE
+viewCompanyDetails.DT=DATE
+viewCompanyDetails.COMPANY_NAME=COMPANY NAME
+viewCompanyDetails.PARENT_NAME=PARENT NAME
+viewCompanyDetails.REMARKS=REMARKS
+viewCompanyDetails.ABBREVIATION=ABBREVIATION
+viewCompanyDetails.SERVICE_TAX_EXEMPTION=SERVICE TAX EXEMPTION
+viewCompanyDetails.HIGH_RISK_SEGMENT=HIGH RISK SEGMENT
+viewCompanyDetails.ACCOUNT_MANAGER=ACCOUNT MANAGER
+viewCompanyDetails.CODE=CODE
+viewCompanyDetails.REGIONAL_SALES_HEAD=REGIONAL SALES HEAD
+viewCompanyDetails.AUTHORIZED_SIGNATORY_NAME=AUTHORIZED SIGNATORY NAME
+viewCompanyDetails.REC_DATE=REC DATE
+viewCompanyDetails.DESIGNATION=DESIGNATION
+viewCompanyDetails.CONTACT_NO=CONTACT NO
+viewCompanyDetails.SECURITY_DEPOSIT=SECURITY DEPOSIT
+viewCompanyDetails.ITEMISED=ITEMISED
+viewCompanyDetails.ROAMING_RENTAL=ROAMING RENTAL
+viewCompanyDetails.CLIP=CLIP
+viewCompanyDetails.CALL_CONF=CALL CONF
+viewCompanyDetails.FAX_AND_DATA=FAX & DATA
+####### End of Company Details ######
+
+####### Start of Access Matrix Details ##########
+
+accessMatrix.SNo = S.No.
+accessMatrix.UserName = UserName
+accessMatrix.Permission = Allow Permission
+
+####### End of Access Matrix Details ##########
+####### Start of Bill Plan Details ###########  
+viewBillPlanDetails.BILL_PLAN_DESC = BILL PLAN
+viewBillPlanDetails.COMPONENT_ID = COMPONENT ID
+viewBillPlanDetails.COMPONENT_DESC = COMPONENT DESC
+viewBillPlanDetails.LOCAL_A2A = LOCAL A2A
+viewBillPlanDetails.LOCAL_A2A_CUG = LOCAL A2A CUG
+viewBillPlanDetails.LOCAL_A2M = LOCAL A2M
+viewBillPlanDetails.LOCAL_A2FL = LOCAL A2FL
+viewBillPlanDetails.STD_A2A_1 = STD A2A 1
+viewBillPlanDetails.STD_A2A_2 = STD A2A 2
+viewBillPlanDetails.STD_A2A_3 = STD A2A 3
+viewBillPlanDetails.STD_A2M_1 = STD A2M 1
+viewBillPlanDetails.STD_A2M_2 = STD A2M 2
+viewBillPlanDetails.STD_A2M_3 = STD A2M 3
+viewBillPlanDetails.STD_A2FL_1 = STD A2FL 1
+viewBillPlanDetails.STD_A2FL_2 = STD A2FL 2
+viewBillPlanDetails.STD_A2FL_3 = STD A2FL 3
+viewBillPlanDetails.ISD_ROW1 = ISD ROW1
+viewBillPlanDetails.ISD_GULF = ISD GULF
+viewBillPlanDetails.ISD_ROW2 = ISD ROW2
+####### End of Bill Plans ###########  
+CSR.Document.Report.Path=/LMS_kb_files2/LMS/Report/
+
+####### phase - 4  ######
+
+###### added by Kundan for Real Time Network Map#####
+createUser.TSGUser=A New TSG User Is Created
+networkFault.Logged=Network Fault Logged
+errors.networkFaultLoggingFailed=An Error Occured While Logging Network Fault
+errors.problem_desc_invalid=Enter valid Problem Decsription
+errors.area_affected_invalid=Enter valid Area Affected
+errors.resolutionTATHH=Enter valid Resolution Hours
+errors.resolutionTATMM=Enter valid Resolution Minutes between 0-60
+
+report.not.found=Report not found for the date
+viewNetworkFault.circle=Circle Name
+viewNetworkFault.affectedArea=Areas Affected
+viewNetworkFault.problem=Network Fault Description
+viewNetworkFault.reportedTime=Logged On
+viewNetworkFault.tat=TAT (HH:MM)
+viewNetworkFault.status=Status
+
+
+###### added by Ajil for Real Time Network Map#####
+###########Start of CSD Configuration ##############
+
+CSD.Configuration.message=Message<FONT color="red"> *</FONT>
+CSD.Configuration.title=CSD User Configuration 
+CSD.Configuration.mobileNumber= Mobile Number<FONT color="red"> *</FONT>
+CSD.Configuration.userList= CSD User List<FONT color="red"> *</FONT>
+########### End of CSD Configuration ##############
+
+###########   Network Fault Report  ############
+networkFaultReport.title=Network Fault Report
+
+networkFaultReport.select.lob= Select LOB
+networkFaultReport.select.circle= Select Circle
+networkFaultReport.select.date= Select Date
+networkFaultReport.select.allCircle=---- All Cicle ----
+networkFaultReport.select.allLob=---- All LOB ----
+
+networkFaultReport.report.type=Report Type
+networkFaultReport.search.Location=Search Location
+networkFaultReport.noRecords=No Records Found
+###########  End of Network Fault Report   ############
+###########   Network Impact Report  ############
+networkImpactReport.title=Network Impact Report
+
+networkImpactReport.select.lob= Select LOB
+networkImpactReport.select.circle= Select Circle
+networkImpactReport.select.date= Select Date
+networkImpactReport.select.allCircle=---- All Cicle ----
+networkImpactReport.report.type=Report Type
+networkImpactReport.search.Location=Search Location
+networkImpactReport.noRecords=No Records Found
+###########  End of Impact Fault Report   ############
+Interim2007.filepath=/LMS_kb_files2/LMS/Temp/
+
+#####Auto Complete#######
+total.search.results = 10
+initial.characters.allowed = 2
+
+
+##### Configure Quick Links #######
+linkupload.status=Links Updated
+linkupload.failure=Error occured while uploading Links!!!
+linkupload.selectLOB=Select LOB
+linkupload.selectCricle =Select Circle 
+linkupload.topLink = Configure Top Link
+##### Configure Quick Links #########
+
+####### Banner Upload ######## 
+addBanner.heading=Upload Banner
+banner.add=Please select image to be uploaded
+addBanner.selectPage=Select Page<FONT color="red"> *</FONT>
+addBanner.selectImage=Browse Banner<FONT color="red"> *</FONT>
+addBanner.success=The Image is uploaded successfully.
+addBanner.failure=Error occured while uploading banner.
+addBanner.bannerName.loginPage=/LMS/BannerImageServlet?image=loginPage
+addBanner.bannerName.csrHomePage=/LMS/BannerImageServlet?image=csrHomePage
+addBanner.db.bannerName.loginPage=loginPage
+addBanner.db.bannerName.csrHomePage=csrHomePage
+addBanner.selectReport=Select Report Type<FONT color="red"> *</FONT>
+
+addBanner.size=500000
+
+addBanner.size=1000000
+
+addBanner.size.failure=Error occurred while uploading banner. File size exceeds limit.
+####### Banner Upload ########
+latestUpdates.timeDuration=48 hour
+########### Reports ###########
+reports.path.contentStatusReport=/kb_files2/LMS/Report/Files/contentStatusReport/
+reports.path.obsoleteIdsReport=/kb_files2/LMS/Report/Files/obsoleteIdsReport/
+reports.path.contentToBeExpiredReport=/kb_files2/LMS/Report/Files/contentToBeExpiredReport/
+reports.path.scrollerUpdationReport=/kb_files2/LMS/Report/Files/scrollerUpdationReport/
+reports.path.noUsageReport=/kb_files2/LMS/Report/Files/noUsageReport/
+reports.path.documentHitCountReport=/kb_files2/LMS/Report/Files/documentHitCountReport/
+reports.path.iportalFeedbackReport=/kb_files2/LMS/Report/Files/iportalFeedbackReport/
+reports.path.userLoginStatusReport=/kb_files2/LMS/Report/Files/userLoginStatusReport/
+########## Reports #############
+lms.dialer.ws.username=lmswebuser
+lms.dialer.ws.password=o/I+VOkNjhMGkJhheWLnow==
+
+##############LMS Bulk Upload################################
+lms.upload.invalid.excel = Invalid file format, please upload correct excel.
+lms.bulk.assignment.success=Assignments uploaded successfully.
+lms.bulk.user.success=Users created successfully.
+lms.bulk.lead.upload.success=Lead uploaded successfully. To check logs 
+lms.bulk.assignment.failed=Data upload failed or partial insertion. To check logs 
+lms.bulk.assignment.excel.only=Please upload xls file only. 
+lms.bulk.upload.error.log = /lms_common/LMS2/BulkUploadErrLogs/
+lms.bulk.upload.download.template = /lms_common/LMS2/BulkUploadTemplate/
+lms.bulk.upload.template.open.lead.register = bulkOpenLeadRegistration.xls
+lms.bulk.upload.template.qualified.lead.register = bulkQualifiedLeadRegistration.xls
+lms.bulk.upload.template.lead.assignment = bulkAssignmentMatrix.xls
+lms.bulk.upload.template.user.creation = bulkUserCreation.xls
+lms.bulk.upload.template.agency = bulkAgencyAssignment.xls
+lms.bulk.upload.template.subStatus=subStatus.xls
+lms.bulk.upload.template.subSubStatus=subSubStatus.xls
+lms.bulk.upload.invalid.excel = Invalid excel. Please download the template and upload again.
+lms.bulk.upload.error = Error Occurred. Please check there could be duplicate data in sheet.
+lms.bulk.assignment.error = Error Occurred. Please check there could be duplicate primary or secondary assignment.
+lms.bulk.upload.blank.excel = Please check excel sheet is empty. 
+
+##############################################################
+##### Lead Assignment #############
+view.assignedLeads = List of Assigned Leads
+view.leadID = Lead ID
+view.productName = Product
+view.primaryUser = Primary User
+search.assignedLeads = Search Assigned Leads
+escalation.assignedLeads = Escalation Assigned Leads 
+escalation.feasibility = Feasibility Escalation
+view.leadDetail = View Lead Detail
+subStatus.success=Sub Status updated successfully.
+subStatus.system=Sub Status cannot be updated.
+subSubStatus.system=SubSub Status cannot be updated.
+subStatus.addsuccess=Sub Status created successfully.
+subSubStatus.addsuccess= Sub Sub status added successfully.
+subStatus.alreadysuccess=Sub Status already exists
+subSubStatus.alreadysuccess=Sub Sub Status already exists
+subSubStatus.success=SubSub Status updated successfully.
+subStatus.failure=Sub Status Cannot be updated.
+subSubStatus.failure=SubSub Status Cannot be updated.
+view.subStatusDetail = View SubStatus Detail
+view.subSubStatusDetail = View SubSubStatus Detail
+search.feasibilityLeads = Search for Feasibility
+view.feasibilityLeads = Leads for Feasibility Check
+close.lead = Lead has been closed successfully
+forward.lead = Lead has been forwarded successfully
+Qualify.feasible.lead = Feasibility check has been done successfully
+assignmentMatrix.creation.success = Matrix has been created successfully
+assignmentMatrix.deletion.success = Matrix has been deleted successfully
+
+new.feasibilityLeads = View Feasible Leads
+view.newfeasibilityLeads = View Feasible Leads Check
+######## Added by Parnika for Product Mapping ##################
+createProductMapping.create= Create Product Mapping
+createProductMapping.selectproductLob= Product LOB
+createProductMapping.createNew= Create New
+createProductMapping.selectproductName= Product Name
+createProductMapping.newProductLob= Product LOB Name
+createProductMapping.newProductName= Product Name
+createProductMapping.newProductSynonym= Product Synonym
+createProductMapping.synonymList= Synonym List
+###### End of changes by Parnika  #################
+
+lms.bulk.user.password=Airtel@123a
+
+######## Added by Parnika for Agency Create/Edit ##################
+createAgency.create= Create Agency
+createAgency.agencyName= Agency Name
+createAgency.agencyDescription= Agency Description
+createAgency.selectCircles= Select Circle(s)
+createAgency.edit= Edit Agency
+createAgency.selectAgency= Select Agency
+editAgency.mappedCircles= Mapped Circle(s)
+editAgency.remainingCircles= Other Circle(s)
+createAgency.agencyPath= URL Path
+createAgency.agencyClass= Class Name
+createAgency.agencyUsername= User Name
+createAgency.agencyPassword= Password
+createAgency.isDefault= Default Agency
+###### End of changes by Parnika for Agency Creation  #################
+
+######## Added by Parnika for View Reports ##################
+viewReports.heading= View Reports
+viewReport.heading= View Report
+viewReports.date= Select Date
+viewReports.type= Report Type
+###### End of changes by Parnika for View Reports #################
+######Added by srikant
+viewLogs.heading = View Logs
+viewLogs.date = Select Date
+viewLogs.type = Log Type
+SMSlogs.notFound = SMSLogs Data not found
+Emaillogs.notFound = EmailLogs not found
+Uploadfilelogs.notFound = Upload/Download Filelogs not found
+Usermstrhistlogs.notFound = UserMstrHistlogs not found
+viewLogs.startDate = Start Date
+viewLogs.endDate = End Date
+logs.not.found = Logs not found for given date
+######## Added by Parnika for Download Master Data##################
+downloadData.heading= Download Master Data
+downloadData.datatype= Select Type
+downloadData.lobtype= LOB Type
+downloadData.selectlobtype= SELECT LOB TYPE IF YOU WANT TO DOWNLOAD MASTER DATA FOR CIRCLE, CITY, ZONE, CITYZONE, RSU, PINCODE OR AUTO ASSIGNMENT MATRIX FOR PARTICULAR LOB TYPE ONLY.
+
+lms.telemedia.productLobId = 2
+lms.4G.productLobId = 24
+lms.dth.productLobId = 5
+
+viewReports.path=/lms_common/LMS2/Report/
+path.uploadedTempFile = /lms_common/LMS2/Docs/uploadedTempFile/
+records.limit.days= 2
+#For production
+sms.xml.mb.ip=10.5.45.39
+sms.xml.mb.port=55000
+sms.xml.mb.userid=wel2lms
+sms.xml.mb.pass = WCOPvRf9EVE=
+sms.xml.mb.src=A$-AIRLMS
+
+mail.smtp.host = 10.5.128.146
+email.from = LMS_Administrator
+
+#For Testing
+#sms.xml.mb.ip=10.5.176.22
+#sms.xml.mb.port=55000
+#sms.xml.mb.userid=fhilms
+#sms.xml.mb.pass =O9X9LGfTHUo=
+#sms.xml.mb.src=AD-ILMS
+############ Added by Parnika for Duplicate Leads Logic ###############
+
+duplicate.open.logic=Y
+duplicate.open.daywise=Y
+duplicate.open.days=1
+duplicate.open.productwise=Y
+
+duplicate.qualified.logic=Y
+duplicate.qualified.daywise=Y
+duplicate.qualified.days=1
+duplicate.qualified.productwise=Y
+
+
+duplicate.onzee.logic=Y
+duplicate.onzee.daywise=Y
+duplicate.onzee.days=1
+duplicate.onzee.productwise=Y
+
+duplicate.exclude=(500,600,700,710)
+
+############ End of changes by Parnika for Duplicate Leads Logic ###############
+
+######### Added by Parnika for File size  #####################
+lms.bulk.upload.invalid.filesize = Please upload not more than 10000 records.
+
+############## End of changes by Parnika ######################
+
+
+######## Added by Bhaskar for Assignment Matrix Download ##################
+assignmentDownload.heading= Bulk Assignment Matrix Download
+assignmentDownload.name= Circle Type Name
+assignmentDownload.lobName=Lob Type
+assignmentDownload.userType=User Type
+assignmentDownload.NotFound=No Data Found
+user.CircleZoneFlag=Z
+user.CityZoneFlag=CZ
+userMasterDownload.heading=User Master Download
+fidCreation.heading= FID Creation
+
+
+###### End of changes by Bhaskar for Assignment Matrix Download #################
+
+
+
+#########Added by aman##########################
+createCircle.cedCircle=Create/Edit/Delete Circle
+createCircle.viewCircle= View Circle
+createCircle.lobType= LOB Type
+createCircle.circleName= Circle Name
+createCircle.circleDesc= Circle Description
+
+
+lms.bulk.upload.template.zone.create = bulkZoneCreation.xls
+lms.bulk.upload.template.city=bulkCityCreation.xls
+lms.bulk.upload.template.cityZone=bulkCityZoneCreation.xls
+lms.bulk.upload.template.pinCode=bulkPinCodeUpload.xls
+lms.bulk.upload.template.rsuCode=bulkRSUUpload.xls
+lms.bulk.upload.template.autoAssignmntUpload= bulkAutoAssignmentMatrixUpload.xls
+lms.bulk.upload.template.channelPartner=bulkChannelPartnerUpload.xls
+lms.bulk.upload.template.state= bulkStateUpload.xls
+lms.bulk.upload.template.agency = bulkAgencyAssignment.xls
+lms.bulk.upload.template.WorkFlowAutoAssignmnt= bulkWorkFlowAutoAssignmentMatrixUpload.xls
+lms.bulk.upload.template.channelid= bulkChannelIdUpload.xls
+lms.bulk.zone.success=Zones uploaded successfully.
+lms.bulk.upload.success=Upload complete.To check logs
+lms.bulk.upload.invalid.excel = Invalid excel. Please download the template and upload again.
+lms.bulk.upload.fail = Upload Failed.
+lms.bulk.upload.template.channePartnerCapability= bulkChannelPartnerCapability.xls
+lms.bulk.upload.template.EscalationUpload= EscalationUpload.xls
+
+lms.schema.bulk.download=LMS2
+#beeru
+######################end of changes by aman#####################################
+
+
+########### Added by Parnika for LMS Phase 2 Create User ##############
+createUser.LobType= Select LOB <FONT color="red"> *</FONT>
+createUser.selectCircles= Select Circle(s) <FONT color="red"> *</FONT>
+createUser.CoordinatorType= Select Zone Type <FONT color="red"> *</FONT>
+user.CircleZoneFlag=Z
+user.CityZoneFlag=CZ
+
+############## End of changes by Parnika ######################
+
+######### Added by Parnika for Lead Capture Auto Assignment  #####################
+lms.online.lead.qualified=Y
+lms.online.lead.auto=1
+lms.online.lead.normal=0
+
+############## End of changes by Parnika ######################
+######### Added by pratap restricted product to display on screen  #####################
+lms.restricted.product.list=0
+############## End of changes by pratap ######################
+REPORT_FILE_LOCATION=/lms_common/LMS2/Report/Online/
+######### added by amarjeet 
+lms.leadRegisteration.template = 4
+lms.4GleadRegisteration.template = 6
+lms.feasibilityWiredleadSMS.template =7
+lms.feasibilityUnwiredleadSMS.template = 8
+############## Added by Parnika Flag for sending SMS to customer through ONZE, set Y for sending sms  #############
+lms.online.lead.sms=Y
+############## End of changes By Parnika #################
+
+## added parameter for for date and sms by amarjeet
+view.feasible.leads.no.of.days = viewFeasibleLeads_noOfdays
+feasible.leads.no.of.days=feasibleLeads_noOfDays
+assigned.leads.no.of.days=assignedLeads_noOfDays
+finalUpdate.no.of.days=finalUpdate_noOfDays
+assigned.escalation.no.of.days=assignedEscalation_noOfDays
+feasible.escalation.no.of.days=feasibleEscalation_noOfDays
+mtd.report.no.of.days = mtdReport_noOfDays
+lifeCycle.report.no.of.days = lifeCycleReport_noOfDays
+leadRegisteration.smsFlag = leadRegisterationSmsFlag
+4GleadRegisteration.smsFlag = 4GleadRegisterationSmsFlag
+feasibilitylead.smsFlag = feasibilityleadSmsFlag
+feasibilitylead.circle.smsFlag = feasibilityCircleSmsFlag
+dashboard.report.no.of.days = dashboardReport_noOfDays
+iDOC.report.no.of.days=iDOCReport_noOfDays
+lead.search.dialer.GisUrl  = leadSearchGISURL
+lead.search.dialer.GisUrl.UserPass = GisUserPass
+Assignment.approval.activate.flag=ASSIGNMENT_APPROVAL_FLAG
+# added by Neetika
+view.week=Duration 
+view.submittedLead= Total Leads Submitted
+view.createdLead= Total Leads Created
+view.senttoDialerLeads= Total Leads Sent to Dialler
+view.qualifiedLeads= Total Leads Qualified
+view.feasibilityLeads= Total Leads in Feasibility
+view.leadSubStatus= Existing Sub Status
+view.leadSubSubStatus=Existing Sub SubStatus
+view.AssignedLeads= Total Assigned Leads
+view.Approvals= Total Pending Approvals
+dashboard.heading= DashBoard Report
+viewiDOCReports.heading= Leads iDOC Report 
+dashboard.restriction= Dash Board is restricted in the time range 
+dailyreport.days=7
+reportConfiguration.heading= Report Configuration
+reportApprovers.heading= Assignment Matrix Approver Configuration
+#in 24 hr now moved to Dataase Configuration Details table
+#hourlyreport.starthour=9
+#dashboard.restrictedtime=17-18
+submitReport.heading=Alert Configuration
+submitReport1.heading= Sub Status Report
+submitReport2.heading= SubSub Status Report
+alerts.success=Alert Configuration Saved
+alerts.failure=Alert Configuration Could Not be Saved!
+channel.partner=10

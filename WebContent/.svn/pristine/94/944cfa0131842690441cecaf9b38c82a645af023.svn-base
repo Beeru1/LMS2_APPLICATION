@@ -1,0 +1,57 @@
+BODY {
+	BACKGROUND: #ffffff; MARGIN: 0px; COLOR: black
+}
+INPUT.searchbox {
+	PADDING-LEFT: 4px; FONT-WEIGHT: normal; FONT-SIZE: 11px; BACKGROUND: white; WIDTH: 94px; COLOR: black; MARGIN-RIGHT: 5px; PADDING-TOP: 2px; FONT-FAMILY: Arial, helvitica
+}
+A.newstext:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 1.2; FONT-FAMILY: Trebuchet MS,arial, helvetica
+}
+A.newstext:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 1.2; FONT-FAMILY: Trebuchet MS,arial, helvetica
+}
+A.newstext:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 1.2; FONT-FAMILY: Trebuchet MS,arial, helvetica
+}
+A.newstext:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 1.2; FONT-FAMILY: Trebuchet MS,arial, helvetica
+}
+.footernavtext {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #ffffff; LINE-HEIGHT: 20px; FONT-FAMILY: arial,helvetica
+}
+.sidenavheader {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: verdana,helvetica, sans-serif
+}
+A.sidenav {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #f3f7ff; FONT-FAMILY: verdana,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenav:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #f3f7ff; FONT-FAMILY: verdana,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenav:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #f3f7ff; FONT-FAMILY: verdana,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenav:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #f3f7ff; FONT-FAMILY: verdana,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenav:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: verdana,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenav:active {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #f3f7ff; FONT-FAMILY: verdana,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenavselected {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #8bc2fb; FONT-FAMILY: arial,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenavselected:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #8bc2fb; FONT-FAMILY: arial,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenavselected:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #8bc2fb; FONT-FAMILY: arial,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenavselected:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #8bc2fb; FONT-FAMILY: arial,helvetica,sans-serif; TEXT-DECORATION: none
+}
+A.sidenavselected:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #8bc2fb; FONT-FAMILY: arial,helvetica,sans-serif; TEXT-DECORATION: none
+}

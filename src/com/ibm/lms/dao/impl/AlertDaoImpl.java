@@ -1,0 +1,368 @@
+package com.ibm.lms.dao.impl;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import com.ibm.lms.common.DBConnection;
+import com.ibm.lms.dao.AlertDao;
+import com.ibm.lms.dto.AlertDTO;
+import com.ibm.lms.dto.BulkUploadMsgDto;
+import com.ibm.lms.dto.LeadDetailsDTO;
+import com.ibm.lms.exception.DAOException;
+import com.ibm.lms.exception.LMSException;
+import com.ibm.lms.services.impl.LeadRegistrationServiceImpl;
+
+
+
+public class AlertDaoImpl implements AlertDao
+{
+	private static final Logger logger;
+
+	static {
+
+		logger = Logger.getLogger(LeadRegistrationServiceImpl.class);
+	}
+public static final String SQL_SELECT_EMAIL_CONFIG1="SELECT ALERT_ID FROM ALERT_EMAIL_CONFIG WHERE ALERT_ID=? WITH UR";
+public static final String SQL_SELECT_EMAIL_CONFIG="SELECT ALERT_ID FROM ALERT_EMAIL_CONFIG WHERE ALERT_ID=? and SOURCE_TYPE=? WITH UR";
+//public static final String SQL_SELECT_EMAIL_CONFIG2="SELECT ALERT_ID,ALERT_TYPE,SOURCE_TYPE,THRESHOLD_COUNT, THRESHOLD_PERIOD,EMAIL_IDS,MOBILE_NUMBERS,STATUS FROM ALERT_EMAIL_CONFIG WHERE ALERT_ID=? AND SOURCE_TYPE=? AND ALERT_TYPE=? AND THRESHOLD_COUNT=? AND THRESHOLD_PERIOD=? AND EMAIL_IDS=? AND MOBILE_NUMBERS=? WITH UR";
+//public static final String SQL_UPDATE_ALERT_EMAIL_CONFIG="UPDATE ALERT_EMAIL_CONFIG SET STATUS='A' WHERE ALERT_ID=?  AND ALERT_TYPE=? AND EMAIL_IDS=? AND MOBILE_NUMBERS=? AND THRESHOLD_COUNT=? AND THRESHOLD_PERIOD=? AND STATUS='D' WITH UR"; 
+//public static final String SQL_UPDATE_ALERT_EMAIL_CONFIG2="UPDATE ALERT_EMAIL_CONFIG SET STATUS='A' WHERE ALERT_ID=? AND SOURCE_TYPE=? AND ALERT_TYPE=? AND EMAIL_IDS=? AND MOBILE_NUMBERS=? AND THRESHOLD_COUNT=? AND THRESHOLD_PERIOD=? AND STATUS='D' WITH UR";
+public static final String SQL_UPDATE_ALERT_EMAIL="UPDATE ALERT_EMAIL_CONFIG SET  MSG_TEMPLATE=?,ALERT_TYPE=? , EMAIL_IDS=? , MOBILE_NUMBERS=? , THRESHOLD_COUNT=? , THRESHOLD_PERIOD=? , SUBJECT_TEMPLATE =? , SMS_TEMPLATE =?,status=? WHERE ALERT_ID=? and SOURCE_TYPE=? WITH UR"; 
+public static final String SQL_HIST_ALERT_EMAIL="INSERT INTO ALERT_EMAIL_CONFIG_HIST( ALERT_ID, ALERT_TYPE, SOURCE_TYPE, SUBJECT_TEMPLATE, MSG_TEMPLATE, THRESHOLD_COUNT, THRESHOLD_PERIOD, EMAIL_IDS, MOBILE_NUMBERS, STATUS, CREATED_TIME, SMS_TEMPLATE, HIST_TIME)   select  ALERT_ID, ALERT_TYPE, SOURCE_TYPE, SUBJECT_TEMPLATE, MSG_TEMPLATE, THRESHOLD_COUNT, THRESHOLD_PERIOD, EMAIL_IDS, MOBILE_NUMBERS, STATUS, CREATED_TIME, SMS_TEMPLATE,current timestamp from ALERT_EMAIL_CONFIG where alert_id=? and SOURCE_TYPE=? with ur ";
+
+public static final String SQL_SELECT_ALERT_DETAILS="SELECT SUBJECT_TEMPLATE,MSG_TEMPLATE,THRESHOLD_COUNT,THRESHOLD_PERIOD,EMAIL_IDS,MOBILE_NUMBERS,STATUS,SMS_TEMPLATE FROM ALERT_EMAIL_CONFIG WHERE ALERT_ID=? WITH UR";
+public static final String SQL_SELECT_ALERT_DETAILS1="SELECT SOURCE_TYPE,SUBJECT_TEMPLATE,MSG_TEMPLATE,THRESHOLD_COUNT,THRESHOLD_PERIOD,EMAIL_IDS,MOBILE_NUMBERS,STATUS,SMS_TEMPLATE FROM ALERT_EMAIL_CONFIG WHERE ALERT_ID=? WITH UR";
+
+public static final String SQL_INSERT_ALERT_EMAIL_CONFIG="INSERT INTO ALERT_EMAIL_CONFIG(ALERT_ID,ALERT_TYPE,SOURCE_TYPE,THRESHOLD_COUNT,THRESHOLD_PERIOD,EMAIL_IDS,MOBILE_NUMBERS,STATUS,MSG_TEMPLATE,SUBJECT_TEMPLATE,SMS_TEMPLATE) "+
+ 														 "VALUES(?,?,?,?,?,?,?,?,?,?,?)	";
+
+
+//Added by srikant 
+private static AlertDaoImpl alertDaoImpl=null;
+
+private AlertDaoImpl(){
+	
+}
+
+public static AlertDaoImpl alertDaoInstance()
+{
+	if(alertDaoImpl==null)
+	{
+		alertDaoImpl=new AlertDaoImpl();
+	}
+	return alertDaoImpl;
+	
+}
+public int insertAlert(AlertDTO alertsDto) throws DAOException
+    {
+    	Connection con=null;
+    	boolean isInsert=false;
+        PreparedStatement ps=null;
+        int alertId=alertsDto.getAlertId();
+        String alertType=alertsDto.getAlertType();
+        String source=alertsDto.getSource();
+        int threshold_count=alertsDto.getThreshold_count();
+        int threshold_period=alertsDto.getThreshold_period();
+        String email=alertsDto.getEmail();
+        String sms=alertsDto.getSms();
+        String msg=alertsDto.getMessage();
+        String subject=alertsDto.getSubjectTemplate();
+        String smsMsg=alertsDto.getMessage1();
+        String status=alertsDto.getStatus();
+        ResultSet rs=null;
+        int result=0;
+            
+        try
+        {   
+        	con=DBConnection.getDBConnection();
+        	//logger.info("insertAlert==");
+        	ps=con.prepareStatement(SQL_INSERT_ALERT_EMAIL_CONFIG);
+        	//ALERT_ID,ALERT_TYPE,SOURCE_TYPE,THRESHOLD_COUNT,THRESHOLD_PERIOD,EMAIL_IDS,MOBILE_NUMBERS,STATUS,MSG_TEMPLATE
+        	ps.setInt(1, alertId);
+			ps.setString(2,alertType);
+			ps.setString(3,source);
+			ps.setInt(4,threshold_count);
+			ps.setInt(5,threshold_period);
+			ps.setString(6,email);
+			ps.setString(7,sms);
+			ps.setString(8,status);
+			ps.setString(9,msg);
+			ps.setString(10,subject);
+			ps.setString(11,smsMsg);
+			result=ps.executeUpdate();
+			//logger.info("result"+result);
+       
+    } //end of try
+	catch (SQLException e)
+      {
+		e.printStackTrace();
+		logger.error("SQL Exception occured while user status update."+ "Exception Message: "+ e.getMessage());
+		throw new LMSException("SQLException: " + e.getMessage(), e);
+	  }
+	catch (Exception e) 
+	{
+		e.printStackTrace();
+		logger.error("Exception occured while user status update."+ "Exception Message: "+ e.getMessage());
+		throw new LMSException("Exception: " + e.getMessage(), e);
+	} 
+	finally {
+		try {
+			  DBConnection.releaseResources(con, ps, null);
+		    } 
+		catch (Exception e) 
+		{
+			logger.error("DAO Exception occured while user status update."+ "Exception Message: "+ e.getMessage());
+			throw new LMSException("DAO Exception: " + e.getMessage(), e);
+		}
+	        }//end of finally
+	return result;
+
+    }
+
+public boolean checkDuplicateAlert(AlertDTO alertsDto) throws DAOException
+	{
+		
+		logger.info("Entered checkDuplicateAlert for table:ALERT_EMAIL_CONFIG");
+
+		Connection con = null;
+		PreparedStatement pst = null;
+		PreparedStatement pst1=null;
+		ResultSet rs = null;
+		boolean isExist = false;
+		int alertId=alertsDto.getAlertId();
+        String alertType=alertsDto.getAlertType();
+        String source=alertsDto.getSource();
+        int threshold_count=alertsDto.getThreshold_count();
+        int threshold_period=alertsDto.getThreshold_period();
+        String email=alertsDto.getEmail();
+        String sms=alertsDto.getSms();
+        
+		try
+		{
+			con = DBConnection.getDBConnection();	
+		
+			if(alertId==3)
+			{
+			pst=con.prepareStatement(SQL_SELECT_EMAIL_CONFIG);
+			pst.setInt(1, alertId);
+			pst.setString(2,source);
+			}
+			else 
+			{
+			pst=con.prepareStatement(SQL_SELECT_EMAIL_CONFIG1);
+			pst.setInt(1, alertId);
+		
+			}
+			rs=pst.executeQuery();
+				if (rs.next()) 
+				{
+					//logger.info("rs block");
+					/*String status=rs.getString("STATUS");
+					if(status.equals("D"))
+					{*/
+						logger.info("entering update function**********");
+						updateAlert(alertsDto);
+					/*}
+					logger.info("rs block");*/
+					isExist = true;
+					
+				}
+		} 
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+			e.printStackTrace();
+			logger.error(
+					"SQL Exception occured while checkDuplicateAlert."
+					+ "Exception Message: "
+					+ e.getMessage());
+			throw new LMSException("SQLException: " + e.getMessage(), e);
+		} catch (DAOException e) {
+			e.printStackTrace();
+			logger.error(
+					"SQL Exception occured while checkDuplicateAlert."
+					+ "Exception Message: "
+					+ e.getMessage());
+			throw new DAOException("SQLException: " + e.getMessage(), e);
+		}
+		catch (Exception e) {
+
+			logger.error(
+					"Exception occured while checkDuplicateAlert."
+					+ "Exception Message: "
+					+ e.getMessage());
+			throw new LMSException("Exception: " + e.getMessage(), e);
+		} finally {
+			try {
+				DBConnection.releaseResources(con, pst, rs);
+			} catch (Exception e) {
+				logger.error(
+						"DAO Exception occured while checkDuplicateAlert."
+						+ "Exception Message: "
+						+ e.getMessage());
+				throw new LMSException("DAO Exception: " + e.getMessage(), e);
+			}
+		}
+		logger.info("isExist"+isExist);
+		return isExist;
+	}
+	
+
+public boolean updateAlert(AlertDTO alertsDto) throws DAOException
+{
+	logger.info("Entered checkDuplicateAlert for table:ALERT_EMAIL_CONFIG");
+
+	Connection con = null;
+	PreparedStatement ps1=null;
+	ResultSet rs1 = null;
+	boolean isExist = false;
+	int alertId=alertsDto.getAlertId();
+    String alertType=alertsDto.getAlertType();
+    String source=alertsDto.getSource();
+    int threshold_count=alertsDto.getThreshold_count();
+    int threshold_period=alertsDto.getThreshold_period();
+    String email=alertsDto.getEmail();
+    String sms=alertsDto.getSms();
+    String message=alertsDto.getMessage();
+    String subject=alertsDto.getSubjectTemplate();
+    String smsMsg=alertsDto.getMessage1();
+    String status=alertsDto.getStatus();
+    int i = 0;
+	try
+	{
+		con = DBConnection.getDBConnection();	
+	//if (alertId==3)
+	//{	
+		
+		ps1=con.prepareStatement(SQL_HIST_ALERT_EMAIL);
+		//MSG_TEMPLATE=?,ALERT_TYPE=? , EMAIL_IDS=? , MOBILE_NUMBERS=? , THRESHOLD_COUNT=? , THRESHOLD_PERIOD=? , SUBJECT_TEMPLATE =? , SMS_TEMPLATE =?
+		
+		ps1.setInt(1, alertId);
+		ps1.setString(2,source);
+		
+		i = ps1.executeUpdate();
+		logger.info("hist query is************"+ ps1.toString());
+		ps1.clearParameters();
+		ps1=con.prepareStatement(SQL_UPDATE_ALERT_EMAIL);
+		//MSG_TEMPLATE=?,ALERT_TYPE=? , EMAIL_IDS=? , MOBILE_NUMBERS=? , THRESHOLD_COUNT=? , THRESHOLD_PERIOD=? , SUBJECT_TEMPLATE =? , SMS_TEMPLATE =?
+		ps1.setString(1,message);
+		ps1.setString(2,alertType);
+		ps1.setString(3,email);
+		ps1.setString(4,sms);
+		ps1.setInt(5,threshold_count);
+		ps1.setInt(6,threshold_period);
+		ps1.setString(7, subject);
+		ps1.setString(8,smsMsg);
+		ps1.setString(9,status);
+		ps1.setInt(10, alertId);
+		ps1.setString(11,source);
+	
+	//}
+	/*else 
+	{
+		logger.info("inside update function***************");
+		ps1=con.prepareStatement(SQL_UPDATE_ALERT_EMAIL_CONFIG);
+		ps1.setInt(1, alertId);
+		//ps1.setString(2,source);
+		ps1.setString(2,alertType);
+		ps1.setString(3,email);
+		ps1.setString(4,sms);
+		ps1.setInt(5,threshold_count);
+		ps1.setInt(6,threshold_period);
+		ps1.executeUpdate();
+		
+	}*/
+   logger.info("update query is************"+ ps1.toString());
+   i = ps1.executeUpdate();
+  
+} catch (SQLException e)
+{
+	e.printStackTrace();
+	e.printStackTrace();
+	logger.error("SQL Exception occured while updateAlert."+ "Exception Message: "	+ e.getMessage());
+	throw new LMSException("SQLException: " + e.getMessage(), e);
+} catch (DAOException e) {
+
+	logger.error("SQL Exception occured while updateAlert2." + "Exception Message: "+ e.getMessage());
+	throw new DAOException("SQLException: " + e.getMessage(), e);
+}
+catch (Exception e) {
+
+	logger.error("Exception occured while updateAlert3."	+ "Exception Message: "	+ e.getMessage());
+	throw new LMSException("Exception: " + e.getMessage(), e);
+} finally {
+	try {
+		DBConnection.releaseResources(con, ps1, rs1);
+	} catch (Exception e) {
+		logger.error("DAO Exception occured while updateAlert4." + "Exception Message: " + e.getMessage());
+		throw new LMSException("DAO Exception: " + e.getMessage(), e);
+	}
+}
+if (i>0)
+isExist=true;
+return isExist;
+}
+
+public  ArrayList<AlertDTO> getAlertDetails(int alertId) throws DAOException
+{
+	Connection con = null;
+	PreparedStatement ps = null;  
+	ResultSet rs = null;
+	ArrayList<AlertDTO> alertList = new ArrayList<AlertDTO>();
+	AlertDTO dto = null;
+	try {
+		con = DBConnection.getDBConnection();
+		if(alertId==3)
+		{
+		ps = con.prepareStatement(SQL_SELECT_ALERT_DETAILS1);
+		}
+		else
+		{
+			ps = con.prepareStatement(SQL_SELECT_ALERT_DETAILS);	
+		}
+	
+		ps.setInt(1,alertId);
+		rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			dto = new AlertDTO();
+			dto.setAlertType(rs.getString("ALERT_TYPE"));
+			dto.setSource(rs.getString("SOURCE_TYPE"));     
+			dto.setSubjectTemplate(rs.getString("SUBJECT_TEMPLATE"));    
+			dto.setMessage(rs.getString("MSG_TEMPLATE"));                                                                                                                                                                       
+			dto.setThreshold_period(rs.getInt("THRESHOLD_PERIOD"));   
+			dto.setEmail(rs.getString("EMAIL_IDS"));     
+			dto.setSms(rs.getString("MOBILE_NUMBERS"));    
+			dto.setStatus(rs.getString("STATUS"));   
+			dto.setMessage1(rs.getString("SMS_TEMPLATE"));  
+			dto.setThreshold_count(rs.getInt("THRESHOLD_COUNT")); 
+			
+			alertList.add(dto);
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+		throw new DAOException("Exception occured while getting alert list:  "+ e.getMessage(),e);
+	} finally {
+		try {
+			DBConnection.releaseResources(con, ps, rs);
+		} catch (Exception e) {				
+			throw new DAOException(e.getMessage(), e);
+		}
+	}
+	return alertList;
+}
+
+
+ 
+}
+
+
+
+

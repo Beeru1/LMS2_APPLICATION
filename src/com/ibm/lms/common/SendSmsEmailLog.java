@@ -1,0 +1,74 @@
+package com.ibm.lms.common;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import org.apache.log4j.Logger;
+
+import com.ibm.lms.dao.impl.MasterDaoImpl;
+import com.ibm.lms.dto.BulkAssignmentDto;
+import com.ibm.lms.engine.AsyncTaskManager;
+import com.ibm.lms.engine.exception.LmsException;
+import com.ibm.lms.exception.DAOException;
+
+public class SendSmsEmailLog 
+
+{
+	private static String fromEmail = PropertyReader.getAppValue("email.from");
+	private static String strHost = PropertyReader.getAppValue("mail.smtp.host");	
+	String messsg="";
+	Logger logger = Logger.getLogger(SendSmsEmailLog.class);
+	private static final String INSERT_EMAIL_HISTORY = "INSERT INTO EMAIL_SENT_HISTORY(EMAIL_MSG, SUBJECT, EMAIL_ID, SENT_ON, RESPONSE) VALUES(?,?,?, current timestamp,?)";
+	
+
+	public String SendEmailAndLog(BulkAssignmentDto bulkAssignmentDto) throws DAOException
+	{
+		for(Object emailObj: bulkAssignmentDto.getEmails().toArray())
+		{
+			//logger.info("*************************eMAIL==="+emailObj.toString());
+		  messsg = SendMail.sendingMail(bulkAssignmentDto.getFilePath(),emailObj.toString() ,null , bulkAssignmentDto.getMessageBody(), bulkAssignmentDto.getEmailsub() , fromEmail , strHost);
+		  //logger.info(emailObj.toString()+"===******messsg**********************=="+messsg);
+		}
+      new AsyncTaskManager().shutDownAll();
+		return messsg;
+	}
+	
+	public void SendSMSAndLog(BulkAssignmentDto bulkAssignmentDto)throws DAOException
+	{
+		
+	}
+	
+	public Connection createLogs(Connection con,BulkAssignmentDto bulkAssignmentDto,String msg)throws DAOException
+	
+	{
+		PreparedStatement inspstmthistory=null;
+		
+		if(bulkAssignmentDto.getFlagSmsEmail()==Constants.EMAILFLAG)
+		{
+			
+			try{
+				inspstmthistory = con.prepareStatement(INSERT_EMAIL_HISTORY);
+				
+				for(Object emailObj: bulkAssignmentDto.getEmails().toArray())
+				{
+				inspstmthistory.setString(1,((bulkAssignmentDto.getMessageBody().length()<1000)? bulkAssignmentDto.getMessageBody():bulkAssignmentDto.getMessageBody().substring(0,999)));
+				inspstmthistory.setString(2, bulkAssignmentDto.getEmailsub());				
+				inspstmthistory.setString(3,emailObj.toString());
+				inspstmthistory.setString(4,msg);
+			    int i=inspstmthistory.executeUpdate();
+			    logger.info("not sent , rows inserted in table is="+i);
+		  	}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+		else if(bulkAssignmentDto.getFlagSmsEmail()==Constants.SMSFLAG)
+		{
+			
+		}
+		return con;
+	}
+	
+}

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE java-wsdl-mapping PUBLIC "-//IBM Corporation, Inc.//DTD J2EE JAX-RPC mapping 1.0//EN" "http://www.ibm.com/webservices/dtd/j2ee_jaxrpc_mapping_1_0.dtd">
+
+   <java-wsdl-mapping id="JavaWSDLMapping_1413560938309">
+      <package-mapping id="PackageMapping_1413560938309">
+         <package-type>com.ibm.lms.webservice</package-type>
+         <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <package-mapping id="PackageMapping_1413560938310">
+         <package-type>com.ibm.lms.dto</package-type>
+         <namespaceURI>http://dto.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <package-mapping id="PackageMapping_1413560938311">
+         <package-type>com.ibm.lms.common</package-type>
+         <namespaceURI>http://common.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1413560938309">
+         <class-type>com.ibm.lms.dto.AuthorizationData</class-type>
+         <root-type-qname id="RootTypeQname_1413560938309">
+            <namespaceURI>http://dto.lms.ibm.com</namespaceURI>
+            <localpart>AuthorizationData</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1413560938309">
+            <java-variable-name>password</java-variable-name>
+            <xml-element-name>password</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1413560938310">
+            <java-variable-name>userName</java-variable-name>
+            <xml-element-name>userName</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1413560938310">
+         <class-type>com.ibm.lms.dto.PushMstrWebserviceResponse</class-type>
+         <root-type-qname id="RootTypeQname_1413560938310">
+            <namespaceURI>http://dto.lms.ibm.com</namespaceURI>
+            <localpart>PushMstrWebserviceResponse</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1413560938311">
+            <java-variable-name>productName</java-variable-name>
+            <xml-element-name>productName</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1413560938312">
+            <java-variable-name>webserviceResponse</java-variable-name>
+            <xml-element-name>webserviceResponse</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1413560938313">
+            <java-variable-name>responseMessage</java-variable-name>
+            <xml-element-name>responseMessage</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1413560938314">
+            <java-variable-name>responseCode</java-variable-name>
+            <xml-element-name>responseCode</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1413560938311">
+         <class-type>com.ibm.lms.dto.PushMstrWebserviceDTO</class-type>
+         <root-type-qname id="RootTypeQname_1413560938311">
+            <namespaceURI>http://dto.lms.ibm.com</namespaceURI>
+            <localpart>PushMstrWebserviceDTO</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1413560938315">
+            <java-variable-name>circleData</java-variable-name>
+            <xml-element-name>circleData</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1413560938316">
+            <java-variable-name>cityData</java-variable-name>
+            <xml-element-name>cityData</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1413560938317">
+            <java-variable-name>pincodeList</java-variable-name>
+            <xml-element-name>pincodeList</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1413560938312">
+         <class-type>java.lang.String</class-type>
+         <root-type-qname id="RootTypeQname_1413560938312">
+            <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+            <localpart>string</localpart>
+         </root-type-qname>
+         <qname-scope>simpleType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1413560938313">
+         <class-type>com.ibm.lms.common.DataObject[]</class-type>
+         <root-type-qname id="RootTypeQname_1413560938313">
+            <namespaceURI>http://common.lms.ibm.com</namespaceURI>
+            <localpart>DataObject[unbounded]</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1413560938314">
+         <class-type>int</class-type>
+         <root-type-qname id="RootTypeQname_1413560938314">
+            <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+            <localpart>int</localpart>
+         </root-type-qname>
+         <qname-scope>simpleType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1413560938315">
+         <class-type>com.ibm.lms.common.DataObject</class-type>
+         <root-type-qname id="RootTypeQname_1413560938315">
+            <namespaceURI>http://common.lms.ibm.com</namespaceURI>
+            <localpart>DataObject</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1413560938318">
+            <java-variable-name>name</java-variable-name>
+            <xml-element-name>name</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1413560938319">
+            <java-variable-name>code</java-variable-name>
+            <xml-element-name>code</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1413560938316">
+         <class-type>java.lang.String[]</class-type>
+         <root-type-qname id="RootTypeQname_1413560938316">
+            <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+            <localpart>string[unbounded]</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+      </java-xml-type-mapping>
+      <service-interface-mapping id="ServiceInterfaceMapping_1413560938309">
+         <service-interface>com.ibm.lms.webservice.PushMstrWebServiceService</service-interface>
+         <wsdl-service-name id="WSDLServiceName_1413560938309">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>PushMstrWebServiceService</localpart>
+         </wsdl-service-name>
+         <port-mapping id="PortMapping_1413560938309">
+            <port-name>PushMstrWebService</port-name>
+            <java-port-name>PushMstrWebService</java-port-name>
+         </port-mapping>
+      </service-interface-mapping>
+      <service-endpoint-interface-mapping id="ServiceEndpointInterfaceMapping_1413560938309">
+         <service-endpoint-interface>com.ibm.lms.webservice.PushMstrWebService</service-endpoint-interface>
+         <wsdl-port-type id="WSDLPortType_1413560938309">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>PushMstrWebService</localpart>
+         </wsdl-port-type>
+         <wsdl-binding id="WSDLBinding_1413560938309">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>PushMstrWebServiceSoapBinding</localpart>
+         </wsdl-binding>
+         <service-endpoint-method-mapping id="ServiceEndpointMethodMapping_1413560938309">
+            <java-method-name>getMstrByProduct</java-method-name>
+            <wsdl-operation>getMstrByProduct</wsdl-operation>
+            <wrapped-element></wrapped-element>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1413560938309">
+               <param-position>0</param-position>
+               <param-type>com.ibm.lms.dto.AuthorizationData</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1413560938309">
+                  <wsdl-message id="WSDLMessage_1413560938309">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>getMstrByProductRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>authData</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1413560938310">
+               <param-position>1</param-position>
+               <param-type>java.lang.String</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1413560938310">
+                  <wsdl-message id="WSDLMessage_1413560938310">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>getMstrByProductRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>product</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1413560938311">
+               <param-position>2</param-position>
+               <param-type>java.lang.String</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1413560938311">
+                  <wsdl-message id="WSDLMessage_1413560938311">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>getMstrByProductRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>flag</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping id="WSDLReturnValueMapping_1413560938309">
+               <method-return-value>com.ibm.lms.dto.PushMstrWebserviceResponse</method-return-value>
+               <wsdl-message id="WSDLMessage_1413560938312">
+                  <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                  <localpart>getMstrByProductResponse</localpart>
+               </wsdl-message>
+               <wsdl-message-part-name>getMstrByProductReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+         </service-endpoint-method-mapping>
+      </service-endpoint-interface-mapping>
+   </java-wsdl-mapping>

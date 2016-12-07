@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.lms.ibm.com" xmlns:impl="http://webservice.lms.ibm.com" xmlns:intf="http://webservice.lms.ibm.com" xmlns:tns2="http://webservice.dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.dto.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="GisInfoCaptureDO">
+    <sequence>
+     <element name="leadId" nillable="true" type="xsd:string"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+     <element name="subStatus" nillable="true" type="xsd:string"/>
+     <element name="rsuCode" nillable="true" type="xsd:string"/>
+     <element name="remarks" nillable="true" type="xsd:string"/>
+     <element name="productBought" nillable="true" type="xsd:string"/>
+     <element name="rentalPlan" nillable="true" type="xsd:string"/>
+     <element name="paymentCollected" nillable="true" type="xsd:string"/>
+     <element name="paymentType" nillable="true" type="xsd:string"/>
+     <element name="paymentAmount" nillable="true" type="xsd:string"/>
+     <element name="address1" nillable="true" type="xsd:string"/>
+     <element name="sentBy" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="AuthorizationData">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="GisResponseMessage">
+    <sequence>
+     <element name="responseCode" nillable="true" type="xsd:string"/>
+     <element name="responseMsg" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://webservice.dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://webservice.dto.lms.ibm.com"/>
+   <element name="captureGisData">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="gisData" type="tns2:GisInfoCaptureDO"/>
+      <element name="authData" nillable="true" type="tns2:AuthorizationData"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="captureGisDataResponse">
+    <complexType>
+     <sequence>
+      <element name="captureGisDataReturn" nillable="true" type="tns2:GisResponseMessage"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="captureGisDataResponse">
+
+      <wsdl:part element="impl:captureGisDataResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="captureGisDataRequest">
+
+      <wsdl:part element="impl:captureGisData" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="GisInfoCaptureWebService">
+
+      <wsdl:operation name="captureGisData">
+
+         <wsdl:input message="impl:captureGisDataRequest" name="captureGisDataRequest"/>
+
+         <wsdl:output message="impl:captureGisDataResponse" name="captureGisDataResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="GisInfoCaptureWebServiceSoapBinding" type="impl:GisInfoCaptureWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="captureGisData">
+
+         <wsdlsoap:operation soapAction="captureGisData"/>
+
+         <wsdl:input name="captureGisDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="captureGisDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="GisInfoCaptureWebServiceService">
+
+      <wsdl:port binding="impl:GisInfoCaptureWebServiceSoapBinding" name="GisInfoCaptureWebService">
+
+         <wsdlsoap:address location="http://localhost:9080/LMS2/services/GisInfoCaptureWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,70 @@
+package com.ibm.lms.actions;
+
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TimerTask;
+import java.util.Map.Entry;
+
+import com.ibm.lms.dto.SmsObject;
+import com.ibm.lms.dto.SmsState;
+import com.ibm.lms.engine.util.ServerPropertyReader;
+import com.ibm.lms.exception.LMSException;
+import com.ibm.lms.services.MasterService;
+import com.ibm.lms.services.impl.MasterServiceImpl;
+
+public class RefreshSMSMaps extends TimerTask {
+
+	@Override
+	public void run() {
+		System.out.println("Refresh Map started--");
+		SmsObject smsObj=new SmsObject();
+		SmsState smsState=new SmsState();
+		// TODO Auto-generated method stub
+		Hashtable<SmsObject,SmsState> smsMap=ReceiveSMS.smsMap;
+		MasterService masterSrvc=new MasterServiceImpl();
+		System.out.println(smsMap.isEmpty());
+		Set<SmsObject>entrySet=smsMap.keySet();
+		Set<SmsObject> removeObject=new HashSet<SmsObject>();
+		Iterator<SmsObject> itr=entrySet.iterator();
+		Integer sessionTime=30;
+		try {
+			sessionTime = Integer.parseInt(masterSrvc.getParameterName("SESSION_TIME_OUT"));
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (LMSException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("CONF_TIME_OUT:"+sessionTime);
+		while(itr.hasNext()){
+			smsObj=itr.next();
+			smsState=smsMap.get(smsObj);
+			Long currentTime=System.currentTimeMillis();
+			Long diff=currentTime-smsState.getLasMsgtime();
+			if(diff>0){
+				Long timeDiffinSec=diff/1000;
+				if(timeDiffinSec>60){
+					Long timeout=timeDiffinSec/60;
+					//configuration;
+					System.out.println("CALC_TIME_OUT:"+timeout);
+					if(timeout > sessionTime){
+						removeObject.add(smsObj);
+						
+					}
+				}
+			}
+		}
+		itr=removeObject.iterator();
+		while(itr.hasNext()){
+			smsObj=itr.next();
+			smsMap.remove(smsObj);
+		}
+		System.out.println("Refresh Map ended");
+
+	}
+
+}

@@ -1,0 +1,241 @@
+package com.ibm.lms.wf.actions;
+
+
+/**
+ * @author Parnika Sharma 
+ */
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+import org.apache.struts.action.ActionError;
+import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
+
+import com.ibm.appsecure.exception.EncryptionException;
+import com.ibm.appsecure.util.Encryption;
+import com.ibm.appsecure.util.IEncryption;
+import com.ibm.lms.common.UserDetails;
+import com.ibm.lms.common.Utility;
+import com.ibm.lms.dto.AgencyDTO;
+import com.ibm.lms.services.AgencyMappingService;
+import com.ibm.lms.services.impl.AgencyMappingServiceImpl;
+import com.ibm.lms.wf.forms.AgencyMappingForm;
+
+
+
+public class AgencyMappingAction extends DispatchAction{
+	private static Logger logger = Logger.getLogger(AgencyMappingAction.class
+			.getName());
+	
+	public ActionForward init(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+	throws Exception {
+
+		logger.info(UserDetails.getUserLoginId(request)+" : Entered init method");
+		
+		AgencyMappingForm agencyBean = (AgencyMappingForm) form;
+		agencyBean.reset(mapping, request);
+		AgencyMappingService agencyService = new AgencyMappingServiceImpl();
+		if(Utility.isValidRequest(request)) {
+        	return mapping.findForward("error");
+        }
+		
+		agencyBean.setCircleList(agencyService.getCircleList());
+		logger.info(UserDetails.getUserLoginId(request)+" : Exiting init method");
+		// Finish with
+		saveToken(request);
+		return mapping.findForward("initAgencyMapping");
+	}
+	
+	public ActionForward insert(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+	throws Exception {
+
+		ActionForward forward = new ActionForward(); // return value
+		logger.info(UserDetails.getUserLoginId(request)+" : Entered insert method");
+		ActionErrors errors = new ActionErrors();
+		AgencyMappingForm agencyBean = (AgencyMappingForm) form;
+		AgencyMappingService agencyService = new AgencyMappingServiceImpl();		
+		AgencyDTO agencyDto = new AgencyDTO();
+		if(Utility.isValidRequest(request)) {
+        	return mapping.findForward("error");
+        }
+		
+		boolean valid = isTokenValid(request, true);
+		try{
+		if (valid){
+		
+			agencyDto.setAgencyName(agencyBean.getAgencyName());
+			agencyDto.setAgencyDescription(agencyBean.getAgencyDescription());
+			agencyDto.setCreateMultiple(agencyBean.getCreateMultiple());
+			agencyDto.setAgencyClass(agencyBean.getAgencyClass());
+			agencyDto.setUsername(agencyBean.getUsername());
+			// For encrypting the password
+			IEncryption t = new Encryption();
+			String encPassword = t.encrypt(agencyBean.getPassword());
+			agencyDto.setPassword(encPassword);
+			agencyDto.setAgencyPath(agencyBean.getAgencyPath());
+			agencyDto.setDefaultCheck(agencyBean.getDefaultCheck());
+
+			String result = agencyService.createAgency(agencyDto);
+			
+			if(result.equalsIgnoreCase("Success")){
+				agencyBean.setMessage("Agency created successfully!!");
+				agencyBean.reset(mapping, request);
+				logger.info("Agency created successfully"+agencyBean.getAgencyDescription()+"HH");
+				agencyBean.setCircleList(agencyService.getCircleList());
+
+			}
+			else if(result.equalsIgnoreCase("Duplicate")) {
+				agencyBean.setMessage("Agency not created, Agency Name already exists.");
+				agencyBean.setCircleList(agencyService.getCircleList());
+			}
+			else {
+				agencyBean.setMessage("Agency not created.");
+				agencyBean.setCircleList(agencyService.getCircleList());
+			}
+
+			forward = mapping.findForward("initAgencyMapping");
+			logger.info(UserDetails.getUserLoginId(request)+" : Exiting insert method");
+			// Finish with
+			
+			
+
+		}
+		else{
+			 return init(mapping, form, request, response);
+		}
+		}
+		catch (EncryptionException e) {
+			errors.add("Agency not created", new ActionError(e.getMessage()));
+			e.printStackTrace();
+			saveErrors(request, errors);
+			agencyBean.setMessage("Agency not created.");
+			agencyBean.setCircleList(agencyService.getCircleList());
+			forward = mapping.findForward("initAgencyMapping");
+			
+		}
+		catch (Exception e) {
+			errors.add("Agency not created", new ActionError(e.getMessage()));
+			e.printStackTrace();
+			saveErrors(request, errors);
+			agencyBean.setMessage("Agency not created.");
+			agencyBean.setCircleList(agencyService.getCircleList());
+			forward = mapping.findForward("initAgencyMapping");
+			
+		}
+		
+		saveToken(request);
+		return (forward);  
+
+
+
+	}
+	
+	public ActionForward initEdit(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+	throws Exception {
+
+		ActionForward forward = new ActionForward(); // return value
+		logger.info(UserDetails.getUserLoginId(request)+" : Entered init method");
+		
+		AgencyMappingForm agencyBean = (AgencyMappingForm) form;
+		AgencyMappingService agencyService = new AgencyMappingServiceImpl();
+		if(Utility.isValidRequest(request)) {
+        	return mapping.findForward("error");
+        }
+		
+		agencyBean.setAgencyList(agencyService.getAgencyList());
+		agencyBean.setSelectedAgencyId(-1);
+		agencyBean.setAgencyDescription("");
+		agencyBean.setAgencyPath("");
+		agencyBean.setAgencyClass("");
+		agencyBean.setUsername("");
+		agencyBean.setPassword("");
+		agencyBean.setConfirmPassword("");
+		
+		forward = mapping.findForward("initEditAgencyMapping");
+		logger.info(UserDetails.getUserLoginId(request)+" : Exiting init edit method");
+		saveToken(request);
+		// Finish with
+		return (forward);  
+	}
+	
+	public ActionForward update(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+	throws Exception {
+
+		ActionForward forward = new ActionForward(); // return value
+		logger.info(UserDetails.getUserLoginId(request)+" : Entered update method");
+		ActionErrors errors = new ActionErrors();
+		AgencyMappingForm agencyBean = (AgencyMappingForm) form;
+		AgencyMappingService agencyService = new AgencyMappingServiceImpl();	
+		AgencyDTO agencyDto = new AgencyDTO();
+		if(Utility.isValidRequest(request)) {
+        	return mapping.findForward("error");
+        }
+		
+		boolean valid = isTokenValid(request, true);
+		try{
+			
+
+		if(valid){
+			
+			agencyDto.setAgencyId(agencyBean.getSelectedAgencyId());
+			agencyDto.setAgencyDescription(agencyBean.getAgencyDescription());
+			agencyDto.setAgencyPath(agencyBean.getAgencyPath());
+			agencyDto.setAgencyClass(agencyBean.getAgencyClass());
+			agencyDto.setUsername(agencyBean.getUsername());
+			// For encrypting the password
+			IEncryption t = new Encryption();
+			String encPassword = t.encrypt(agencyBean.getPassword());
+			agencyDto.setPassword(encPassword);
+			agencyDto.setDefaultCheck(agencyBean.getDefaultCheck());
+
+			boolean rowUpdated = agencyService.updateAgency(agencyDto);
+			
+			if(rowUpdated){
+				agencyBean.setMessage("Agency updated successfully!!");
+				agencyBean.setAgencyList(agencyService.getAgencyList());
+				agencyBean.setSelectedAgencyId(-1);
+				agencyBean.setAgencyDescription("");
+				agencyBean.setAgencyPath("");
+				agencyBean.setAgencyClass("");
+				agencyBean.setUsername("");
+				agencyBean.setPassword("");
+				agencyBean.setConfirmPassword("");
+			}			
+			else{
+				agencyBean.setMessage("Agency not updated.");
+			}
+			
+			forward = mapping.findForward("editAgencyMapping");
+			logger.info(UserDetails.getUserLoginId(request)+" : Exiting update method");
+			
+		}
+		else{
+			 return initEdit(mapping, form, request, response);
+		}
+		}
+		catch (Exception e) {
+			errors.add("Agency not created", new ActionError(e.getMessage()));
+			e.printStackTrace();
+			saveErrors(request, errors);
+			agencyBean.setMessage("Agency not updated.");
+			forward = mapping.findForward("editAgencyMapping");
+			
+		}
+		saveToken(request);
+		return (forward);
+
+	}
+    
+}
+	
+

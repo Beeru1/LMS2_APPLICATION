@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.lms.ibm.com" xmlns:impl="http://webservice.lms.ibm.com" xmlns:intf="http://webservice.lms.ibm.com" xmlns:tns2="http://dataobjects.engine.lms.ibm.com" xmlns:tns3="http://dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://dataobjects.engine.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="UpdateLeadDataDO">
+    <sequence>
+     <element name="leadId" nillable="true" type="xsd:string"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+     <element name="subStatus" nillable="true" type="xsd:string"/>
+     <element name="cafNumber" nillable="true" type="xsd:string"/>
+     <element name="remarks" nillable="true" type="xsd:string"/>
+     <element name="productBought" nillable="true" type="xsd:string"/>
+     <element name="rentalPlan" nillable="true" type="xsd:string"/>
+     <element name="paymentCollected" nillable="true" type="xsd:string"/>
+     <element name="paymentType" nillable="true" type="xsd:string"/>
+     <element name="paymentAmount" nillable="true" type="xsd:string"/>
+     <element name="competitorChosen" nillable="true" type="xsd:string"/>
+     <element name="sentBy" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://dataobjects.engine.lms.ibm.com" xmlns:tns3="http://dto.lms.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://dto.lms.ibm.com"/>
+   <import namespace="http://dataobjects.engine.lms.ibm.com"/>
+   <element name="updateLeadData">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="leadData" type="tns2:UpdateLeadDataDO"/>
+      <element name="authData" nillable="true" type="tns3:AuthorizationData"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateLeadDataResponse">
+    <complexType>
+     <sequence>
+      <element name="updateLeadDataReturn" nillable="true" type="tns3:UpdateLeadResponseMessage"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://dto.lms.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="AuthorizationData">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="UpdateLeadResponseMessage">
+    <sequence>
+     <element name="responseCode" nillable="true" type="xsd:string"/>
+     <element name="responseMsg" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="updateLeadDataResponse">
+
+      <wsdl:part element="impl:updateLeadDataResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateLeadDataRequest">
+
+      <wsdl:part element="impl:updateLeadData" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="UpdateLeadWebService">
+
+      <wsdl:operation name="updateLeadData">
+
+         <wsdl:input message="impl:updateLeadDataRequest" name="updateLeadDataRequest"/>
+
+         <wsdl:output message="impl:updateLeadDataResponse" name="updateLeadDataResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="UpdateLeadWebServiceSoapBinding" type="impl:UpdateLeadWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="updateLeadData">
+
+         <wsdlsoap:operation soapAction="updateLeadData"/>
+
+         <wsdl:input name="updateLeadDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateLeadDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="UpdateLeadWebServiceService">
+
+      <wsdl:port binding="impl:UpdateLeadWebServiceSoapBinding" name="UpdateLeadWebService">
+
+         <wsdlsoap:address location="http://localhost:9080/LMS2/services/UpdateLeadWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

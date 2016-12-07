@@ -1,0 +1,99 @@
+package com.ibm.lms.engine;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import org.apache.poi.hssf.record.formula.functions.T;
+import org.apache.struts.upload.FormFile;
+
+import com.ibm.lms.dao.BulkAssigmentDao;
+import com.ibm.lms.dao.impl.BulkAssigmentDaoImpl;
+import com.ibm.lms.dto.UserMstr;
+import com.ibm.lms.engine.dataobjects.LeadToBeAssignedDO;
+import com.ibm.lms.engine.handlers.AssignmentHandler;
+import com.ibm.lms.exception.DAOException;
+
+
+
+public class AsyncTaskManager {
+
+	private static AsyncTaskManager resDealsCode = null;
+	private final ExecutorService es = Executors.newCachedThreadPool();
+
+	public AsyncTaskManager() {
+		
+	}
+	
+	public static AsyncTaskManager getInstance() {
+		if(resDealsCode == null) {
+			synchronized (AsyncTaskManager.class) {
+				resDealsCode = new AsyncTaskManager();
+			}
+		}
+		return resDealsCode;
+	}
+	
+	public void processHandler(LMSHandler processor) {
+		es.submit(processor);
+	}
+	
+	public void processCapturedLeads(LMSHandler processor) {
+		es.submit(processor);
+	}
+	
+	public void processUpdateLeads(LMSHandler processor) {
+		es.submit(processor);
+	}
+	
+	public void processLeadCapture(LMSHandler processor) {
+		es.submit(processor);
+	}
+	
+	public void processAssignmentData(LMSHandler processor) 
+	{
+		System.out.println("inside function processAssignmentData************");
+		es.submit(processor);
+	}
+	
+	/**
+	 * <p>
+	 * For assignment of Lead
+	 * </p>
+	 * @param leadToBeAssignedDO
+	 */
+	public void doAssignment(LeadToBeAssignedDO leadToBeAssignedObj){
+		
+		AssignmentHandler assignmentHandlerObj = new AssignmentHandler(leadToBeAssignedObj);
+		es.submit(assignmentHandlerObj);
+		
+	}
+	
+	/**
+	 * For Bulk Assignment. Internally calls doAssignment
+	 * @param leadToBeAssignedArrDO
+	 */
+	public void doBulkAssignment(LeadToBeAssignedDO[] leadToBeAssignedArrObj){
+		
+		if(leadToBeAssignedArrObj != null && leadToBeAssignedArrObj.length > 0){
+			
+			LeadToBeAssignedDO leadToBeAssignedObj = null;
+			
+			for(int i=0; i < leadToBeAssignedArrObj.length; i++){
+				leadToBeAssignedObj = leadToBeAssignedArrObj[i];
+				doAssignment(leadToBeAssignedObj);
+			}
+		}
+		
+		
+	}
+	
+
+
+
+	
+	
+	public void shutDownAll(){
+		es.shutdown();
+	}
+}

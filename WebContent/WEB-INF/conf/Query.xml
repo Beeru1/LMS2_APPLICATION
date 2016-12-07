@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<storedqueries>
+	<!-- dataSrc details -->
+	<datasources>
+		<datasource name="oracle">
+			<path>jdbc/LMS2JNDI</path>
+		</datasource>
+	</datasources>
+
+	<!-- Stored Query -->
+	<storedquery name="validatePwdExpiry" datasource="oracle">
+		<query>Select days(current timestamp) - days(USER_PSSWRD_EXPRY_DT) as diffdate from USER_MSTR where USER_LOGIN_ID = '?' WITH UR</query>
+	</storedquery>
+
+	<storedquery name="validatePwdHistory" datasource="oracle">
+		<query>Select count(b.USER_PASSWORD) as matches from USER_MSTR a, PASSWORD_HISTORY b where a.USER_LOGIN_ID = '?' and b.USER_LOGIN_ID = a.USER_LOGIN_ID and b.USER_PASSWORD = '?'  WITH UR</query>
+	</storedquery>
+
+	<storedquery name="authenticate" datasource="oracle">
+		<query>Select USER_LOGIN_ID, USER_PASSWORD from USER_MSTR where USER_LOGIN_ID='?' and USER_PASSWORD='?' and LOGIN_ATTEMPTED &lt;? and STATUS='A'  WITH UR</query>
+
+	</storedquery>
+
+	<storedquery name="invalidLoginCnt" datasource="oracle">
+		<query>update USER_MSTR set LOGIN_ATTEMPTED = LOGIN_ATTEMPTED+1 where USER_LOGIN_ID='?'  WITH UR</query>
+	</storedquery>
+
+	<storedquery name="resetLoginCnt" datasource="oracle">
+		<query>update USER_MSTR set LOGIN_ATTEMPTED=0 where USER_LOGIN_ID='?'  WITH UR</query>
+	</storedquery>
+
+	<storedquery name="chkAcctLocked" datasource="oracle">
+		<query>select LOGIN_ATTEMPTED from USER_MSTR where USER_LOGIN_ID='?' and STATUS='A'  WITH UR</query>
+	</storedquery>
+</storedqueries>

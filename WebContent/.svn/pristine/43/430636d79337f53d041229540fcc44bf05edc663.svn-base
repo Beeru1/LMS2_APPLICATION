@@ -1,0 +1,10 @@
+##################Global##################
+OLMSDS_LOOKUP_NAME=jdbc/OLMSKMJNDI
+DATASOURCE_LOOKUP_NAME=jdbc/LMS2JNDI
+LOGIN.EMAIL=LMS_Administrator
+#LOGIN.SMTP=10.5.128.146
+category.create=A Record Is Created
+folder.path=/lms_common/LMS/Docs/
+# Message Broker details
+lms.user.create.mail.subject=LMS Account Details 
+lms.user.create.mail.body=Please find below LMS account credentials.

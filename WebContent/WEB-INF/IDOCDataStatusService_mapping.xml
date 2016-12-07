@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE java-wsdl-mapping PUBLIC "-//IBM Corporation, Inc.//DTD J2EE JAX-RPC mapping 1.0//EN" "http://www.ibm.com/webservices/dtd/j2ee_jaxrpc_mapping_1_0.dtd">
+
+   <java-wsdl-mapping id="JavaWSDLMapping_1458249831589">
+      <package-mapping id="PackageMapping_1458249831589">
+         <package-type>com.ibm.lms.webservice</package-type>
+         <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <package-mapping id="PackageMapping_1458249831590">
+         <package-type>com.ibm.lms.dto.webservice</package-type>
+         <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458249831589">
+         <class-type>com.ibm.lms.dto.webservice.IDOCDataStatusDTO[]</class-type>
+         <root-type-qname id="RootTypeQname_1458249831589">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>IDOCDataStatusDTO[unbounded]</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458249831590">
+         <class-type>com.ibm.lms.dto.webservice.AuthorizationData</class-type>
+         <root-type-qname id="RootTypeQname_1458249831590">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>AuthorizationData</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1458249831589">
+            <java-variable-name>password</java-variable-name>
+            <xml-element-name>password</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458249831590">
+            <java-variable-name>userName</java-variable-name>
+            <xml-element-name>userName</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458249831591">
+         <class-type>java.lang.String</class-type>
+         <root-type-qname id="RootTypeQname_1458249831591">
+            <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+            <localpart>string</localpart>
+         </root-type-qname>
+         <qname-scope>simpleType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458249831592">
+         <class-type>com.ibm.lms.dto.webservice.IDOCStatusServiceResponse</class-type>
+         <root-type-qname id="RootTypeQname_1458249831592">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>IDOCStatusServiceResponse</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1458249831591">
+            <java-variable-name>responseCode</java-variable-name>
+            <xml-element-name>responseCode</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458249831592">
+            <java-variable-name>responseMsg</java-variable-name>
+            <xml-element-name>responseMsg</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1458249831593">
+         <class-type>com.ibm.lms.dto.webservice.IDOCDataStatusDTO</class-type>
+         <root-type-qname id="RootTypeQname_1458249831593">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>IDOCDataStatusDTO</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1458249831593">
+            <java-variable-name>prospectsMobileNumber</java-variable-name>
+            <xml-element-name>prospectsMobileNumber</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458249831594">
+            <java-variable-name>alternateContactNumber</java-variable-name>
+            <xml-element-name>alternateContactNumber</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458249831595">
+            <java-variable-name>onlineCafNo</java-variable-name>
+            <xml-element-name>onlineCafNo</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458249831596">
+            <java-variable-name>status</java-variable-name>
+            <xml-element-name>status</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458249831597">
+            <java-variable-name>status_date</java-variable-name>
+            <xml-element-name>status_date</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458249831598">
+            <java-variable-name>rejectReason</java-variable-name>
+            <xml-element-name>rejectReason</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458249831599">
+            <java-variable-name>idocStep</java-variable-name>
+            <xml-element-name>idocStep</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1458249831600">
+            <java-variable-name>source</java-variable-name>
+            <xml-element-name>source</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <service-interface-mapping id="ServiceInterfaceMapping_1458249831591">
+         <service-interface>com.ibm.lms.webservice.IDOCDataStatusServiceService</service-interface>
+         <wsdl-service-name id="WSDLServiceName_1458249831591">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>IDOCDataStatusServiceService</localpart>
+         </wsdl-service-name>
+         <port-mapping id="PortMapping_1458249831591">
+            <port-name>IDOCDataStatusService</port-name>
+            <java-port-name>IDOCDataStatusService</java-port-name>
+         </port-mapping>
+      </service-interface-mapping>
+      <service-endpoint-interface-mapping id="ServiceEndpointInterfaceMapping_1458249831591">
+         <service-endpoint-interface>com.ibm.lms.webservice.IDOCDataStatusService</service-endpoint-interface>
+         <wsdl-port-type id="WSDLPortType_1458249831591">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>IDOCDataStatusService</localpart>
+         </wsdl-port-type>
+         <wsdl-binding id="WSDLBinding_1458249831591">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>IDOCDataStatusServiceSoapBinding</localpart>
+         </wsdl-binding>
+         <service-endpoint-method-mapping id="ServiceEndpointMethodMapping_1458249831591">
+            <java-method-name>iDOCStatusUpdateData</java-method-name>
+            <wsdl-operation>iDOCStatusUpdateData</wsdl-operation>
+            <wrapped-element></wrapped-element>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1458249831591">
+               <param-position>0</param-position>
+               <param-type>com.ibm.lms.dto.webservice.AuthorizationData</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1458249831591">
+                  <wsdl-message id="WSDLMessage_1458249831591">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>iDOCStatusUpdateDataRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>authorizationData</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1458249831592">
+               <param-position>1</param-position>
+               <param-type>com.ibm.lms.dto.webservice.IDOCDataStatusDTO[]</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1458249831592">
+                  <wsdl-message id="WSDLMessage_1458249831592">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>iDOCStatusUpdateDataRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>dataStatusDTO</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping id="WSDLReturnValueMapping_1458249831592">
+               <method-return-value>com.ibm.lms.dto.webservice.IDOCStatusServiceResponse</method-return-value>
+               <wsdl-message id="WSDLMessage_1458249831593">
+                  <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                  <localpart>iDOCStatusUpdateDataResponse</localpart>
+               </wsdl-message>
+               <wsdl-message-part-name>iDOCStatusUpdateDataReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+         </service-endpoint-method-mapping>
+      </service-endpoint-interface-mapping>
+   </java-wsdl-mapping>

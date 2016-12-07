@@ -1,0 +1,36 @@
+/******************************************************************************/
+/*                                                                            */
+/* @copyright module                                                          */
+/*                                                                            */
+/* Theme: Default                                                             */
+/*                                                                            */
+/* This file is designed for use with Internet Explorer.                                                                 */
+/*                                                                  */
+/*                                                                  */
+/* This CSS file was programatically generated using the configuration information from CssStyles_LatinI.properties.                                                                 */
+/*                                                                  */
+/*                                                                            */
+/******************************************************************************/
+/*  NOTE:  Comments inside CSS files cannot be nested inside each other.      */
+/******************************************************************************/
+
+/******************************************************************************/
+/* General styles                                                             */
+/******************************************************************************/
+
+/**********************Selfcare II Related Styles******************************/
+
+.sc-body-text-white {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-image: url('../images/img_red_bg_logo.jpg');
+	background-repeat: repeat-x;
+}

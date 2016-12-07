@@ -1,0 +1,159 @@
+/*
+ * Created on jan 15, 2014
+ */
+package com.ibm.lms.services.impl;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+
+import com.ibm.lms.dao.LeadRegistrationDao;
+import com.ibm.lms.dao.ReportDao;
+import com.ibm.lms.dao.impl.LeadRegistrationDaoImpl;
+import com.ibm.lms.dao.impl.MasterDaoImpl;
+import com.ibm.lms.dao.impl.ReportDaoImpl;
+import com.ibm.lms.dto.DashBoardReportDTO;
+import com.ibm.lms.dto.IDOCReportDTO;
+import com.ibm.lms.dto.LeadDetailsDTO;
+import com.ibm.lms.dto.LifeCycleReportDTO;
+import com.ibm.lms.dto.MTDReportDTO;
+import com.ibm.lms.exception.LMSException;
+import com.ibm.lms.forms.LeadRegistrationFormBean;
+import com.ibm.lms.forms.ReportsFormBean;
+import com.ibm.lms.services.ReportService;
+/**
+ * @author Amarjeet
+ */
+public class ReportServiceImpl implements ReportService
+
+{
+	
+	private static final Logger logger;
+	static {
+		logger = Logger.getLogger(LeadRegistrationDaoImpl.class);
+	}
+	
+	 public ArrayList<MTDReportDTO> getLeadMTDReport(ReportsFormBean formBean) throws LMSException{
+		 logger.info("Inside getLeadMTDReport");
+		 logger.info("Inside getLeadMTDReport");
+		 ReportDao reportDao = ReportDaoImpl.reportDaoInstance();//chnaged by srikant new ReportDaoImpl();
+		 try{
+			 
+			 return reportDao.getLeadMTDReport(formBean);
+		 }
+		 catch (Exception e) {
+			 e.printStackTrace();
+				logger.error("Exception occurred while getLeadMTDReport: "+e.getMessage());
+				throw new LMSException(e.getMessage(), e);
+			}
+		 
+	 }
+	
+	 public ArrayList<MTDReportDTO> getLeadMTDReportDayMonthwise(ReportsFormBean formBean,HttpServletRequest request) throws LMSException{
+		 logger.info("Inside getLeadMTDReport_daywise_monthwise");
+		
+		 ReportDao reportDao = ReportDaoImpl.reportDaoInstance();//chnaged by srikant new ReportDaoImpl();
+		 try{
+			 
+			 return reportDao.getLeadMTDReportDayMonthwise(formBean,request);
+		 }
+		 catch (Exception e) {
+			 e.printStackTrace();
+				logger.error("Exception occurred while getLeadMTDReport: "+e.getMessage());
+				throw new LMSException(e.getMessage(), e);
+			}
+		 
+	 }
+	 
+	 public ArrayList<MTDReportDTO> getLeadMTDReportDayMonthwiseGridPopulate(ReportsFormBean formBean,HttpServletRequest request) throws LMSException{
+		 logger.info("Inside getLeadMTDReport_daywise_monthwise");
+		 
+		 ReportDao reportDao = ReportDaoImpl.reportDaoInstance();//chnaged by srikant new ReportDaoImpl();
+		 try{
+			 
+			 return reportDao.getLeadMTDReportDayMonthwiseGridPopulate(formBean,request);
+		 }
+		 catch (Exception e) {
+			 e.printStackTrace();
+				logger.error("Exception occurred while getLeadMTDReport: "+e.getMessage());
+				throw new LMSException(e.getMessage(), e);
+			}
+		 
+	 }
+	 
+	 public ArrayList<MTDReportDTO> getFTDMTDReportCountDetails(ReportsFormBean formBean) throws LMSException{
+		 
+ logger.info("Inside getFTDMTDReportCountDetails");
+		 
+		 ReportDao reportDao = ReportDaoImpl.reportDaoInstance();//chnaged by srikant new ReportDaoImpl();
+		 try{
+			 
+			 
+			 return reportDao.getFTDMTDReportCountDetails(formBean);
+		 }
+		 catch (Exception e) {
+			 e.printStackTrace();
+				logger.error("Exception occurred while getLeadMTDReport: "+e.getMessage());
+				throw new LMSException(e.getMessage(), e);
+			}
+		 
+		 
+	 }
+	
+	 
+	//added by sudhanshu
+	 public ArrayList<LifeCycleReportDTO> getLeadLifecycleReport(ReportsFormBean formBean) throws LMSException{
+		 logger.info("Inside getLeadLifecycleReport");
+		 logger.info("Inside getLeadLifecycleReport");
+		 ReportDao reportDao = ReportDaoImpl.reportDaoInstance();//chnaged by srikant new ReportDaoImpl();
+		 try{
+			 
+			return reportDao.getLeadLifecycleReport(formBean);
+		 }
+		 catch (Exception e) {
+			 e.printStackTrace();
+				logger.error("Exception occurred while getLeadLifecycleReport: "+e.getMessage());
+				throw new LMSException(e.getMessage(), e);
+			}
+		 
+	 }
+	
+		//added by sudhanshu
+	 //added by amarjeet 
+	 public ArrayList<DashBoardReportDTO> getDashboardReport(ReportsFormBean formBean ) throws LMSException
+		{
+			logger.info("asa::::lead report seviceimpl");
+			ReportDao dao= ReportDaoImpl.reportDaoInstance();//chnaged by srikant new ReportDaoImpl();
+			try
+			{
+			return dao.getDashboardReport(formBean);
+			}
+			catch (Exception e) {
+				logger.error("Exception occurred while getting lead list filtered on Lead Id : "+e.getMessage());
+				throw new LMSException(e.getMessage(), e);
+			}
+		}
+	 //end changes of amarjeet 
+	 
+	//added by Nancy Agrawal
+		public ArrayList<IDOCReportDTO> getiDOCReport(ReportsFormBean formBean)
+				throws LMSException 
+				{
+			logger.info("asa::::lead report seviceimpl");
+			ReportDao dao= ReportDaoImpl.reportDaoInstance();
+			try
+			{
+			return dao.getiDOCReport(formBean);
+			}
+			catch (Exception e) {
+				logger.error("Exception occurred while getting lead list filtered on Lead Id : "+e.getMessage());
+				throw new LMSException(e.getMessage(), e);
+		}
+				}
+
+		
+}
+
+

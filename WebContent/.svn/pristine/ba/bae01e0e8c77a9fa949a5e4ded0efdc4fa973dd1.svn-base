@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE java-wsdl-mapping PUBLIC "-//IBM Corporation, Inc.//DTD J2EE JAX-RPC mapping 1.0//EN" "http://www.ibm.com/webservices/dtd/j2ee_jaxrpc_mapping_1_0.dtd">
+
+   <java-wsdl-mapping id="JavaWSDLMapping_1415300352343">
+      <package-mapping id="PackageMapping_1415300352343">
+         <package-type>com.ibm.lms.webservice</package-type>
+         <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <package-mapping id="PackageMapping_1415300352344">
+         <package-type>com.ibm.lms.engine.dataobjects</package-type>
+         <namespaceURI>http://dataobjects.engine.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <package-mapping id="PackageMapping_1415300352345">
+         <package-type>com.ibm.lms.dto</package-type>
+         <namespaceURI>http://dto.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1415300352343">
+         <class-type>com.ibm.lms.dto.AuthorizationData</class-type>
+         <root-type-qname id="RootTypeQname_1415300352343">
+            <namespaceURI>http://dto.lms.ibm.com</namespaceURI>
+            <localpart>AuthorizationData</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1415300352359">
+            <java-variable-name>password</java-variable-name>
+            <xml-element-name>password</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352360">
+            <java-variable-name>userName</java-variable-name>
+            <xml-element-name>userName</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1415300352359">
+         <class-type>com.ibm.lms.dto.UpdateLeadResponseMessage</class-type>
+         <root-type-qname id="RootTypeQname_1415300352359">
+            <namespaceURI>http://dto.lms.ibm.com</namespaceURI>
+            <localpart>UpdateLeadResponseMessage</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1415300352361">
+            <java-variable-name>responseCode</java-variable-name>
+            <xml-element-name>responseCode</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352362">
+            <java-variable-name>responseMsg</java-variable-name>
+            <xml-element-name>responseMsg</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1415300352360">
+         <class-type>java.lang.String</class-type>
+         <root-type-qname id="RootTypeQname_1415300352360">
+            <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+            <localpart>string</localpart>
+         </root-type-qname>
+         <qname-scope>simpleType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1415300352361">
+         <class-type>com.ibm.lms.engine.dataobjects.UpdateLeadDataDO</class-type>
+         <root-type-qname id="RootTypeQname_1415300352361">
+            <namespaceURI>http://dataobjects.engine.lms.ibm.com</namespaceURI>
+            <localpart>UpdateLeadDataDO</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1415300352363">
+            <java-variable-name>leadId</java-variable-name>
+            <xml-element-name>leadId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352364">
+            <java-variable-name>status</java-variable-name>
+            <xml-element-name>status</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352365">
+            <java-variable-name>subStatus</java-variable-name>
+            <xml-element-name>subStatus</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352366">
+            <java-variable-name>cafNumber</java-variable-name>
+            <xml-element-name>cafNumber</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352367">
+            <java-variable-name>remarks</java-variable-name>
+            <xml-element-name>remarks</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352368">
+            <java-variable-name>productBought</java-variable-name>
+            <xml-element-name>productBought</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352369">
+            <java-variable-name>rentalPlan</java-variable-name>
+            <xml-element-name>rentalPlan</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352370">
+            <java-variable-name>paymentCollected</java-variable-name>
+            <xml-element-name>paymentCollected</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352371">
+            <java-variable-name>paymentType</java-variable-name>
+            <xml-element-name>paymentType</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352372">
+            <java-variable-name>paymentAmount</java-variable-name>
+            <xml-element-name>paymentAmount</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352373">
+            <java-variable-name>competitorChosen</java-variable-name>
+            <xml-element-name>competitorChosen</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1415300352374">
+            <java-variable-name>sentBy</java-variable-name>
+            <xml-element-name>sentBy</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1415300352362">
+         <class-type>com.ibm.lms.engine.dataobjects.UpdateLeadDataDO[]</class-type>
+         <root-type-qname id="RootTypeQname_1415300352362">
+            <namespaceURI>http://dataobjects.engine.lms.ibm.com</namespaceURI>
+            <localpart>UpdateLeadDataDO[unbounded]</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+      </java-xml-type-mapping>
+      <service-interface-mapping id="ServiceInterfaceMapping_1415300352359">
+         <service-interface>com.ibm.lms.webservice.UpdateLeadWebServiceService</service-interface>
+         <wsdl-service-name id="WSDLServiceName_1415300352359">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>UpdateLeadWebServiceService</localpart>
+         </wsdl-service-name>
+         <port-mapping id="PortMapping_1415300352359">
+            <port-name>UpdateLeadWebService</port-name>
+            <java-port-name>UpdateLeadWebService</java-port-name>
+         </port-mapping>
+      </service-interface-mapping>
+      <service-endpoint-interface-mapping id="ServiceEndpointInterfaceMapping_1415300352359">
+         <service-endpoint-interface>com.ibm.lms.webservice.UpdateLeadWebService</service-endpoint-interface>
+         <wsdl-port-type id="WSDLPortType_1415300352359">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>UpdateLeadWebService</localpart>
+         </wsdl-port-type>
+         <wsdl-binding id="WSDLBinding_1415300352359">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>UpdateLeadWebServiceSoapBinding</localpart>
+         </wsdl-binding>
+         <service-endpoint-method-mapping id="ServiceEndpointMethodMapping_1415300352359">
+            <java-method-name>updateLeadData</java-method-name>
+            <wsdl-operation>updateLeadData</wsdl-operation>
+            <wrapped-element></wrapped-element>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1415300352359">
+               <param-position>0</param-position>
+               <param-type>com.ibm.lms.engine.dataobjects.UpdateLeadDataDO[]</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1415300352359">
+                  <wsdl-message id="WSDLMessage_1415300352359">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>updateLeadDataRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>leadData</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1415300352360">
+               <param-position>1</param-position>
+               <param-type>com.ibm.lms.dto.AuthorizationData</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1415300352360">
+                  <wsdl-message id="WSDLMessage_1415300352360">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>updateLeadDataRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>authData</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping id="WSDLReturnValueMapping_1415300352359">
+               <method-return-value>com.ibm.lms.dto.UpdateLeadResponseMessage</method-return-value>
+               <wsdl-message id="WSDLMessage_1415300352361">
+                  <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                  <localpart>updateLeadDataResponse</localpart>
+               </wsdl-message>
+               <wsdl-message-part-name>updateLeadDataReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+         </service-endpoint-method-mapping>
+      </service-endpoint-interface-mapping>
+   </java-wsdl-mapping>

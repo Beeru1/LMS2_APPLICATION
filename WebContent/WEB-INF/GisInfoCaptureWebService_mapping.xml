@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE java-wsdl-mapping PUBLIC "-//IBM Corporation, Inc.//DTD J2EE JAX-RPC mapping 1.0//EN" "http://www.ibm.com/webservices/dtd/j2ee_jaxrpc_mapping_1_0.dtd">
+
+   <java-wsdl-mapping id="JavaWSDLMapping_1433138270883">
+      <package-mapping id="PackageMapping_1433138270883">
+         <package-type>com.ibm.lms.webservice</package-type>
+         <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <package-mapping id="PackageMapping_1433138270884">
+         <package-type>com.ibm.lms.dto.webservice</package-type>
+         <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+      </package-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1433138270883">
+         <class-type>com.ibm.lms.dto.webservice.AuthorizationData</class-type>
+         <root-type-qname id="RootTypeQname_1433138270883">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>AuthorizationData</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1433138270883">
+            <java-variable-name>password</java-variable-name>
+            <xml-element-name>password</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270884">
+            <java-variable-name>userName</java-variable-name>
+            <xml-element-name>userName</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1433138270884">
+         <class-type>com.ibm.lms.dto.webservice.GisInfoCaptureDO[]</class-type>
+         <root-type-qname id="RootTypeQname_1433138270884">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>GisInfoCaptureDO[unbounded]</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1433138270885">
+         <class-type>java.lang.String</class-type>
+         <root-type-qname id="RootTypeQname_1433138270885">
+            <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+            <localpart>string</localpart>
+         </root-type-qname>
+         <qname-scope>simpleType</qname-scope>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1433138270886">
+         <class-type>com.ibm.lms.dto.webservice.GisInfoCaptureDO</class-type>
+         <root-type-qname id="RootTypeQname_1433138270886">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>GisInfoCaptureDO</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1433138270885">
+            <java-variable-name>leadId</java-variable-name>
+            <xml-element-name>leadId</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270886">
+            <java-variable-name>status</java-variable-name>
+            <xml-element-name>status</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270887">
+            <java-variable-name>subStatus</java-variable-name>
+            <xml-element-name>subStatus</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270888">
+            <java-variable-name>rsuCode</java-variable-name>
+            <xml-element-name>rsuCode</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270889">
+            <java-variable-name>remarks</java-variable-name>
+            <xml-element-name>remarks</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270890">
+            <java-variable-name>productBought</java-variable-name>
+            <xml-element-name>productBought</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270891">
+            <java-variable-name>rentalPlan</java-variable-name>
+            <xml-element-name>rentalPlan</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270892">
+            <java-variable-name>paymentCollected</java-variable-name>
+            <xml-element-name>paymentCollected</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270893">
+            <java-variable-name>paymentType</java-variable-name>
+            <xml-element-name>paymentType</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270894">
+            <java-variable-name>paymentAmount</java-variable-name>
+            <xml-element-name>paymentAmount</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270895">
+            <java-variable-name>address1</java-variable-name>
+            <xml-element-name>address1</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270896">
+            <java-variable-name>sentBy</java-variable-name>
+            <xml-element-name>sentBy</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <java-xml-type-mapping id="JavaXMLTypeMapping_1433138270887">
+         <class-type>com.ibm.lms.dto.webservice.GisResponseMessage</class-type>
+         <root-type-qname id="RootTypeQname_1433138270887">
+            <namespaceURI>http://webservice.dto.lms.ibm.com</namespaceURI>
+            <localpart>GisResponseMessage</localpart>
+         </root-type-qname>
+         <qname-scope>complexType</qname-scope>
+         <variable-mapping id="VariableMapping_1433138270897">
+            <java-variable-name>responseCode</java-variable-name>
+            <xml-element-name>responseCode</xml-element-name>
+         </variable-mapping>
+         <variable-mapping id="VariableMapping_1433138270898">
+            <java-variable-name>responseMsg</java-variable-name>
+            <xml-element-name>responseMsg</xml-element-name>
+         </variable-mapping>
+      </java-xml-type-mapping>
+      <service-interface-mapping id="ServiceInterfaceMapping_1433138270883">
+         <service-interface>com.ibm.lms.webservice.GisInfoCaptureWebServiceService</service-interface>
+         <wsdl-service-name id="WSDLServiceName_1433138270883">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>GisInfoCaptureWebServiceService</localpart>
+         </wsdl-service-name>
+         <port-mapping id="PortMapping_1433138270883">
+            <port-name>GisInfoCaptureWebService</port-name>
+            <java-port-name>GisInfoCaptureWebService</java-port-name>
+         </port-mapping>
+      </service-interface-mapping>
+      <service-endpoint-interface-mapping id="ServiceEndpointInterfaceMapping_1433138270883">
+         <service-endpoint-interface>com.ibm.lms.webservice.GisInfoCaptureWebService</service-endpoint-interface>
+         <wsdl-port-type id="WSDLPortType_1433138270883">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>GisInfoCaptureWebService</localpart>
+         </wsdl-port-type>
+         <wsdl-binding id="WSDLBinding_1433138270883">
+            <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+            <localpart>GisInfoCaptureWebServiceSoapBinding</localpart>
+         </wsdl-binding>
+         <service-endpoint-method-mapping id="ServiceEndpointMethodMapping_1433138270883">
+            <java-method-name>captureGisData</java-method-name>
+            <wsdl-operation>captureGisData</wsdl-operation>
+            <wrapped-element></wrapped-element>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1433138270883">
+               <param-position>0</param-position>
+               <param-type>com.ibm.lms.dto.webservice.GisInfoCaptureDO[]</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1433138270883">
+                  <wsdl-message id="WSDLMessage_1433138270883">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>captureGisDataRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>gisData</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping id="MethodParamPartsMapping_1433138270884">
+               <param-position>1</param-position>
+               <param-type>com.ibm.lms.dto.webservice.AuthorizationData</param-type>
+               <wsdl-message-mapping id="WSDLMessageMapping_1433138270884">
+                  <wsdl-message id="WSDLMessage_1433138270884">
+                     <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                     <localpart>captureGisDataRequest</localpart>
+                  </wsdl-message>
+                  <wsdl-message-part-name>authData</wsdl-message-part-name>
+                  <parameter-mode>IN</parameter-mode>
+               </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping id="WSDLReturnValueMapping_1433138270883">
+               <method-return-value>com.ibm.lms.dto.webservice.GisResponseMessage</method-return-value>
+               <wsdl-message id="WSDLMessage_1433138270885">
+                  <namespaceURI>http://webservice.lms.ibm.com</namespaceURI>
+                  <localpart>captureGisDataResponse</localpart>
+               </wsdl-message>
+               <wsdl-message-part-name>captureGisDataReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+         </service-endpoint-method-mapping>
+      </service-endpoint-interface-mapping>
+   </java-wsdl-mapping>

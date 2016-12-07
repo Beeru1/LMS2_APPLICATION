@@ -1,0 +1,223 @@
+package com.ibm.lms.engine.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.sql.DataSource;
+
+import org.apache.commons.dbcp.ConnectionFactory;
+import org.apache.commons.dbcp.DriverManagerConnectionFactory;
+import org.apache.commons.dbcp.PoolableConnectionFactory;
+import org.apache.commons.dbcp.PoolingDataSource;
+import org.apache.commons.pool.impl.GenericObjectPool;
+import org.apache.log4j.Logger;
+
+import com.ibm.lms.engine.util.PasswordEncDec;
+import com.ibm.lms.engine.util.ServerPropertyReader;
+import com.ibm.lms.engine.exception.DAOException;
+import com.ibm.lms.engine.util.Constants;
+
+
+/** 
+ * The DBConnection class, this class is used to get a DB connection using a datasource
+ * This class can be used to connect to any datasource, not just Oracle, so the name is a misnomer for this version
+ * In case you want this  class to use in your project, replace BarringException with your own exception class 
+ * @author Rohit Dhal, adapted by Puneet Lakhina for Code Generator.
+ * @date 21-Mar-2007
+ */
+
+public class DBConnection {
+	
+	
+	private static Logger logger = Logger.getLogger(DBConnection.class);
+	private static DataSource mem_o_datasource;
+	private static DataSource hrms_datasource;
+	private static int counter=0;
+
+	
+	/**
+	 * The default private constructor.Use getDBConnection() to get a connection
+	 *
+	 */
+	private DBConnection() {
+	}
+	
+	private static DataSource getDataSource() throws DAOException {
+		PoolingDataSource dataSource = null;
+		try {
+			logger.info("********************Loading the bubdle*********************************");
+			//PropertyReader.setBundleName(Constants.PROPERTIES_FILE_LOCATION);
+			
+			java.lang.Class.forName(ServerPropertyReader.getString("database.driver")).newInstance();
+			GenericObjectPool connectionPool = new GenericObjectPool(null);
+			connectionPool.setMaxIdle(Integer.parseInt(ServerPropertyReader.getString(
+							"database.pool.maxIdle")));
+			
+		/*	connectionPool.setMinIdle(Integer.parseInt(PropertyReader.getString(
+					"database.pool.minIdle")));
+			*/
+			
+			connectionPool.setMaxWait(Integer.parseInt(ServerPropertyReader.getString(
+							"database.pool.maxWait.millisec")));
+			connectionPool.setMaxActive(Integer.parseInt(ServerPropertyReader.getString(
+							"database.pool.maxActive")));
+			logger.info("aaaaaaaaaaaaa");
+			ConnectionFactory connectionFactory = new DriverManagerConnectionFactory(ServerPropertyReader.getString("database.url"), ServerPropertyReader.getString("database.username"),PasswordEncDec.decPassword(ServerPropertyReader.getString("database.password")));
+			logger.info("bbbbbbbbbb");
+			/*
+			 * Now we'll create the PoolableConnectionFactory, which wraps the
+			 * "real" Connections created by the ConnectionFactory with the
+			 * classes that implement the pooling functionality.
+			 */
+			// PoolableConnectionFactory poolableConnectionFactory =
+			new PoolableConnectionFactory(connectionFactory, connectionPool,null, null, false, false);
+			logger.info("PoolableConnectionFactory:::::"+connectionPool);
+			dataSource = new PoolingDataSource(connectionPool);
+			logger.info("dataSource:::::::"+dataSource);
+			logger.info("cccccccccc");
+		} catch (Exception exp) {
+			exp.printStackTrace();
+			logger.info("Error when attempting to obtain DB Driver "+ exp);
+			logger.info("Error when attempting to obtain DB Driver ", exp);
+			throw new DAOException("Connection not Found.");
+		}
+		return dataSource;
+	}
+	
+	/**
+	 * This method does the lookup of the HRMS datasource and store it in a memeber variable to be 
+	 * used later , to avoid doing lookups again and again
+	 * @exception com.ibm.lms.batch.exception.DAOException This exception is thrown in case data source cannot be looked up
+	 */
+/*	private  static void getHRMSDataSource() throws com.ibm.lms.batch.exception.DAOException {
+		try {
+			synchronized (DBConnection.class){
+				if (hrms_datasource == null) {
+					InitialContext loc_o_ic = new InitialContext();
+					hrms_datasource =(DataSource) loc_o_ic.lookup(PropertyReader.getValue("OLMSDS_LOOKUP_NAME"));					
+				}
+			}
+		} catch (NamingException namingException) {
+			logger.info("Lookup of LDAP Data Source Failed. Reason:" + namingException.getMessage());
+			com.ibm.lms.batch.exception.DAOException exception =
+			new com.ibm.lms.batch.exception.DAOException("Exception Occured while data source lookup.",namingException);
+			throw exception;
+		}
+	}*/
+	
+	/**
+	 * This method returns the db connection using a datasource
+	 * @return Connection the db connection instance
+	 * @exception com.ibm.lms.batch.exception.DAOException This exception is thrown in case connection is not established
+	 */
+	public static  Connection getDBConnection() throws DAOException {
+	//	logger.info("Request for connection received");
+		Connection dbConnection = null;
+		try {
+
+	//		logger.info("Counter in getDBConnection : "+counter);
+			counter++;
+			if (mem_o_datasource == null) {
+				mem_o_datasource = getDataSource();
+				}
+				dbConnection =
+				mem_o_datasource.getConnection();
+		// TODO Log that connection has been established
+		} catch (SQLException sqlException) {
+			// TODO LOG THIS
+			logger.info("Could Not Obtain Connection. Reason:" + sqlException.getMessage() + ". Error Code:" + sqlException.getErrorCode());
+			DAOException exception =
+				new DAOException("Exception Occured while obtaining Connection.",sqlException);
+			throw exception;
+		}
+	//	logger.info("Connection Obtained.");
+		return dbConnection;
+	}
+	
+	/**
+	 * This method returns the db connection using a datasource
+	 * @return Connection the db connection instance
+	 * @exception com.ibm.lms.batch.exception.DAOException This exception is thrown in case connection is not established
+	 */
+	/*public static  Connection getOLMSConnection() throws com.ibm.lms.batch.exception.DAOException {
+		logger.info("Request for connection received");
+		Connection oracleConnection = null;
+		try {
+			
+			if (hrms_datasource == null) {
+				getHRMSDataSource();
+				}
+			oracleConnection =
+				hrms_datasource.getConnection();
+			logger.info("Connection Obtained.");
+		} catch (SQLException sqlException) {
+			logger.info("Couldn't connected to HRMS server. Reason:" + sqlException.getMessage() + ". Error Code:" + sqlException.getErrorCode());
+			com.ibm.lms.batch.exception.DAOException exception =
+				new com.ibm.lms.batch.exception.DAOException("Couldn't connected to HRMS server.");
+			throw exception;
+		}
+		
+		return oracleConnection;
+	}*/
+	
+	public static void releaseResources(
+		Connection connection,
+		Statement statement,
+		ResultSet resultSet)
+		throws DAOException {
+//		logger.info("Request for releasing resources recieved");
+		try {
+			
+		
+						counter--;
+// 		logger.info("Counter in releaseResources: "+counter);
+
+			if (resultSet != null) {
+				resultSet.close();
+				resultSet = null;
+			}
+			if (statement != null) {
+				statement.close();
+				statement = null;
+			}
+			if (connection != null) {
+				connection.close();
+				connection = null;
+			}
+
+		} catch (SQLException sqlException) {
+			logger.info("Closing of Resources Failed. Reason:" + sqlException.getMessage()+". Error Code:"+ sqlException.getErrorCode());
+			throw new DAOException("errors.dbconnection.close_connection");
+		}
+
+	}
+	private static DBConnection connectionDb;
+	
+	public static DBConnection getInstance() {
+
+		if (connectionDb == null) {
+			connectionDb = new DBConnection();
+		}
+
+		return connectionDb;
+	}
+
+	public static void main(String arg[])
+	{
+		try
+		{
+			logger.info("11111111");
+			
+			
+			logger.info("222222");
+		 //PropertyReader.setBundleName("lib.ServerProperties");
+		  DBConnection conDb = DBConnection.getInstance();
+		  logger.info("connection  :" + conDb.getDBConnection());
+		}catch(Exception ex){ex.printStackTrace();}
+		
+	}
+	
+
+}

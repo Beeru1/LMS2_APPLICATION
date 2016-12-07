@@ -1,0 +1,623 @@
+.datatable-table{
+	border: 1pt solid #FFFFFF;
+	padding: 1px;
+	}
+/*for TR in table heading*/
+.tr-tableHeading{
+	background-color: #AFDFD8;
+}
+/*for TD in table heading*/
+.td-body-textbold-green{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #0B8E7C;
+	text-decoration: none;
+	border: 1pt;
+	border-style: solid;
+	border-color: #649E95;
+}
+/*for TD in table heading align right*/
+.td-body-textbold-green-right{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #0B8E7C;
+	text-decoration: none;
+	border: 1pt;
+	border-style: solid;
+	border-color: #649E95;
+	text-align: right;
+}
+
+/*for TR in gray rows */
+.tr-outputdata-gray{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	background-color: #F3F3F3;
+	text-decoration: none;
+	border-color:#D8D8D8;
+}
+/*for TR in green rows */
+.tr-outputdata-green{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	background-color: #E9F6F4;
+	text-decoration: none;
+	border-color:#D8D8D8;
+}
+.wpsA{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+font-style: normal;
+line-height: normal;
+font-weight: normal;
+font-variant: normal;
+text-transform: none;
+color: #0000CC;
+}
+/*for TD output table left align*/
+.td-text-cellcontent-left {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-align: left;
+	color: #6C6C6C;
+	text-decoration: none;
+	border: 1pt solid  #D8D8D8;
+}
+
+/*for TD output table */
+.td-text-cellcontent{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+        text-align: right;
+ 	color: #6C6C6C;
+	text-decoration: none;
+	border: 1pt solid  #D8D8D8;
+	 
+}
+
+/*for green bold text */
+.sc-agreendbold{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0B8E7C;
+	font-size:11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+/*for green  text */
+.sc-agreen {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4BAEA0;
+	font-size:11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+/*for gray bold text */
+.sc-agraybold {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #6C6C6C;
+	font-size:11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+/*for gray nomal text */
+
+.sc-agray {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #6C6C6C;
+	font-size:11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+/*for hyperlink in output table used with span*/
+.sc-hyperLinkgray{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+font-style: normal;
+font-weight: bold;
+line-height: normal;
+font-variant: normal;
+text-transform: none;
+color: #6C6C6C;
+text-decoration: none;
+
+}
+
+.sc-tr-highlighted-outputdata {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	background-color: #cccccc;
+	text-decoration: none;
+	text-align:left;
+	border-color:#CCCCCC;
+}
+
+
+	
+/*view bill starts here*/
+
+.sc-hyperLink{
+
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+font-style: normal;
+font-weight: bold;
+line-height: normal;
+font-variant: normal;
+text-transform: none;
+color: #6C6C6C;
+text-decoration: none;
+}
+
+.tdLabel {
+	FONT-WEIGHT: bold; VERTICAL-ALIGN: top; LINE-HEIGHT: 20px; font-size: 11px; color: #3C3C3C 
+}
+
+.tdField {
+	VERTICAL-ALIGN: top; LINE-HEIGHT: 20px; font-size: 11px; color: #3C3C3C
+}
+
+.scTableHeadStart {
+	BORDER-RIGHT: 1pt solid; PADDING-RIGHT: 3px; 	BORDER-TOP: 1pt solid; 	PADDING-LEFT: 3px;  FONT-WEIGHT: bold;	FONT-SIZE: 7.5pt; 	PADDING-BOTTOM: 3px; 	VERTICAL-ALIGN: top; 	BORDER-LEFT: 1pt solid; 	COLOR: #0B8E7C; PADDING-TOP: 3px; BORDER-BOTTOM: 1pt solid;	BACKGROUND-COLOR: #85C6BD;
+	 
+}
+
+.scTableHeadStart-bold {
+	BORDER-RIGHT: 1pt solid;
+	PADDING-RIGHT: 3px;
+	BORDER-TOP: 1pt solid;
+	PADDING-LEFT: 3px;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 7.5pt;
+	PADDING-BOTTOM: 3px;
+	VERTICAL-ALIGN: top;
+	BORDER-LEFT: 1pt solid;
+	COLOR: #0B8E7C; PADDING-TOP: 3px; BORDER-BOTTOM: 1pt solid;
+	BACKGROUND-COLOR: #85C6BD;
+}
+
+TABLE.tableBill TD {
+	BORDER-BOTTOM: #AFDFD8 1px solid
+}
+TABLE.tableBill {
+	BORDER-RIGHT: #AFDFD8 1px solid; 
+	PADDING-RIGHT: 3px; 
+	BORDER-TOP: #AFDFD8 1px solid; 
+	PADDING-LEFT: 3px; 
+	PADDING-BOTTOM: 3px; 
+	BORDER-LEFT: #AFDFD8 1px solid; 
+	PADDING-TOP: 3px; 
+	BORDER-BOTTOM: #AFDFD8 1px solid; 
+	TEXT-ALIGN: left
+}
+
+TABLE.tableBillA TD {
+	BORDER-BOTTOM: #AFDFD8 1px solid
+}
+TABLE.tableBillA {
+	BORDER-RIGHT: #AFDFD8 1px 
+	solid; PADDING-RIGHT: 3px; 
+	BORDER-TOP: #AFDFD8 1px solid; 
+	PADDING-LEFT: 3px; 
+	PADDING-BOTTOM: 3px; 
+	BORDER-LEFT: #AFDFD8 1px solid; 
+	PADDING-TOP: 3px; 
+	BORDER-BOTTOM: #AFDFD8 1px solid; 
+	TEXT-ALIGN: left
+}
+
+.trBG0 {
+	FONT-SIZE: xx-small; COLOR: #333333; FONT-FAMILY: Verdana, Tahoma, Arial; BACKGROUND-COLOR: #F3F3F3
+}
+.trBG1 {
+	FONT-SIZE: xx-small; COLOR: #333333; FONT-FAMILY: Verdana, Tahoma, Arial; BACKGROUND-COLOR: #E9F6F4
+}
+.message {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; FONT-SIZE: 9pt; MARGIN-BOTTOM: 10px; VERTICAL-ALIGN: middle; COLOR: red
+}
+
+.greenHyperLink{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+font-style: normal;
+font-weight: bold;
+line-height: normal;
+font-variant: normal;
+text-transform: none;
+color: #3b9185;
+text-decoration: none;
+}
+
+.fontRedBox {
+	BORDER-RIGHT: red 1pt solid; PADDING-RIGHT: 3px; BORDER-TOP: red 1pt solid; PADDING-LEFT: 3px; FONT-WEIGHT: bold; PADDING-BOTTOM: 3px; BORDER-LEFT: red 1pt solid; COLOR: red; PADDING-TOP: 3px; BORDER-BOTTOM: red 1pt solid; LETTER-SPACING: 1pt; HEIGHT: 18px
+}
+
+.tdLabelA {
+	PADDING-RIGHT: 5px;
+	PADDING-LEFT: 0px;
+	FONT-WEIGHT: bold;
+	PADDING-BOTTOM: 5px;
+	VERTICAL-ALIGN: top;
+	PADDING-TOP: 5px ;
+	font-size: 11px;
+	color: #0B8E7C   
+}
+
+.fontTitle {
+	FONT-WEIGHT: 800; FONT-SIZE: 13px; VERTICAL-ALIGN: middle; WIDTH: 100%;
+	LINE-HEIGHT: 25px; BORDER-BOTTOM: thin solid; LETTER-SPACING: 2pt;
+	TEXT-ALIGN: left; FONT-VARIANT: normal; COLOR: #0B8E7C;
+}
+
+.sc-body-textbold-black {
+
+	font-family: Arial, Helvetica, sans-serif;
+	color: #6C6C6C;
+	font-size:11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.sc-body-text-black {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #6C6C6C;
+	font-size:11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.scTrHeadStart {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #0B8E7C;
+	text-decoration: none;
+}
+
+.sc-abold {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333333;
+	font-weight: bold;
+	text-decoration: none;
+}
+a.sc-aredbold, A.sc-aredbold:Visited, A.sc-aredbold:Active, A.sc-aredbold:link {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FF0000;
+	font-size:11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+a.sc-aredbold:hover {
+	color: #FF0000;
+	text-decoration: underline;
+}
+a.sc-redUnderline, A.redUnderline:Visited, A.redUnderline:Active, A.redUnderline:link {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FF0000;
+	font-size:11px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+a.redUnderline:hover {
+	color: #FF0000;
+	text-decoration: none;
+}
+.sc-ared {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FF0000;
+	font-size:11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.tableHeading {
+	FONT-WEIGHT: bold; VERTICAL-ALIGN: top; LINE-HEIGHT: 20px; font-size: 11px; color: #0B8E7C 
+}
+.sc-buttonlook {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-repeat: repeat-x;
+	background-position: center;
+	background-color: #3B9185;
+	border: 2px solid #3B9185;
+	
+}
+
+tbody tr.odd {
+	/*background-color: #DDF;
+	*/
+	FONT-SIZE: xx-small; COLOR: #333333; FONT-FAMILY: Verdana, Tahoma, Arial; BACKGROUND-COLOR: #F3F3F3;
+	
+}
+
+tbody tr.even {
+	FONT-SIZE: xx-small; COLOR: #333333; FONT-FAMILY: Verdana, Tahoma, Arial; BACKGROUND-COLOR: #E9F6F4;
+	/*background-color: #DDF;*/
+	
+}
+A.green:link, A.green:link:Visited, A.green:link:Active, A.green:link:Link
+{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #666666;
+	font-size:11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+A.green:link:Hover
+{
+	color: #0B8E7C;	
+}
+div.fastfactouterdiv {
+	width: 100%;
+	font-family: Verdana;
+	font-size: 11px;
+	padding-bottom: 5px;
+	/*background: url(bottom.gif) no-repeat  right bottom;*/
+	text-decoration:none;
+	color: grey;
+	vertical-align:middle;
+}
+div.fastfactouterdiv a {
+	text-decoration:none;
+	/*color: #066;*/
+}
+div.fastfactouterdiv a.current {
+	/*background : #red;*/
+}
+div.fastfactouterdiv a:hover {
+	/*background : #066 url(linkarrow.gif) no-repeat right center;
+	color: #777;*/
+	text-decoration: none;
+}
+div.fastfactouterdiv div {
+    color: grey;
+    width: 100%;
+	/*background: url(title.gif) repeat-x;*/
+	overflow: hidden;
+}
+div.fastfactouterdiv div.no-child {
+	width: 100%;
+	/*height: 25px;*/
+}
+div.fastfactouterdiv div.no-child span {
+	/*display: block;
+	padding: 1px 10px;*/
+	font-weight: bold;
+	/*color: block;*/
+	width: 100%;
+	padding-left: 5pt;
+	cursor: default;
+	text-align: left;
+	text-decoration:none;
+	border: 1px solid #F3F3F3;
+}
+div.fastfactouterdiv div.fastfactinnerdiv {
+	height: 25px;
+}
+div.fastfactouterdiv div span {
+	/*display: block;
+	padding: 5px 25px;*/
+	padding-left:2px;
+	font-weight: bold;
+	width: 100%;
+	/*color: block;
+	color: #066;*/
+	cursor: default;
+	text-align: center;
+	text-decoration:none;
+	border: 1px solid #F3F3F3;
+}
+div.fastfactouterdiv div span a {
+	text-decoration:none;
+	/*color: #066;*/
+	}
+div.fastfactouterdiv div.fastfactinnerdiv span {
+	/*background-image: url(collapsed.gif);*/
+}
+div.fastfactouterdiv div a {
+	text-decoration:none;
+	/*color: #066;*/
+}
+div.fastfactouterdiv div a.current {
+	/*background : #red;*/
+}
+div.fastfactouterdiv div a:hover {
+	/*background : #066 url(linkarrow.gif) no-repeat right center;
+	background: url(selected-title.gif) repeat-x;
+	color: #777;*/
+	text-decoration: none;
+}
+/*view bill ends here*/
+
+.sc-pagetitle {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #AE0202;
+	font-size:11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*From Existing CSS*/
+.sc-head-red {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #EA1000;
+	text-decoration: none;
+	border: #017C84;
+}
+
+/* Help portlet*/
+.sc-body-successs-msg {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #0000CC;
+	text-decoration: none;
+}
+
+.sc-div_header {
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	border-top-width: 1px;
+	background-color: #CCCCCC;
+	display: table;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+}
+
+/* panels */
+sc-div.tabs_help {
+	padding: .5em;
+	padding-left: 
+}
+sc-div.tabs_help div.tabs_help {
+	padding: 0;
+}
+sc-div.tabs_help div.tabs_help div {
+	clear: left;
+	padding: 0.5em;
+	height:40px;
+	border: 1px solid #CCCCCC;
+	margin-left: 0px;
+}
+.dynamic-tab-pane-control.tab-pane {
+	position:	relative;
+	width:		100%;
+}
+.dynamic-tab-pane-control .tab-row .tab {
+	float:left;
+	border-bottom:	none;
+	z-index:		1;
+	white-space:	nowrap;
+	position:		relative;
+	top:			0;
+	height : 16px;
+	font-family : Verdana;
+	color: #ffffff;
+	text-align : center;
+	font-weight: bold;
+	text-decoration: none;
+	font-size:10px;
+	VERTICAL-ALIGN: middle;
+	display:inline;
+}
+
+.dynamic-tab-pane-control .tab-row .tab.selected {
+	/*background:		red;
+	border:			1px solid ThreeDDarkShadow;*/
+	border-bottom:	0;
+	z-index:		1;
+	/*padding:		8px 20px 3px 5px;
+	margin:			1px -1px 1px 2px;*/
+	top:			0;
+	
+	font:			10px;
+	font-weight:	bold;
+	font-family:	Verdana;/*Arial, Helvetica, sans-serif;*/
+	color:			silver;
+	/*text-decoration:underline;*/
+	cursor:			default;
+	
+}
+.dynamic-tab-pane-control .tab-row .tab.selected.hover{
+	/*text-decoration:	underline;*/
+	cursor:				default;
+}
+.dynamic-tab-pane-control .tab-row .tab a {
+	font:				10px;
+	font-weight:		bold;
+	font-family:		Verdana;/*Arial, Helvetica, sans-serif;*/
+	color:				black;
+	text-decoration:	none;
+	cursor:				default;
+	}
+
+.dynamic-tab-pane-control .tab-row .tab.hover {
+	/*text-decoration:	underline;background:		red;url("../images/tab-background.GIF");red;*/
+	cursor: default;
+}
+.dynamic-tab-pane-control .tab-page {
+	clear:			both;
+	border:			1px solid #D8D8D8;/*#7E7E7E;/*ThreeDDarkShadow;*/
+	background:		ThreeDHighlight;
+	z-index:		2;
+	position:		relative;
+	top:			-2px;
+	color:			WindowText;/*edit color for help and demo text*/
+	font:			Message-Box;
+	padding-bottom:10px;
+	padding-top: 10px;
+	/*border-top:		1px solid #ff7519;/*1px solid ThreeDDarkShadow;
+	border-top-width: 	100%;*/
+	height:				00px;
+}
+.dynamic-tab-pane-control .tab-row {
+	z-index:		0;
+	white-space:	nowrap;
+}

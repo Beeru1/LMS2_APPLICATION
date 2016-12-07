@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+								"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<tiles-definitions>
+
+    <definition name=".mainLayout" path="/jsp/layouts/main-layout.jsp">
+		<put name="title" value="" />
+		<put name="header" value="/jsp/layouts/header.jsp" />
+		<put name="tickler1" value="/jsp/layouts/tickler1.jsp" />
+		<put name="menu" value="/jsp/layouts/menu.jsp" />
+		<put name="body" value="/jsp/layouts/blank.html" />
+		<put name="tickler2" value="/jsp/layouts/tickler2.jsp" />
+		<put name="footer" value="/jsp/layouts/footer.jsp" />
+	</definition>
+	
+	<definition name="home.page" extends=".mainLayout">
+		<put name="title" value="LMS : Home Page" />
+		<put name="body" value="/jsp/home.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="lmsHelp.page" extends=".mainLayout">
+		<put name="title" value="LMS : Help Page" />
+		<put name="body" value="/jsp/lmsHelp.jsp" />
+	</definition>
+	
+	
+	
+	
+	<definition name="errorPage.page" extends=".mainLayout">
+		
+		<put name="body" value="/jsp/errors/error404Page.jsp" />
+	</definition>
+	
+	<definition name="error500Page.page" extends=".mainLayout">
+		
+		<put name="body" value="/jsp/errors/error500Page.jsp" />
+	</definition>
+
+	<definition name="createCircle.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create Circle" />
+		<put name="body" value="/jsp/createCircle.jsp" />
+	</definition>
+	
+	<definition name="displayFileList.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create Circle" />
+		<put name="body" value="/jsp/displayFile.jsp" />
+	</definition>
+	<definition name="fileReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : File Report" />
+		<put name="body" value="/jsp/fileReport.jsp" />
+	</definition>
+		
+	<definition name="rejectedFileList.page" extends=".mainLayout">
+		<put name="title" value="LMS : Rejected Files"></put>
+		<put name="body" value="/jsp/showRejectedFiles.jsp"></put>
+	</definition>
+	<definition name="addFile.page" extends=".mainLayout">
+		<put name="title" value="LMS : Add File"></put>
+		<put name="body" value="/jsp/addFile.jsp"></put>
+	</definition>
+	
+	<definition name="submitFileList.page" extends=".mainLayout">
+		<put name="title" value="LMS : Submit File For Approval"></put>
+		<put name="body" value="/jsp/submitFileForApproval.jsp"></put>
+	</definition>
+	
+	<definition name="approveFileList.page" extends=".mainLayout">
+		<put name="title" value="LMS : Approve/Reject File"></put>
+		<put name="body" value="/jsp/approveFile.jsp"></put>
+	</definition>
+
+
+	<definition name="circleMstr.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create Circle" />
+		<put name="body" value="/jsp/createCircle.jsp" />
+	</definition>
+	
+	<definition name="createCategory.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create Category" />
+		<put name="body" value="/jsp/createCategory.jsp" />
+	</definition>
+	<definition name="createSubCategory.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create Sub Category" />
+		<put name="body" value="/jsp/createSubCategory.jsp" />
+	</definition>
+	<definition name="createUser.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create User" />
+		<put name="body" value="/jsp/createUser.jsp" />
+	</definition>
+	
+	<definition name="viewAllUsers.page" extends=".mainLayout">
+		<put name="title" value="LMS : View All Users" />
+		<put name="body" value="/jsp/viewAllUsers.jsp" />
+	</definition>
+	
+	<definition name="searchUser.page" extends=".mainLayout">
+		<put name="title" value="LMS : Search User" />
+		<put name="body" value="/jsp/searchUser.jsp" />
+	</definition>
+	
+	<definition name="viewUserDetails.page" extends=".mainLayout">
+		<put name="title" value="LMS : View User Details" />
+		<put name="body" value="/jsp/viewUserDetails.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="circleMstr.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create Circle" />
+		<put name="body" value="/jsp/createCircle.jsp" />
+	</definition>
+	<definition name="viewUser.page" extends=".mainLayout">
+		<put name="title" value="LMS : View Users" />
+		<put name="body" value="/jsp/viewEditUser.jsp" />
+	</definition>
+	<definition name="editUser.page" extends=".mainLayout">
+		<put name="title" value="LMS : Edit User" />
+		<put name="body" value="/jsp/editUser.jsp" />
+	</definition>
+	
+	<definition name="viewSingleUser.page" extends=".mainLayout">
+		<put name="title" value="LMS : User Details" />
+		<put name="body" value="/jsp/viewUser.jsp" />
+	</definition>
+	
+	
+	<definition name="searchFile.page" extends=".mainLayout">
+		<put name="title" value="LMS : Search Files" />
+		<put name="body" value="/jsp/searchFile.jsp" />
+	</definition>
+		<definition name="displayDocument.page" extends=".mainLayout">
+		<put name="title" value="LMS : View Document" />
+		<put name="body" value="/jsp/displayDocument.jsp" />
+	</definition>
+	<definition name="keywordFileSearch.page" extends=".mainLayout">
+		<put name="title" value="LMS : Keyword File Search" />
+		<put name="body" value="/jsp/keywordFileSearch.jsp" />
+	</definition>	
+	<definition name="changePassword.page" extends=".mainLayout">
+		<put name="title" value="LMS : Change Password" />
+		<put name="body" value="/jsp/changePasswordInt.jsp" />
+	</definition>
+
+<!--  First time Login password changes  -->
+	<definition name="initChangePasswordFirstLogin.page" extends=".mainLayout">
+		<put name="title" value="LMS : Change Password" />
+		<put name="body" value="/jsp/changePassword.jsp" />
+		<put name="header" value="/jsp/layouts/header.jsp" />
+		<put name="tickler1" value="" />
+		<put name="menu" value="" />
+		<put name="tickler2" value="" />
+		<put name="footer" value="/jsp/layouts/footer.jsp" />		
+	</definition>
+	
+	<definition name="initCSRChangePasswordFirstLogin.page" extends=".mainLayout">
+		<put name="title" value="LMS : Change Password" />
+		<put name="body" value="/jsp/changePassword.jsp" />
+		<put name="header" value="/jsp/layouts/header.jsp" />
+		<put name="tickler1" value="" />
+		<put name="menu" value="" />
+		<put name="tickler2" value="" />
+		<put name="footer" value="/jsp/layouts/footer.jsp" />		
+	</definition>
+
+
+	<definition name="unlockUser.page" extends=".mainLayout">
+		<put name="title" value="LMS : Unlock User" />
+		<put name="body" value="/jsp/activateUserAccount.jsp" />
+	</definition>		
+	
+	<definition name="leadRegistration.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Registration" />
+		<put name="body" value="/jsp/leadRegistration.jsp" />
+	</definition>	
+	
+	<definition name="editLeadRegistration.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Registration" />
+		<put name="body" value="/jsp/editLeadRegistration.jsp" />
+	</definition>
+	<definition name="leadSearch.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Search" />
+		<put name="body" value="/jsp/leadSearch.jsp" />
+	</definition>
+	
+	<definition name="SubStatusSearch.page" extends=".mainLayout">
+		<put name="title" value="LMS : Sub Status Search" />
+		<put name="body" value="/jsp/SubStatusSearch.jsp" />
+	</definition>
+	
+	<definition name="SubSubStatusSearch.page" extends=".mainLayout">
+		<put name="title" value="LMS : Sub Sub Status Search" />
+		<put name="body" value="/jsp/SubSubStatusSearch.jsp" />
+	</definition>
+	
+	<definition name="subStatus.page" extends=".mainLayout">
+		<put name="title" value="LMS : Sub Status Search" />
+		<put name="body" value="/jsp/subStatus.jsp" />
+	</definition>
+	
+	<definition name="subSubStatus.page" extends=".mainLayout">
+		<put name="title" value="LMS : Sub Status Search" />
+		<put name="body" value="/jsp/subSubStatus.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="leadSearchFinalUpdatePage.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Search Final Update" />
+		<put name="body" value="/jsp/leadSearchFinalUpdate.jsp" />
+	</definition>
+	<definition name="viewLeadFinalUpdateDetails.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Detail" />
+		<put name="body" value="/jsp/workflow/viewLeadFinalUpdate.jsp" />
+	</definition>	
+	
+	<definition name="leadSearchDialler.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Search" />
+		<put name="body" value="/jsp/leadSearchDialler.jsp" />
+	</definition>
+	
+	<definition name="leadDetails.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Details" />
+		<put name="body" value="/jsp/leadDetails.jsp" />
+	</definition>
+	
+	<definition name="fesibleleadDetails.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Details" />
+		<put name="body" value="/jsp/fesibleLeadDetails.jsp" />
+	</definition>
+	
+	
+	<definition name="success.page" extends=".mainLayout">
+		<put name="title" value="LMS : Transaction Status" />
+		<put name="body" value="/jsp/success.jsp" />
+	</definition>	
+	
+	<definition name="contentSearch.page" extends=".mainLayout">
+		<put name="title" value="LMS : Document Content Search" />
+		<put name="body" value="/jsp/contentSearch.jsp" />
+	</definition>
+
+	<definition name="bulkUserUpload.page" extends=".mainLayout">
+		<put name="title" value="LMS : User Bulk Upload" />
+		<put name="body" value="/jsp/bulkUserUpload.jsp" />
+	</definition>
+	<definition name="bulkUserDelete.page" extends=".mainLayout">
+		<put name="title" value="LMS : Bulk User Deletion" />
+		<put name="body" value="/jsp/bulkUserDelete.jsp" />
+	</definition>
+	
+	<definition name="userLoginReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : File Report" />
+		<put name="body" value="/jsp/userLoginStatusReport.jsp" />
+	</definition>
+	<definition name="circleWiseReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : File Report" />
+		<put name="body" value="/jsp/circleWiseReport.jsp" />
+	</definition>
+	<definition name="fileIdWiseReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : File Report" />
+		<put name="body" value="/jsp/agentIdWiseReport.jsp" />
+	</definition>
+	<definition name="viewArchivedFiles.page" extends=".mainLayout">
+		<put name="title" value="LMS : Archived Documents" />
+		<put name="body" value="/jsp/searchArchivedFile.jsp" />
+	</definition>
+	<definition name="alertReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : File Report" />
+		<put name="body" value="/jsp/alertHistoryReport.jsp" />
+	</definition>
+
+	<definition name="viewBulkUserFiles.page" extends=".mainLayout">
+ 	<put name="title" value="LMS : View Bulk User Upload Files" />
+ 	<put name="body" value="/jsp/viewBulkUserFiles.jsp" />
+	</definition>
+	
+	
+	<definition name="UploadPartnerThreshold.page" extends=".mainLayout">
+		<put name="title" value="LMS : Channel Partner Capability Upload" />
+		<put name="body" value="/jsp/UploadPartnerThreshold.jsp" />
+	</definition>
+	
+	<!-- Waiver Matrix -->
+	<definition name="excelUpload.page" extends=".mainLayout">
+		<put name="title" value="LMS : Upload File"></put>
+		<put name="body" value="/jsp/excelUpload.jsp"></put>
+	</definition>
+	
+	<definition name="displayFile.page" path="/jsp/displayFile.jsp">
+		<put name="title" value=""></put>
+	</definition>
+	
+		<definition name="iDocReports.page" extends=".mainLayout">
+		<put name="title" value="LMS :Leads iDOC Report" />
+		<put name="body" value="/jsp/iDoc.jsp" />
+	</definition>
+	
+	<definition name="excelDownload.page" extends=".mainLayout">
+		<put name="title" value="LMS : Download Template"></put>
+		<put name="body" value="/jsp/excelDownload.jsp"></put>
+	</definition>
+	
+	<definition name="lockedUserReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : Locked User Report" />
+		<put name="body" value="/jsp/lockedUserReport.jsp" />
+	</definition>
+	<definition name="adminHelp.page" extends=".mainLayout">
+		<put name="title" value="LMS : Help Document" />
+		<put name="body" value="/jsp/help.jsp" />
+	</definition>
+	<definition name="downloadReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : CSR Wise Document Count Report" />
+		<put name="body" value="/jsp/downloadCSRWiseDocumentCount.jsp" />
+	</definition>
+
+	<definition name="NetworkErrorLogForm.page" extends=".mainLayout">
+		<put name="title" value="LMS : Network Fault Log" />
+		<put name="body" value="/jsp/logNetworkError.jsp" />
+	</definition>
+	<!-- Real Time Network Map -->
+	
+	<definition name="CsdConfiguration.page" extends=".mainLayout">
+		<put name="title" value="LMS : CSD Configuration" />
+		<put name="body" value="/jsp/configCsdUser.jsp" />
+	</definition>
+	<definition name="NetworkFaultReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : Network Fault Report" />
+		<put name="body" value="/jsp/networkFaultReport.jsp" />
+	</definition>
+	<definition name="NetworkImpactReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : Network Impact Report" />
+		<put name="body" value="/jsp/networkImpactReport.jsp" />
+	</definition>
+	<definition name="noUsageReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : No Usage Report" />
+		<put name="body" value="/jsp/noUsageReport.jsp" />
+	</definition>
+		<definition name="scrollerUpdationReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : Scroller Updation Report" />
+		<put name="body" value="/jsp/scrollerUpdationReport.jsp" />
+	</definition>
+	<definition name="scrollerUpdationReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : Scroller Updation Report" />
+		<put name="body" value="/jsp/scrollerUpdationReport.jsp" />
+	</definition>
+	<definition name="contentStatusReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : Content Status Report" />
+		<put name="body" value="/jsp/contentStatusReport.jsp" />
+	</definition>
+	<definition name="contentExpireReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : Content Expiry Report" />
+		<put name="body" value="/jsp/contentExpireReport.jsp" />
+	</definition>
+		<definition name="obsoleteIdsReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : Obsolete Ids Report" />
+		<put name="body" value="/jsp/obsoleteIdsReport.jsp" />
+	</definition>
+	<definition name="reports.page" extends=".mainLayout">
+		<put name="title" value="LMS : View Reports" />
+		<put name="body" value="/jsp/reports.jsp" />
+	</definition>
+	
+		<definition name="mtdReports.page" extends=".mainLayout">
+		<put name="title" value="LMS : View Report" />
+		<put name="body" value="/jsp/leadMTDreports.jsp" />
+	</definition>
+	<definition name="billplan-Upload.page" extends=".mainLayout">
+		<put name="title" value="LMS : Bill Plan Upload" />
+		<put name="body" value="/jsp/billplan-Upload.jsp" />
+	</definition>
+	<definition name="billplan-Details.page" extends=".mainLayout">
+		<put name="title" value="LMS : Bill Plan Details" />
+		<put name="body" value="/jsp/billplan-Details.jsp" />
+	</definition>
+
+	<definition name="billplan-EditDetails.page" extends=".mainLayout">
+		<put name="title" value="LMS : Bill Plan Details" />
+		<put name="body" value="/jsp/billplan-EditDetails.jsp" />
+	</definition>
+	
+	<definition name="bulkAssignment.page" extends=".mainLayout">
+		<put name="title" value="Bulk Product Assignment"></put>
+		<put name="body" value="/jsp/bulkAssignment.jsp"></put>
+	</definition>
+	
+	<definition name="bulkUserCreation.page" extends=".mainLayout">
+		<put name="title" value="Bulk User Creation"></put>
+		<put name="body" value="/jsp/bulkUserCreation.jsp"></put>
+	</definition>
+	
+	<definition name="bulkLeadRegistration.page" extends=".mainLayout">
+		<put name="title" value="Bulk Lead Registration"></put>
+		<put name="body" value="/jsp/bulkLeadRegistration.jsp"></put>
+	</definition>
+	
+	<definition name="assignedLeads.page" extends=".mainLayout">
+		<put name="title" value="LMS : Assigned Leads" />
+		<put name="body" value="/jsp/workflow/listAsignedLeads.jsp" />
+	</definition>
+	<definition name="searchAssignmentAcceleration.page" extends=".mainLayout">
+		<put name="title" value="LMS : Assignment Acceleration Search" />
+		<put name="body" value="/jsp/workflow/searchAssignmentAcceleration.jsp" />
+	</definition>
+	<definition name="assignedLeadDetail.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Detail" />
+		<put name="body" value="/jsp/workflow/viewAssignedLead.jsp" />
+	</definition>
+	<definition name="feasibleLeads.page" extends=".mainLayout">
+		<put name="title" value="LMS : Check Feasible Leads" />
+		<put name="body" value="/jsp/workflow/listFeasibleLeads.jsp" />
+	</definition>
+	<definition name="feasibilityLeadDetail.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Detail" />
+		<put name="body" value="/jsp/workflow/viewFeasibilityLead.jsp" />
+	</definition>
+		<definition name="newFeasibilityLead.page" extends=".mainLayout">
+		<put name="title" value="LMS : New Feasible Leads" />
+		<put name="body" value="/jsp/workflow/newFeasibleLeads.jsp" />
+	</definition>
+	
+	<definition name="editLeadRegistration.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Registration" />
+		<put name="body" value="/jsp/editLeadRegistration.jsp" />
+	</definition>
+	<!--changed By Nancy  -->
+	<definition name="editLeadSearch.page" extends=".mainLayout">
+		<put name="title" value="LMS : Edit Lead Search" />
+		<put name="body" value="/jsp/editLeadSearch.jsp" />
+	</definition>	
+	
+	<definition name="editLeadDetails.page" extends=".mainLayout">
+		<put name="title" value="LMS : Edit Lead Details" />
+		<put name="body" value="/jsp/editLeadDetails.jsp" />
+	</definition>
+	
+	<definition name="editLead.page" extends=".mainLayout">
+		<put name="title" value="LMS : Edit Lead Details" />
+		<put name="body" value="/jsp/editLead.jsp" />
+	</definition>
+	
+	<definition name="assignedLeadView.page" extends=".mainLayout">
+		<put name="title" value="LMS : Lead Detail" />
+		<put name="body" value="/jsp/workflow/assignedLeadView.jsp" />
+	</definition>
+	<definition name="assignmentMatrix.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create Assignment Matrix" />
+		<put name="body" value="/jsp/workflow/assignmentMatrix.jsp" />
+	</definition>
+	
+	<!-- added by Nancy -->
+	
+	<definition name="assignmentMatrixList.page" extends=".mainLayout">
+		<put name="title" value="LMS : Assignment Matrix List" />
+		<put name="body" value="/jsp/workflow/listAssignmentMatrix.jsp" />
+	</definition>
+	
+	
+	<definition name="secondLevelApprover.page" extends=".mainLayout">
+		<put name="title" value="LMS : Assignment Matrix L2 Approval List" />
+		<put name="body" value="/jsp/SecondLevelApprover.jsp" />
+	</definition>
+	
+	
+	<definition name="assignmentMatrixApprovalList.page" extends=".mainLayout">
+		<put name="title" value="LMS : Assignment Matrix L1 Approval List" />
+		<put name="body" value="/jsp/OLMApprovers.jsp" />
+	</definition>
+	
+	<!--  Added by Parnika  -->
+	
+	<definition name="createProductMapping.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create Product Mapping" />
+		<put name="body" value="/jsp/createProductMapping.jsp" />
+	</definition>
+	
+	<definition name="createAgency.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create Agency" />
+		<put name="body" value="/jsp/createAgency.jsp" />
+	</definition>
+	
+	<definition name="editAgency.page" extends=".mainLayout">
+		<put name="title" value="LMS : Edit Agency" />
+		<put name="body" value="/jsp/editAgency.jsp" />
+	</definition>
+	
+	<definition name="reports.page" extends=".mainLayout">
+		<put name="title" value="LMS : View Reports" />
+		<put name="body" value="/jsp/reports.jsp" />
+	</definition>
+
+	<definition name="downloadMasters.page" extends=".mainLayout">
+		<put name="title" value="LMS : Download Master" />
+		<put name="body" value="/jsp/downloadMasters.jsp" />
+	</definition>
+	
+	<!-- End of changes by Parnika -->
+	
+	<!--  Added by Bhaskar  -->
+	
+	<definition name="bulkAssignmentDownload.page" extends=".mainLayout">
+		<put name="title" value="LMS : Bulk Assignment Matrix Download " />
+		<put name="body" value="/jsp/assignmentDownload.jsp" />
+	</definition>
+	<definition name="userMasterDownload.page" extends=".mainLayout">
+		<put name="title" value="LMS : User master Download " />
+		<put name="body" value="/jsp/userMasterDownload.jsp" />
+	</definition>
+	
+	<!-- End of changes by Bhaskar -->
+	
+	<!-- added by aman -->
+	<definition name="circleManagement.page" extends=".mainLayout">
+		<put name="title" value="LMS : Create/Edit/Delete Circle" />
+		<put name="body" value="/jsp/createCircle.jsp" />
+	</definition>
+	
+	<definition name="bulkMstr.page" extends=".mainLayout">
+		<put name="title" value="LMS : Bulk Master Management" />
+		<put name="body" value="/jsp/bulkMstrCreation.jsp" />
+	</definition>
+	
+	<definition name="bulkPinCodeMstr.page" extends=".mainLayout">
+		<put name="title" value="LMS : Bulk Master Management" />
+		<put name="body" value="/jsp/bulkPinCodeMstr.jsp" />
+	</definition>
+	
+	<definition name="searchFeasibilityEscalation.page" extends=".mainLayout">
+		<put name="title" value="LMS : Feasibility Escalation Search" />
+		<put name="body" value="/jsp/workflow/searchFeasibilityEscalation.jsp" />
+	</definition>
+	
+	<definition name="leadLifeCycleReports.page" extends=".mainLayout">
+		<put name="title" value="LMS : View Lead Lifecycle Report" />
+		<put name="body" value="/jsp/LeadLifecycle.jsp" />
+	</definition>
+	
+	<!-- end of changes by aman -->
+	<definition name="createFormId.page" extends=".mainLayout">
+		<put name="title" value="LMS : Generate Form Id" />
+		<put name="body" value="/jsp/formIdCreation.jsp" />
+	</definition>
+	
+	<definition name="viewFormId.page" extends=".mainLayout">
+		<put name="title" value="LMS : View/Edit/Download Form Id" />
+		<put name="body" value="/jsp/formIdView.jsp" />
+	</definition>
+	
+	<definition name="updateFormId.page" extends=".mainLayout">
+		<put name="title" value="LMS : Update Form Id" />
+		<put name="body" value="/jsp/updateFid.jsp" />
+	</definition>
+	<definition name="reportConfiguration.page" extends=".mainLayout">
+		<put name="title" value="LMS : Configure Reports" />
+		<put name="body" value="/jsp/ReportConfiguration.jsp" />
+	</definition>
+	
+	<definition name="saveReportConfiguration.page" extends=".mainLayout">
+		<put name="title" value="LMS : Report Configuration Saved" />
+		<put name="body" value="/jsp/ReportConfigurationSave.jsp" />
+	</definition>
+	
+	<definition name="existReportConfiguration.page" extends=".mainLayout">
+		<put name="title" value="LMS : Report Configuration Exist" />
+		<put name="body" value="/jsp/ReportConfigurationExist.jsp" />
+	</definition>
+	
+	<definition name="deleteReportConfiguration.page" extends=".mainLayout">
+		<put name="title" value="LMS : Report Configuration Deleted" />
+		<put name="body" value="/jsp/ReportConfigurationDelete.jsp" />
+	</definition>	
+	<!--  changes by amarjeet -->
+         <definition name="dashboardReport.page" extends=".mainLayout">
+		<put name="title" value="LMS : View Dashbaord Report" />
+		<put name="body" value="/jsp/DashboardReport.jsp" />
+	</definition>
+	<!-- end of changes by amarjeet -->
+	
+		<!-- Added By Parnika for dirty/Duplicate dump -->
+	
+	<definition name="dirty.page" extends=".mainLayout">
+		<put name="title" value="LMS : View Dirty/Duplicate Report" />
+		<put name="body" value="/jsp/viewDirtyDuplicate.jsp" />
+	</definition>
+	
+		<definition name="reportDashboard.page" extends=".mainLayout">
+		<put name="title" value="LMS : Dashboard Reports" />
+		<put name="body" value="/jsp/reportDashboard.jsp" />
+	</definition>
+	<definition name="alerts.page" extends=".mainLayout">
+	     <put name="title" value="LMS : Alert Report"/>
+	     <put name="body" value="/jsp/alerts.jsp"/>
+	 </definition>
+	<!--changed By Nancy  -->
+	<definition name="editLeadSearch.page" extends=".mainLayout">
+		<put name="title" value="LMS : Edit Lead Search" />
+		<put name="body" value="/jsp/editLeadSearch.jsp" />
+	</definition>	
+	
+	<definition name="editLeadDetails.page" extends=".mainLayout">
+		<put name="title" value="LMS : Edit Lead Details" />
+		<put name="body" value="/jsp/editLeadDetails.jsp" />
+	</definition>
+	
+	<definition name="editLead.page" extends=".mainLayout">
+		<put name="title" value="LMS : Edit Lead Details" />
+		<put name="body" value="/jsp/editLead.jsp" />
+	</definition>
+	
+	<definition name="logs.page" extends=".mainLayout">
+		<put name="title" value="LMS : download Logs" />
+		<put name="body" value="/jsp/downloadLogs.jsp" />
+	</definition>
+	
+		<!-- End of changes By Nancy  -->
+	<!-- End of changes By Parnika  -->
+</tiles-definitions>
